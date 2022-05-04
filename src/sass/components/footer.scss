@@ -1,6 +1,6 @@
 .footer {
   font-family: 'Roboto';
-  background-color: #f7f7f7;
+  background-color: $background-gray;
 }
 
 .footer-wrapper {
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #545454;
+  color: $text-color-gray;
 
   @media screen and(min-width: 768px) {
     flex-direction: row;
