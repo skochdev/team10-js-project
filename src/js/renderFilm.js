@@ -11,51 +11,42 @@ export function renderFilm(container, film, genres) {
     }
   }
   if (!film.poster_path) {
-    film.poster_path = "[poster_path]";
+    film.poster_path = "/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg";
   }
-  // https://image.tmdb.org/t/p/original/[poster_path]
+  if (!film.vote_count) {
+    film.vote_average = 'Not Available';
+    film.vote_count = 'Not Available';
+  }
+  if (!film.popularity) {
+    film.popularity = 'Not Available';
+  }
+  if (!film.original_title) {
+    film.original_title = 'Not Available';
+  }
   const markup = `<div class="film__card">
     <img class="film__poster"
-      srcset="${film.poster_path} 300w, ${film.poster_path} 600w, ${film.poster_path} 1200w"
-      sizes="(min-width: 1024px) 500px, (min-width: 768px) 300px, 100vw"
-      src="${film.poster_path}"
+      srcset="https://image.tmdb.org/t/p/w342${film.poster_path} 342w, https://image.tmdb.org/t/p/w500${film.poster_path} 500w"
+      sizes="(max-width: 1023px) 342px, 500px"
+      src="https://image.tmdb.org/t/p/w500${film.poster_path}"
       alt="${title} Poster"
     />
     <div class="film__caption">
-      {{#if title}}
-      <h2 class="film__title">{{title}}</h2>
-      {{/if}}
-      {{#unless title}}
-        {{#if name}}
-        <h2 class="film__title">{{name}}</h2>
-        {{/if}}
-        {{#unless name}}
-        <h2 class="film__title">{{original_title}}</h2>
-        {{/unless}}
-      {{/unless}}
-      <h3 class="film__item-caption">Vote / Votes</h3>
-      {{#if vote_count}}
-      <p><span class="film__vote">{{vote_average}}</span>/<span class="film__votes">{{vote_count}}</span></p>
-      {{/if}}
-      {{#unless vote_count}}
-      <p class="film__na">Not Available</p>
-      {{/unless}}
-      <h3 class="film__item-caption">Popularity</h3>
-      {{#if popularity}}
-      <p class="film__popularity">{{popularity}}</p>
-      {{/if}}
-      {{#unless popularity}}
-      <p class="film__na">Not Available</p>
-      {{/unless}}
-      <h3 class="film__item-caption">Original Title</h3>
-      {{#if original_title}}
-      <p class="film__original-title">{{original_title}}</p>
-      {{/if}}
-      {{#unless original_title}}
-      <p class="film__na">Not Available</p>
-      {{/unless}}
-      <h3 class="film__item-caption">Genre</h3>
-      {{#if genre_ids}}
+    <h2 class="film__title">${film.title}</h2>
+      <ul class="film__list">
+        <li class="film__item">
+          <p class="film__item-caption">Vote / Votes</p>
+          <p><span class="film__vote">${vote_average}</span>/<span class="film__votes">${vote_count}</span></p>
+        </li>
+        <li class="film__item">
+          <p class="film__item-caption">Popularity</p>
+          <p class="film__popularity">${popularity}</p>
+        </li>
+        <li class="film__item">
+          <p class="film__item-caption">Original Title</p>
+          <p class="film__original-title">${original_title}</p>
+        </li>
+        <li class="film__item">
+          <p class="film__item-caption">Genre</p>
       <p class="film__genre">{{genre_ids}}</p>
       {{/if}}
       {{#unless genre_ids}}
