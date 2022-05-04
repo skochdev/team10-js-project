@@ -24,7 +24,7 @@
     <img
       src="./images/{{poster_path}}"
       {{#if title}}
-      alt="{{title}}"
+      alt="{{title}} Poster"
       {{/if}}
       {{#unless title}}
       alt="Film poster"
@@ -37,7 +37,12 @@
     <h2 class="film__title">{{title}}</h2>
     {{/if}}
     {{#unless title}}
-    <h2 class="film__title">{{original_title}}</h2>
+      {{#if name}}
+      <h2 class="film__title">{{name}}</h2>
+      {{/if}}
+      {{#unless name}}
+      <h2 class="film__title">{{original_title}}</h2>
+      {{/unless}}
     {{/unless}}
     <h3 class="film__item-caption">Vote / Votes</h3>
     {{#if vote_count}}
