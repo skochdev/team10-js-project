@@ -1,4 +1,4 @@
-export function renderSnpinner(parentElement) {
+export default function renderSpinner(parentElement) {
   const spinnerMarkup = `
   <div class="animated-spinner">
     <div></div>
