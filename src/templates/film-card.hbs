@@ -1,0 +1,81 @@
+<div class="film__card">
+  <picture class="film__poster">
+    <source
+      media="(max-width: 767px)"
+      srcset="
+      ./images/technokryak-mob.jpg    1x,
+      ./images/technokryak-mob@2x.jpg 2x
+      "
+    />
+    <source
+      media="(max-width: 1023px)"
+      srcset="
+      ./images/technokryak-tab.jpg    1x,
+      ./images/technokryak-tab@2x.jpg 2x
+      "
+    />
+    <source
+      media="(min-width: 1200px)"
+      srcset="
+      ./images/technokryak.jpg    1x,
+      ./images/technokryak@2x.jpg 2x
+      "
+    />
+    <img
+      src="./images/{{poster_path}}"
+      {{#if title}}
+      alt="{{title}}"
+      {{/if}}
+      {{#unless title}}
+      alt="Film poster"
+      {{/unless}}
+      width="450"
+    />
+  </picture>
+  <div class="film__caption">
+    {{#if title}}
+    <h2 class="film__title">{{title}}</h2>
+    {{/if}}
+    {{#unless title}}
+    <h2 class="film__title">{{original_title}}</h2>
+    {{/unless}}
+    <h3 class="film__item-caption">Vote / Votes</h3>
+    {{#if vote_count}}
+    <p><span class="film__vote">{{vote_average}}</span>/<span class="film__votes">{{vote_count}}</span></p>
+    {{/if}}
+    {{#unless vote_count}}
+    <p class="film__na">Not Available</p>
+    {{/unless}}
+    <h3 class="film__item-caption">Popularity</h3>
+    {{#if popularity}}
+    <p class="film__popularity">{{popularity}}</p>
+    {{/if}}
+    {{#unless popularity}}
+    <p class="film__na">Not Available</p>
+    {{/unless}}
+    <h3 class="film__item-caption">Original Title</h3>
+    {{#if original_title}}
+    <p class="film__original-title">{{original_title}}</p>
+    {{/if}}
+    {{#unless original_title}}
+    <p class="film__na">Not Available</p>
+    {{/unless}}
+    <h3 class="film__item-caption">Genre</h3>
+    {{#if genre_ids}}
+    <p class="film__genre">{{genre_ids}}</p>
+    {{/if}}
+    {{#unless genre_ids}}
+    <p class="film__na">Not Available</p>
+    {{/unless}}
+    <h3 class="film__about-caption">About</h3>
+    {{#if overview}}
+    <p class="film__about">{{overview}}</p>
+    {{/if}}
+    {{#unless overview}}
+    <p class="film__na">Not Available</p>
+    {{/unless}}
+    <div class="film__buttons">
+      <button class="film__button film__watched" type="button">Add to watched</button>
+      <button class="film__button film__queue" type="button">Add to queue</button>
+    </div>
+</div>
