@@ -35,7 +35,7 @@ export default function renderMovieCard(film, genres, mode) {
     />
     <div class="movie__caption">
       <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${release_date.slice(
+      <p class="movie__genre">${genre} | ${film.release_date.slice(
       0,
       4,
     )} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
@@ -49,7 +49,7 @@ export default function renderMovieCard(film, genres, mode) {
     />
     <div class="movie__caption">
       <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${release_date.slice(
+      <p class="movie__genre">${genre} | ${film.release_date.slice(
       0,
       4,
     )} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>

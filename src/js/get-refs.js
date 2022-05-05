@@ -16,6 +16,9 @@ export default function getRefs() {
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
+    galleryRef: document.querySelector('.film-gallery'),
+    parsedGenresRef: JSON.parse(localStorage.getItem("genre_ids")),
+    
     // footer related refs // рефи з футера
     footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
     studentsModal: document.querySelector('[data-studentsModal]'),
