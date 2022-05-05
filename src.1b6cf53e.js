@@ -82,8 +82,8 @@ module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"ePT3":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=a;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}async function a(){const{data:t}=await(0,e.default)("https://api.themoviedb.org/3/genre/movie/list?api_key=fdf0e898687a376156944fbb1ab25196&language=en-US");return t.genres}
 },{"axios":"dZBD"}],"jxhk":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;var e=require("./fetchGenres");function t(){return(0,e.fetchGenres)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=r;var e=t(require("./fetchGenres"));function t(e){return e&&e.__esModule?e:{default:e}}function r(){return(0,e.default)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
 },{"./fetchGenres":"ePT3"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss");var e=require("./js/saveGenresToLocalStorage");(0,e.saveGenresToLocalStorage)();
+"use strict";require("./sass/main.scss");var e=s(require("./js/saveGenresToLocalStorage"));function s(e){return e&&e.__esModule?e:{default:e}}(0,e.default)();
 },{"./sass/main.scss":"clu1","./js/saveGenresToLocalStorage":"jxhk"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.9d0596ae.js.map
+//# sourceMappingURL=/team10-js-project/src.1b6cf53e.js.map
