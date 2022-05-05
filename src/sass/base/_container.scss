@@ -3,6 +3,16 @@
   margin-right: auto;
   padding-left: 32px;
   padding-right: 32px;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+  }
 }
-
-

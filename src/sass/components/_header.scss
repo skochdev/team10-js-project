@@ -1,268 +1,246 @@
-.container {
-    @media screen and (min-width: $mobile) {
-        width: $mobile;
-    }
-
-    @media screen and (min-width: $tablet) {
-        width: $tablet;
-    }
-
-    @media screen and (min-width: $desktop) {
-        width: $desktop;
-    }
-}
-
-
 // --------------------MOBILE----------------------------
 
 .header {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), 
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(../images/header320.jpg);
-    background-repeat: no-repeat;
-    background-color: $text-color-black;
-    background-position: top;
-    width: 100%;
-    height: 216px;
-    padding-bottom: 97px;
-    padding-top: 46px;
-    margin: 0 auto;
-    margin: 0%;
+  background-repeat: no-repeat;
+  background-color: $text-color-black;
+  background-position: top;
+  width: 100%;
+  height: 216px;
+  padding-bottom: 97px;
+  padding-top: 46px;
+  margin: 0 auto;
+  margin: 0%;
 }
 
 @media (min-device-pixel-ratio: 2) and (min-width: $mobile),
-    (min-resolution: 192dpi) and (min-width: $mobile),
-    (min-resolution: 2dppx) and (min-width: $mobile) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../images/header320@2x.jpg);
-    }
+  (min-resolution: 192dpi) and (min-width: $mobile),
+  (min-resolution: 2dppx) and (min-width: $mobile) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header320@2x.jpg);
+  }
 }
 
 @media (min-device-pixel-ratio: 3) and (min-width: $mobile),
-(min-resolution: 288dpi) and (min-width: $mobile),
-(min-resolution: 3dppx) and (min-width: $mobile) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../images/header320@3x.jpg);
-    }
+  (min-resolution: 288dpi) and (min-width: $mobile),
+  (min-resolution: 3dppx) and (min-width: $mobile) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header320@3x.jpg);
+  }
 }
 
 .header__wrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo__link {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 0;
-    padding-left: 0;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
-.logo__link:hover>.logo__icon {
-    stroke: $hover-orange;
-    transition: stroke 250ms $transition-default-timing;
+.logo__link:hover > .logo__icon {
+  stroke: $hover-orange;
+  transition: stroke 250ms $transition-default-timing;
 }
 
 .logo__icon {
-    margin-right: 8px;
-    stroke: $logo-color;
+  margin-right: 8px;
+  stroke: $logo-color;
 }
 
 .logo__text {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
-    .navigation {
-        margin-bottom: 60px;
-    }
+  .navigation {
+    margin-bottom: 60px;
+  }
 }
 
 .navigation__list {
-    display: flex;
-    padding-left: 0;
-    align-items: center;
+  display: flex;
+  padding-left: 0;
+  align-items: center;
 }
 
 .navigation__item:not(:last-child) {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .navigation__link {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.16;
-    text-align: center;
-    text-transform: uppercase;
-    color: $text-color-white;
-    padding: 0%;
-    &:hover {
-        color: $hover-orange;
-        transition: $color-transition;
-    }
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  text-align: center;
+  text-transform: uppercase;
+  color: $text-color-white;
+  padding: 0%;
+  &:hover {
+    color: $hover-orange;
+    transition: $color-transition;
+  }
 }
 
-
 .header__form {
-    height: 20px;
-    display: block;
-    box-sizing: border-box;
-    position: relative;
+  height: 20px;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .header__input {
-    width: 100%;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    background-color: inherit;
-    border-bottom: 0.5px solid $text-color-white;
-    transition: $color-transition;
-    padding-bottom: 1px;
-    padding-left: 1px;
-    color: $text-color-white;
+  width: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: inherit;
+  border-bottom: 0.5px solid $text-color-white;
+  transition: $color-transition;
+  padding-bottom: 1px;
+  padding-left: 1px;
+  color: $text-color-white;
 
-    &:hover,
-    &:focus {
-        border-bottom: 1px solid $hover-orange;
-        transition: border-bottom 500ms;
-    }
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $hover-orange;
+    transition: border-bottom 500ms;
+  }
 }
 
 .header__input::placeholder {
-    font-size: 400;
-    font-size: 14px;
-    line-height: 1.14;
-    padding-left: 1px;
+  font-size: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  padding-left: 1px;
 
-    color: #fff;
+  color: #fff;
 }
 
 .btn__search {
-    position: absolute;
-    right: -3px;
-    border: none;
-    cursor: pointer;
-    background-color: inherit;
+  position: absolute;
+  right: -3px;
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
 }
 
 .navigation__link.current {
-    position: relative;
+  position: relative;
 }
 
 .navigation__link.current::after {
-    position: absolute;
-    top: 13px;
-    display: block;
-    content: '';
-    height: 3px;
-    width: 100%;
-    background-color: $hover-orange;
+  position: absolute;
+  top: 13px;
+  display: block;
+  content: '';
+  height: 3px;
+  width: 100%;
+  background-color: $hover-orange;
 }
-
-
 
 // ------------------------TABLET------------------------
 
 @media screen and (min-width: $tablet) {
-    .header {
-        padding-top: 41px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../images/header768.jpg);
-    }
+  .header {
+    padding-top: 41px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header768.jpg);
+  }
 }
 
 @media (min-device-pixel-ratio: 2) and (min-width: $tablet),
-(min-resolution: 192dpi) and (min-width: $tablet),
-(min-resolution: 2dppx) and (min-width: $tablet) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../images/header768@2x.jpg);
-    }
+  (min-resolution: 192dpi) and (min-width: $tablet),
+  (min-resolution: 2dppx) and (min-width: $tablet) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header768@2x.jpg);
+  }
 }
 
 @media (min-device-pixel-ratio: 3) and (min-width: $tablet),
-(min-resolution: 288dpi) and (min-width: $tablet),
-(min-resolution: 3dppx) and (min-width: $tablet) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../images/header768@3x.jpg);
-    }
-}
-
-
-@media screen and (min-width: $tablet) {
-    .logo__text {
-        display: block;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.16;
-        color: $text-color-white;
-    }
+  (min-resolution: 288dpi) and (min-width: $tablet),
+  (min-resolution: 3dppx) and (min-width: $tablet) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header768@3x.jpg);
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .header__form {
-        width: 336px;
-        margin: 0 auto;
-    }
+  .logo__text {
+    display: block;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.16;
+    color: $text-color-white;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .logo__link {
-        padding: 0;
-        height: 35px;
-        align-items: center;
-    }
+  .header__form {
+    width: 336px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .navigation {
-        margin-bottom: 52px;
-    }
+  .logo__link {
+    padding: 0;
+    height: 35px;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .navigation__list {
-        padding-top: 9px;
-        padding-left: 0;
-        align-items: center;
-    }
+  .navigation {
+    margin-bottom: 52px;
+  }
 }
 
+@media screen and (min-width: $tablet) {
+  .navigation__list {
+    padding-top: 9px;
+    padding-left: 0;
+    align-items: center;
+  }
+}
 
 // ----------------------DESKTOP------------------------
 
-
 @media screen and (min-width: $desktop) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../images/header1024.jpg);
-            max-width: 1600px;
-            margin: auto;
-    }
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header1024.jpg);
+    max-width: 1600px;
+    margin: auto;
+  }
 }
 
 @media (min-device-pixel-ratio: 2) and (min-width: $desktop),
-(min-resolution: 192dpi) and (min-width: $desktop),
-(min-resolution: 2dppx) and (min-width: $desktop) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../images/header1024@2x.jpg);
-            max-width: 1600px;
-            margin: auto;
-    }
+  (min-resolution: 192dpi) and (min-width: $desktop),
+  (min-resolution: 2dppx) and (min-width: $desktop) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header1024@2x.jpg);
+    max-width: 1600px;
+    margin: auto;
+  }
 }
 
 @media (min-device-pixel-ratio: 3) and (min-width: $desktop),
-(min-resolution: 288dpi) and (min-width: $desktop),
-(min-resolution: 3dppx) and (min-width: $desktop) {
-    .header {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../images/header1024@3x.jpg);
-            max-width: 1600px;
-            margin: auto;
-    }
+  (min-resolution: 288dpi) and (min-width: $desktop),
+  (min-resolution: 3dppx) and (min-width: $desktop) {
+  .header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header1024@3x.jpg);
+    max-width: 1600px;
+    margin: auto;
+  }
 }
-
