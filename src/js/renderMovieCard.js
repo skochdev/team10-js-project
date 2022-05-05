@@ -1,7 +1,7 @@
 import { getGenres } from './getGenres';
 
 // картка фільму головної сторінки
-export function renderMovieCard(film, genres, mode) {
+export default function renderMovieCard(film, genres, mode) {
   let genre = '';
   if (film.genre_ids.length === 0) {
     genre = 'Not Available';

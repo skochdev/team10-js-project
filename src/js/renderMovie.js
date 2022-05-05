@@ -2,7 +2,7 @@ import { getGenres } from './getGenres';
 
 // Картка details модалка фільму
 
-export function renderMovie(container, film, genres) {
+export default function renderMovie(container, film, genres) {
   let genre = '';
   if (!film.title) {
     if (film.original_title) {
