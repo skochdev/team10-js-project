@@ -86,4 +86,4 @@ module.exports=require("./lib/axios");
 },{"./fetchGenres":"ePT3"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=s(require("./js/saveGenresToLocalStorage"));function s(e){return e&&e.__esModule?e:{default:e}}(0,e.default)();
 },{"./sass/main.scss":"clu1","./js/saveGenresToLocalStorage":"jxhk"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.1b6cf53e.js.map
+//# sourceMappingURL=/team10-js-project/src.261f8d7c.js.map
