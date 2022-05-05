@@ -42,7 +42,7 @@ export function renderMovie(container, film, genres) {
         <ul class="film__list">
           <li class="film__item">
             <p class="film__item-caption">Vote / Votes</p>
-            <p><span class="film__vote">${film.vote_average}</span>/<span class="film__votes">${film.vote_count}</span></p>
+            <p class="film__rating"><span class="film__vote">${film.vote_average}</span>/<span class="film__votes">${film.vote_count}</span></p>
           </li>
           <li class="film__item">
             <p class="film__item-caption">Popularity</p>
@@ -60,7 +60,7 @@ export function renderMovie(container, film, genres) {
         <p class="film__about-caption">About</p>
         <p class="film__about">${film.overview}</p>
         <div class="film__buttons">
-          <button class="film__button film__watched" type="button">Add to watched</button>
+          <button class="film__button film__button-active film__watched" type="button">Add to watched</button>
           <button class="film__button film__queue" type="button">Add to queue</button>
         </div>
       </div>

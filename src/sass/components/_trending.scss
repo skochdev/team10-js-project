@@ -1,27 +1,27 @@
-.portfolio__list {
-  @media screen and (min-width: 768px) {
+.movie__list {
+  @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 32px 16.5px;
   }
 }
 
-.portfolio__item {
-  border: 1px solid $grid-border-color;
-  box-shadow: none;
-  transition: box-shadow 250ms $timing-function;
-
-  @media screen and (min-width: 768px) {
-    @include fbasis(2, 30px);
+.movie__item {
+  @media screen and (min-width: $tablet) {
+    @include fbasis(2, 32px);
   }
 
-  @media screen and (min-width: 1200px) {
-    @include fbasis(3, 30px);
+  @media screen and (min-width: $desktop) {
+    @include fbasis(3, 16.5px);
   }
 
   &:not(:last-child) {
     @media screen and (max-width: 767px) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 
@@ -31,53 +31,23 @@
   }
 }
 
-.portfolio__thumb {
-  position: relative;
-  overflow: hidden;
+.movie__poster {
+  max-width: 100%;
+  height: auto;
 }
 
-.portfolio__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  padding: 24px;
-  font-size: 18px;
-  line-height: 1.56;
-  text-overflow: ellipsis;
-  color: $white-color;
-  background-color: $portfolio-overlay-color;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 250ms $timing-function, opacity 250ms $timing-function;
-
-  @media screen and (min-width: 480px) {
-    display: flex;
-    align-items: center;
-  }
-
-  .portfolio__item:hover & {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.movie__caption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.33;
 }
 
-.portfolio__caption {
-  padding: 20px 24px;
+.movie__title {
+  color: $text-color-black;
+  text-transform: uppercase;
+  word-break: break-all;
 }
 
-.portfolio__name {
-  margin-bottom: 4px;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: $primary-text-color;
-}
-
-.portfolio__type {
-  font-size: 16px;
-  line-height: 1.87;
-  color: $secondary-text-color;
+.movie__genre {
+  color: $hover-orange;
 }

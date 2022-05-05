@@ -1,0 +1,3 @@
+@mixin fbasis($count, $margin) {
+  flex-basis: calc((100% - ((#{$count} - 1) * #{$margin})) / #{$count});
+}
