@@ -90,4 +90,4 @@ module.exports=require("./lib/axios");
 },{"./fetchGenres":"ePT3","./fetchPopularMovies":"gyxV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var s=require("./js/saveGenres");(0,s.saveGenresToLocalStorage)();
 },{"./sass/main.scss":"clu1","./js/saveGenres":"wEZN"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.507d95b4.js.map
+//# sourceMappingURL=/team10-js-project/src.e32d7349.js.map
