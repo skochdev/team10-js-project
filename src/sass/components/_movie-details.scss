@@ -1,0 +1,170 @@
+.film__card {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    gap: 68px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 16px;
+  }
+}
+
+.film__poster {
+  max-width: 100%;
+  height: auto;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 264px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 375px;
+  }
+}
+
+.film__caption {
+  font-size: 12px;
+  color: $text-color-black;
+}
+
+.film__title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  word-break: break-all;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 30px;
+    line-height: 1.17;
+  }
+}
+
+.film__list {
+  margin-bottom: 20px;
+}
+
+.film__item {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.film__item-caption {
+  width: 108px;
+  line-height: 1.33;
+  color: $text-color-light-gray;
+
+  @media screen and (min-width: $desktop) {
+    width: 152px;
+  }
+}
+
+.film__rating {
+  line-height: 1.33;
+  color: $text-color-light-gray;
+}
+
+.film__vote, .film__votes, .film__popularity {
+  line-height: 1.17;
+}
+
+.film__vote {
+  padding: 1px 9px 1px 10px;
+  border-radius: 5px;
+  color: $text-color-white;
+  background-color: $hover-orange;
+}
+
+.film__votes {
+  padding: 1px 4px;
+  border-radius: 5px;
+  color: $text-color-black;
+  background-color: $background-gray;
+}
+
+.film__original-title, .film__genre, .film__about-caption {
+  line-height: 1.33;
+}
+
+.film__original-title {
+    text-transform: uppercase;
+    word-break: break-all;
+}
+
+.film__about-caption {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.film__about {
+  margin-bottom: 20px;
+  line-height: 1.67;
+  word-break: break-all;
+}
+
+.film__buttons {
+  display: flex;
+  gap: 20px;
+
+  @media screen and (min-width: $tablet) {
+    gap: 15px;
+  }
+}
+
+.film__button {
+  min-width: 110px;
+  min-height: 44px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.33;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid $text-color-black;
+  border-radius: 5px;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 125px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-width: 136px;
+  }
+}
+
+.film__button-active {
+  color: $text-color-white;
+  background-color: $hover-orange;
+  border-color: $hover-orange;
+}
+
+.film__watched {
+  padding: 6px 27px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 14px 9px 12px 9px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 14px 10px 12px 10px;
+  }
+}
+
+.film__queue {
+  padding: 13px 14px 13px 13px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 15px 21px 13px 21px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 14px 8px 12px  8px;
+  }
+}

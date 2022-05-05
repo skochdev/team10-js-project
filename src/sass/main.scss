@@ -9,8 +9,11 @@
 @import './utils/visually-hidden';
 @import './base/reset';
 @import './utils/variables';
+@import './utils/mixins';
 @import './base/container';
 @import './base/body';
 @import './components/header.scss';
+@import './components/trending';
+@import './components/movie-details';
 @import './components/footer';
 @import './components/footer-modal';
