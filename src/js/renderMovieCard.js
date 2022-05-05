@@ -1,11 +1,12 @@
-import { getGenres } from "./getGenres";
+import { getGenres } from './getGenres';
 
+// картка фільму головної сторінки
 export function renderMovieCard(film, genres, mode) {
   let genre = '';
   if (film.genre_ids.length === 0) {
     genre = 'Not Available';
   } else if (film.genre_ids.length > 3) {
-    genre = getGenres(film.genre_ids.slice(0,2), genres) + ', Other';
+    genre = getGenres(film.genre_ids.slice(0, 2), genres) + ', Other';
   } else {
     genre = getGenres(film.genre_ids, genres);
   }
@@ -24,7 +25,7 @@ export function renderMovieCard(film, genres, mode) {
     film.release_date = '';
   }
   if (!film.poster_path) {
-    film.poster_path = "/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg";
+    film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
   }
   if (mode !== 'library') {
     return `<li class="movie__item">
@@ -34,7 +35,10 @@ export function renderMovieCard(film, genres, mode) {
     />
     <div class="movie__caption">
       <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${release_date.slice(0, 4)} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
+      <p class="movie__genre">${genre} | ${release_date.slice(
+      0,
+      4,
+    )} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
     </div>
   </li>`;
   } else {
@@ -45,7 +49,10 @@ export function renderMovieCard(film, genres, mode) {
     />
     <div class="movie__caption">
       <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${release_date.slice(0, 4)} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
+      <p class="movie__genre">${genre} | ${release_date.slice(
+      0,
+      4,
+    )} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
     </div>
   </li>`;
   }

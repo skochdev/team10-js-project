@@ -1,4 +1,6 @@
-import { getGenres } from "./getGenres";
+import { getGenres } from './getGenres';
+
+// Картка details модалка фільму
 
 export function renderMovie(container, film, genres) {
   let genre = '';
@@ -14,7 +16,7 @@ export function renderMovie(container, film, genres) {
     }
   }
   if (!film.poster_path) {
-    film.poster_path = "/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg";
+    film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
   }
   if (!film.popularity) {
     film.popularity = 'Not Available';
