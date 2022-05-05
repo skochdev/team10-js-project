@@ -80,10 +80,10 @@ module.exports={version:"0.27.2"};
 },{"./utils":"S1cf","./helpers/bind":"EDTP","./core/Axios":"OvAf","./core/mergeConfig":"OHvn","./defaults":"VQpg","./cancel/CanceledError":"E1lI","./cancel/CancelToken":"tsWd","./cancel/isCancel":"V30M","./env/data":"xNqU","./helpers/toFormData":"BFle","../lib/core/AxiosError":"rRKx","./helpers/spread":"X8jb","./helpers/isAxiosError":"wICU"}],"dZBD":[function(require,module,exports) {
 module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"ePT3":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchGenres=a;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}async function a(){const{data:t}=await(0,e.default)("https://api.themoviedb.org/3/genre/movie/list?api_key=fdf0e898687a376156944fbb1ab25196&language=en-US");return t.genres}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=a;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}async function a(){const{data:t}=await(0,e.default)("https://api.themoviedb.org/3/genre/movie/list?api_key=fdf0e898687a376156944fbb1ab25196&language=en-US");return t.genres}
 },{"axios":"dZBD"}],"jxhk":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.saveGenresToLocalStorage=r;var e=require("./fetchGenres");function r(){return(0,e.fetchGenres)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;var e=require("./fetchGenres");function t(){return(0,e.fetchGenres)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
 },{"./fetchGenres":"ePT3"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/saveGenresToLocalStorage");(0,e.saveGenresToLocalStorage)();
 },{"./sass/main.scss":"clu1","./js/saveGenresToLocalStorage":"jxhk"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.37dbaafd.js.map
+//# sourceMappingURL=/team10-js-project/src.9d0596ae.js.map
