@@ -79,3 +79,25 @@
   opacity: 0;
   pointer-events: none;
 }
+
+.footer__closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.footer__close-icon {
+  width: 11px;
+  height: 11px;
+  transition: $fill-transition;
+
+  &:hover,
+  :focus {
+    fill: $hover-orange;
+  }
+}
