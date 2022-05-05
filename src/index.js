@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import { saveGenresToLocalStorage } from './js/saveGenres';
+import { saveGenresToLocalStorage } from './js/saveGenresToLocalStorage';
 
 saveGenresToLocalStorage();
 
