@@ -1,0 +1,14 @@
+.main__wrapper {
+
+@media screen and (min-width: $mobile) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: $tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+}
+
