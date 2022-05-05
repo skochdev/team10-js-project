@@ -1,0 +1,53 @@
+.movie__list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 32px 16.5px;
+  }
+}
+
+.movie__item {
+  @media screen and (min-width: $tablet) {
+    @include fbasis(2, 32px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include fbasis(3, 16.5px);
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.movie__poster {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie__caption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.movie__title {
+  color: $text-color-black;
+  text-transform: uppercase;
+  word-break: break-all;
+}
+
+.movie__genre {
+  color: $hover-orange;
+}
