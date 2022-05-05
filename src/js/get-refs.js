@@ -12,8 +12,13 @@
 export default function getRefs() {
   return {
     searchBtnRef: document.querySelector('[data-action="search-button"]'),
-    mainRef: document.querySelector('main'),
     homeRef: document.querySelector('[data-link="home"]'),
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
+    // рефа тегу <main> з index.html
+    mainRef: document.querySelector('main'),
+    // footer related refs // рефи з футера
+    footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
+    studentsModal: document.querySelector('[data-studentsModal]'),
+    footerCloseBtnRef: document.querySelector('[data-action="footerCloseBtn"]'),
   };
 }

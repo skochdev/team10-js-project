@@ -1,24 +1,36 @@
-const refs = {
-  footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
-  studentsModal: document.querySelector('[data-studentsModal]'),
-};
+import getRefs from './get-refs';
 
-refs.studentsModal.addEventListener('click', onFooterModalOpen);
+const REFS = getRefs();
+
+REFS.studentsModal.addEventListener('click', onFooterModalOpen);
+REFS.footerModalBackdrop.addEventListener('keydown', onEscape);
 
 function onFooterModalOpen() {
-  refs.footerModalBackdrop.addEventListener('click', onFooterModalBackdropClick);
-  refs.footerModalBackdrop.classList.remove('is-hidden');
+  REFS.footerModalBackdrop.addEventListener('click', onFooterModalBackdropClick);
+  REFS.footerCloseBtnRef.addEventListener('click', onFooterModalClose);
+  window.addEventListener('keydown', onEscape);
+  REFS.footerModalBackdrop.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
 }
 
 function onFooterModalClose() {
-  refs.footerModalBackdrop.removeEventListener('click', onFooterModalBackdropClick);
-  refs.footerModalBackdrop.classList.add('is-hidden');
+  REFS.footerModalBackdrop.removeEventListener('click', onFooterModalBackdropClick);
+  window.removeEventListener('keydown', onEscape);
+  REFS.footerCloseBtnRef.removeEventListener('click', onFooterModalClose);
+  REFS.footerModalBackdrop.classList.add('is-hidden');
   document.body.style.overflow = 'auto';
 }
 
 function onFooterModalBackdropClick(e) {
-  if (e.target === e.currentTarget) {
+  if (e.target === e.currentTarget || e.code === 'Escape') {
     onFooterModalClose();
   }
+}
+
+function onEscape(e) {
+  if (e.code === 'Escape') {
+    onFooterModalClose();
+  }
+
+  return;
 }
