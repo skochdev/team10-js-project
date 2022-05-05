@@ -1,6 +1,6 @@
 import { getGenres } from "./getGenres";
 
-export function renderMovie(container, film, genres) {
+export function renderMovieCard(film, genres) {
   let genre = '';
   if (film.genre_ids.length === 0) {
     genre = 'Not Available';
@@ -26,17 +26,14 @@ export function renderMovie(container, film, genres) {
   if (!film.poster_path) {
     film.poster_path = "/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg";
   }
-  const markup = `<div class="movie__card">
-    <img class="film__poster"
+  return `<li class="movie__item">
+    <img class="movie__poster"
       src="https://image.tmdb.org/t/p/w342${film.poster_path}"
       alt="${film.title} Poster"
     />
-    <div class="film__caption">
-      <h2 class="film__title">${film.title}</h2>
-      <p class="film__genre">${genre} | ${release_date.slice(0, 4)}</p>
-      <p class="film__popularity">${film.popularity.toFixed(1)}</p>
-      </div>
+    <div class="movie__caption">
+      <h2 class="movie__title">${film.title}</h2>
+      <p class="movie__genre">${genre} | ${release_date.slice(0, 4)} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
     </div>
-  `;
-  container.insertAdjacentHTML('beforeend', markup);
+  </li>`;
 }
