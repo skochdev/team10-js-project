@@ -1,0 +1,49 @@
+.footer {
+  font-family: 'Roboto';
+  background-color: $background-gray;
+}
+
+.footer-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer__text-wrapper {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $text-color-gray;
+
+  @media screen and(min-width: 768px) {
+    flex-direction: row;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+}
+
+.footer__copyright-text {
+  @media screen and(max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__team-text {
+  display: flex;
+  align-items: center;
+}
+
+.footer__students {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__icon-heart {
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+}

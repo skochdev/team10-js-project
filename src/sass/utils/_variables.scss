@@ -1,0 +1,32 @@
+// Container breakpoints
+
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Colors
+
+$background-white: #ffffff;
+$background-gray: #f7f7f7;
+
+$text-color-white: #ffffff;
+$text-color-black: #000000;
+$text-color-red: #ff001b;
+$text-color-gray: #545454;
+$text-color-light-gray: #8c8c8c; //Используется в модалке
+
+$hover-orange: #ff6b08;
+
+$logo-color: #818181;
+
+// ===================== Transition variables =================
+
+/* Transitions */
+$transition-default-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+$color-transition: color 250ms $transition-default-timing;
+$bgc-transition: background-color 250ms $transition-default-timing;
+$fill-transition: fill 250ms $transition-default-timing;
+$box-shadow-transition: box-shadow 250ms $transition-default-timing;
+$transform-transition: transform 250ms $transition-default-timing;
+$border-color-transition: border-color 250ms $transition-default-timing;
