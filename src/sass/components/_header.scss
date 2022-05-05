@@ -218,7 +218,7 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header1024.jpg);
-    max-width: 1600px;
+    max-width: 100%;
     margin: auto;
   }
 }
@@ -229,7 +229,7 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header1024@2x.jpg);
-    max-width: 1600px;
+    max-width: 100%;
     margin: auto;
   }
 }
@@ -240,7 +240,7 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header1024@3x.jpg);
-    max-width: 1600px;
+    max-width: 100%;
     margin: auto;
   }
 }
