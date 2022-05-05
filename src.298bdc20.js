@@ -81,13 +81,9 @@ module.exports={version:"0.27.2"};
 module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"ePT3":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchGenres=a;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}async function a(){const{data:t}=await(0,e.default)("https://api.themoviedb.org/3/genre/movie/list?api_key=fdf0e898687a376156944fbb1ab25196&language=en-US");return t.genres}
-},{"axios":"dZBD"}],"cZF8":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.API_KEY=void 0;const e="c4bc941c607c9762d744b272a86df854";exports.API_KEY=e;
-},{}],"gyxV":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchMovies=i;var e=r(require("axios")),t=require("./api");function r(e){return e&&e.__esModule?e:{default:e}}async function i(){const{data:r}=await(0,e.default)(`https://api.themoviedb.org/3/trending/movie/day?api_key=${t.API_KEY}`);return r.results}
-},{"axios":"dZBD","./api":"cZF8"}],"wEZN":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.saveGenresToLocalStorage=t;var e=require("./fetchGenres"),r=require("./fetchPopularMovies");function t(){return(0,e.fetchGenres)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
-},{"./fetchGenres":"ePT3","./fetchPopularMovies":"gyxV"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss");var s=require("./js/saveGenres");(0,s.saveGenresToLocalStorage)();
-},{"./sass/main.scss":"clu1","./js/saveGenres":"wEZN"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.e32d7349.js.map
+},{"axios":"dZBD"}],"jxhk":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.saveGenresToLocalStorage=r;var e=require("./fetchGenres");function r(){return(0,e.fetchGenres)().then(e=>{localStorage.setItem("genre_ids",JSON.stringify(e))})}
+},{"./fetchGenres":"ePT3"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss");var e=require("./js/saveGenresToLocalStorage");(0,e.saveGenresToLocalStorage)();
+},{"./sass/main.scss":"clu1","./js/saveGenresToLocalStorage":"jxhk"}]},{},["Focm"], null)
+//# sourceMappingURL=/team10-js-project/src.298bdc20.js.map
