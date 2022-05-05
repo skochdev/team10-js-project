@@ -86,4 +86,4 @@ module.exports=require("./lib/axios");
 },{"./fetchGenres":"ePT3"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/saveGenresToLocalStorage");(0,e.saveGenresToLocalStorage)();
 },{"./sass/main.scss":"clu1","./js/saveGenresToLocalStorage":"jxhk"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.49c397db.js.map
+//# sourceMappingURL=/team10-js-project/src.16d73a16.js.map
