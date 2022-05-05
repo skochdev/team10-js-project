@@ -1,4 +1,4 @@
-import { getGenres } from './getGenres';
+import  getGenres  from './getGenres';
 
 // картка фільму головної сторінки
 export default function renderMovieCard(film, genres, mode) {
