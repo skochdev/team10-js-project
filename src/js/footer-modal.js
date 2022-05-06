@@ -10,7 +10,7 @@ function onFooterModalOpen() {
   REFS.footerCloseBtnRef.addEventListener('click', onFooterModalClose);
   window.addEventListener('keydown', onEscape);
   REFS.footerModalBackdrop.classList.remove('is-hidden');
-  setBodyOverflow('initial');
+  setBodyOverflow('hidden');
 }
 
 function onFooterModalClose() {
@@ -26,7 +26,7 @@ function onFooterModalClose() {
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   if (!e.matches) return;
   REFS.footerModalBackdrop.classList.add('is-hidden');
-  setBodyOverflow('initial');
+  onFooterModalClose();
 });
 
 function onFooterModalBackdropClick(e) {
