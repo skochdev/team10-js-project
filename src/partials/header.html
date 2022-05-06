@@ -10,10 +10,10 @@
       <nav class="navigation">
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a class="navigation__link current" href="./index.html" data-link="home">HOME</a>
+            <a class="navigation__link current" href="./index.html" data-link="home">Home</a>
           </li>
           <li class="navigation__item">
-            <a class="navigation__link" href="#" data-link="my-library">MY LIBRARY</a>
+            <a class="navigation__link" href="#" data-link="my-library">My Library</a>
           </li>
         </ul>
       </nav>
@@ -25,7 +25,6 @@
         name="searchQuery"
         autocomplete="off"
         placeholder="Search Movies"
-        required
       />
 
       <button class="btn__search" type="submit" data-action="search-button">
@@ -34,5 +33,10 @@
         </svg>
       </button>
     </form>
+  </div>
+
+  <div class="library-btn__item is-hidden">
+    <button class="library-btn watched-btn" type="button">Watched</button>
+    <button class="library-btn queue-btn" type="button">Queue</button>
   </div>
 </header>

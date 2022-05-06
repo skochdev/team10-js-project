@@ -18,9 +18,7 @@
     </symbol>
     <symbol id="icon-film"
       viewBox="0 0 32 32">
-      <path fill="none"
-        stroke="#818181"
-        style="stroke: var(--color2, #818181)"
+      <path
         stroke-linejoin="round"
         stroke-linecap="round"
         stroke-miterlimit="4"
