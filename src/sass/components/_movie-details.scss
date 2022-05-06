@@ -10,19 +10,20 @@
 }
 
 .film__poster {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  border-radius: 5px;
 
   @media screen and (max-width: 767px) {
     margin-bottom: 20px;
   }
 
   @media screen and (min-width: $tablet) {
-    max-width: 264px;
+    width: 264px;
   }
 
   @media screen and (min-width: $desktop) {
-    max-width: 375px;
+    width: 375px;
   }
 }
 
