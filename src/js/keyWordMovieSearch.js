@@ -6,9 +6,11 @@ const refs = getRefs();
 let searchQuery = '';
 
 refs.headerFormRef.addEventListener('submit', onFormSubmit);
+console.log(refs.errorWindowRef);
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+  refs.errorWindowRef.innerHTML = '';
   searchQuery = refs.headerFormRef.searchQuery.value;
 
   if (searchQuery === '') {
@@ -31,5 +33,7 @@ function onFetchMovieRequest(movies) {
 }
 
 function onFetchMovieError() {
-  console.log('Search result not successful. Enter the correct movie name and');
+  const errorNotification = 'Search result not successful. Enter the correct movie name and';
+
+  refs.errorWindowRef.innerHTML = errorNotification;
 }
