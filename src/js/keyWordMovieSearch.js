@@ -1,6 +1,7 @@
 import getRefs from './get-refs';
 import renderTrending from './renderTrending';
 import fetchKeyWord from './fetchKeyWord';
+import onLoaderHidden from './onLoaderHidden';
 
 const refs = getRefs();
 let searchQuery = '';
@@ -17,7 +18,7 @@ function onFormSubmit(evt) {
     return;
   }
 
-  fetchKeyWord(searchQuery, 1).then(onFetchMovieRequest).catch(onFetchMovieError);
+  fetchKeyWord(searchQuery, 1).then(onFetchMovieRequest).catch(onFetchMovieError).finally(onLoaderHidden);
   refs.headerFormRef.searchQuery.value = '';
 }
 

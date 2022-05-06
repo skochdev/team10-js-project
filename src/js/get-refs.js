@@ -19,6 +19,7 @@ export default function getRefs() {
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
     gallery: document.querySelector('.gallery'),
+    loader: document.querySelector('.loader'),
     // footer related refs // рефи з футера
     footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
     studentsModal: document.querySelector('[data-studentsModal]'),
