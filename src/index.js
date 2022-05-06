@@ -7,8 +7,12 @@ import fetchPopularMovies from './js/fetchPopularMovies';
 
 const refs = getRefs();
 saveGenresToLocalStorage();
-const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
-fetchPopularMovies(1).then(response => {
-  renderTrending(refs.gallery, response.results, genres);
-  localStorage.setItem('trending', JSON.stringify(response));
-  }).catch(error => console.log(error));
+
+const genres = JSON.parse(localStorage.getItem('genre_ids'));
+fetchPopularMovies(1)
+  .then(response => {
+    renderTrending(refs.gallery, response.results, genres);
+    localStorage.setItem('trending', JSON.stringify(response));
+  })
+  .catch(error => console.log(error));
+

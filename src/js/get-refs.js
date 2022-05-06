@@ -11,9 +11,11 @@
 
 export default function getRefs() {
   return {
+    headerFormRef: document.querySelector('[data-form-type="search-form"]'),
     searchBtnRef: document.querySelector('[data-action="search-button"]'),
     homeRef: document.querySelector('[data-link="home"]'),
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
+    errorWindowRef: document.querySelector('[data-errorWindow="errorWindow"]'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
     gallery: document.querySelector('.gallery'),
