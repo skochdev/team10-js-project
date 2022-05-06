@@ -257,12 +257,15 @@
       url(../images/header1024.jpg);
     max-width: 100%;
     margin: auto;
+    background-size: cover;
+    
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header1024.jpg);
         max-width: 100%;
         margin: auto;
+        background-size: cover;
     }
   }
 }
@@ -275,12 +278,14 @@
       url(../images/header1024@2x.jpg);
     max-width: 100%;
     margin: auto;
+    background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header1024@2x.jpg);
       max-width: 100%;
       margin: auto;
+      background-size: cover;
     }
   }
 }
@@ -293,12 +298,14 @@
       url(../images/header1024@3x.jpg);
     max-width: 100%;
     margin: auto;
+    background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header1024@3x.jpg);
       max-width: 100%;
       margin: auto;
+      background-size: cover;
     }
   }
 }
