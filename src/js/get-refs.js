@@ -23,5 +23,8 @@ export default function getRefs() {
     footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
     studentsModal: document.querySelector('[data-studentsModal]'),
     footerCloseBtnRef: document.querySelector('[data-action="footerCloseBtn"]'),
+    // посилання кнопок подробиць фільму
+    addToWatched: document.querySelector('.film__watched'),
+    addToQueue: document.querySelector('.film__queue'),
   };
 }
