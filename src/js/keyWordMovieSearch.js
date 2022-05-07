@@ -31,6 +31,7 @@ function onFetchMovieRequest(movies) {
   }
 
   renderTrending(refs.gallery, moviesArray, genres);
+  localStorage.setItem('currentFilms', JSON.stringify(movies.data));
   onLoaderHidden();
 }
 
