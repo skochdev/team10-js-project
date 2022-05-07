@@ -18,7 +18,7 @@ function onFormSubmit(evt) {
     return;
   }
 
-  fetchKeyWord(searchQuery, 1).then(onFetchMovieRequest).catch(onFetchMovieError).finally(onLoaderHidden);
+  fetchKeyWord(searchQuery, 1).then(onFetchMovieRequest).catch(onFetchMovieError);
   refs.headerFormRef.searchQuery.value = '';
 }
 
@@ -31,10 +31,12 @@ function onFetchMovieRequest(movies) {
   }
 
   renderTrending(refs.gallery, moviesArray, genres);
+  onLoaderHidden();
 }
 
 function onFetchMovieError() {
   const errorNotification = 'Search result not successful. Enter the correct movie name and';
+  onLoaderHidden();
 
   refs.errorWindowRef.innerHTML = errorNotification;
 }

@@ -4,7 +4,6 @@ import fetchGenres from './js/fetchGenres';
 import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';
 import fetchPopularMovies from './js/fetchPopularMovies';
-import onLoaderHidden from './js/onLoaderHidden';
 
 const refs = getRefs();
 
@@ -15,7 +14,10 @@ fetchPopularMovies(1)
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
     renderTrending(refs.gallery, response.results, genres);
     localStorage.setItem('trending', JSON.stringify(response));
-  })
-  .catch(error => console.log(error)).finally(onLoaderHidden);
+  }).catch(error => console.log(error));
+
+
+  
+
 
 
