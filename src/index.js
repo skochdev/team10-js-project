@@ -4,6 +4,7 @@ import fetchGenres from './js/fetchGenres';
 import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';
 import fetchPopularMovies from './js/fetchPopularMovies';
+import addTestWatchedQueue from './js/addTestWatchedQueue';
 
 const refs = getRefs();
 
@@ -16,8 +17,8 @@ fetchPopularMovies(1)
     localStorage.setItem('trending', JSON.stringify(response));
   }).catch(error => console.log(error));
 
+// addTestWatchedQueue();
 
-  
 
 
 

@@ -1,4 +1,5 @@
 import getRefs from "./get-refs";
+import libraryButton from './libraryButton';
 
 const refs = getRefs();
 
@@ -34,16 +35,20 @@ function onMyLibraryBtnClick() {
     refs.myLibraryRef.classList.add('current'); // додається помаранчеве підкреслення кнопки My library
     refs.homeRef.classList.remove('current');  // знімається помаранчеве підкреслення з кнопки Home
     header.classList.add('header__my-library'); // видаляється фонове зображення Home
+  watchedBtn.classList.add('active');
+  libraryButton('watched');
 }
 
 function onWatchedBtnClick() {
-    queueBtn.classList.remove('active');
-    watchedBtn.classList.add('active');
+  queueBtn.classList.remove('active');
+  watchedBtn.classList.add('active');
+  libraryButton('watched');
 }
 
 function onQueueBtnClick() {
-    watchedBtn.classList.remove('active');
-    queueBtn.classList.add('active');
+  watchedBtn.classList.remove('active');
+  queueBtn.classList.add('active');
+  libraryButton('queue');
 }
 
 
