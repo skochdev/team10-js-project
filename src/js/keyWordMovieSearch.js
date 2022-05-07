@@ -8,12 +8,11 @@ const refs = getRefs();
 let searchQuery = '';
 
 refs.headerFormRef.addEventListener('submit', onFormSubmit);
-console.log(refs.errorWindowRef);
 
 function onFormSubmit(evt) {
   evt.preventDefault();
   refs.errorWindowRef.innerHTML = '';
-  searchQuery = refs.headerFormRef.searchQuery.value;
+  searchQuery = refs.headerFormRef.searchQuery.value.trim();
 
   if (searchQuery === '') {
     return;
@@ -37,7 +36,7 @@ function onFetchMovieRequest(movies) {
 }
 
 function onFetchMovieError() {
-  const errorNotification = 'Search result not successful. Enter the correct movie name and';
+  const errorNotification = 'Please, enter the correct movie name and try again';
   onLoaderHidden();
 
   refs.errorWindowRef.innerHTML = errorNotification;
