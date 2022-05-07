@@ -32,7 +32,7 @@ export default function renderMovie(container, film, genres) {
   if (!film.overview) {
     film.overview = 'Not Available';
   }
-  const markup = `<div class="film__card">
+  const markup = `<div class="film__card" data-index-number="${film.id}">
     <img class="film__poster"
       srcset="https://image.tmdb.org/t/p/w342${film.poster_path} 342w, https://image.tmdb.org/t/p/w500${film.poster_path} 500w"
       sizes="(max-width: 1023px) 342px, 500px"
