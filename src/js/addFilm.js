@@ -2,7 +2,7 @@ import getRefs from "./get-refs";
 import fetchGenres from "./fetchGenres";
 import fetchMovieById from "./fetchMovieById";
 
-// функції передається рядок 'queue' або 'watched', об'єкт фільму
+// функції передається рядок 'queue' або 'watched', ідентифікатор фільму
 export default function addFilm(storage, film_id) {
   const refs = getRefs();
   const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();

@@ -11,6 +11,6 @@ export default function libraryButton(storage) {
     return;
   } else {
     refs.gallery.innerHTML = '';
-    console.info('Your ${storage} library is empty!');
+    console.info(`Your ${storage} library is empty!`);
   }
 }
