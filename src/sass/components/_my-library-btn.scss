@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 66px;
     opacity: 1;
     cursor: pointer;
 
     @media screen and (max-width: 767px) {
-        margin-bottom: 62px;
+        margin-bottom: 60px;
     }
 
     &.is-hidden {
