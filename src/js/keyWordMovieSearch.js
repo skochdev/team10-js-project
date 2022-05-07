@@ -2,6 +2,7 @@ import getRefs from './get-refs';
 import renderTrending from './renderTrending';
 import fetchKeyWord from './fetchKeyWord';
 import onLoaderHidden from './onLoaderHidden';
+import addDataToLocalStorage from './addDataToLocalStorage';
 
 const refs = getRefs();
 let searchQuery = '';
@@ -31,7 +32,7 @@ function onFetchMovieRequest(movies) {
   }
 
   renderTrending(refs.gallery, moviesArray, genres);
-  localStorage.setItem('currentFilms', JSON.stringify(movies.data));
+  addDataToLocalStorage(refs.movieKey, movies.data);
   onLoaderHidden();
 }
 
