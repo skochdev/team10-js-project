@@ -1,4 +1,5 @@
 import getRefs from "./get-refs";
+import libraryButton from './libraryButton';
 
 const refs = getRefs();
 
@@ -38,13 +39,15 @@ function onMyLibraryBtnClick() {
 }
 
 function onWatchedBtnClick() {
-    queueBtn.classList.remove('active');
-    watchedBtn.classList.add('active');
+  queueBtn.classList.remove('active');
+  watchedBtn.classList.add('active');
+  libraryButton('watched');
 }
 
 function onQueueBtnClick() {
-    watchedBtn.classList.remove('active');
-    queueBtn.classList.add('active');
+  watchedBtn.classList.remove('active');
+  queueBtn.classList.add('active');
+  libraryButton('queue');
 }
 
 
