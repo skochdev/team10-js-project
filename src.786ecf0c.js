@@ -102,4 +102,4 @@ module.exports=require("./lib/axios");
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=l(require("./js/get-refs")),r=l(require("./js/fetchGenres")),s=l(require("./js/saveGenresToLocalStorage")),t=l(require("./js/renderTrending")),a=l(require("./js/fetchPopularMovies")),u=l(require("./js/addTestWatchedQueue")),o=l(require("./js/addDataToLocalStorage"));function l(e){return e&&e.__esModule?e:{default:e}}const d=(0,e.default)();(0,s.default)(),(0,a.default)(1).then(e=>{const r=JSON.parse(localStorage.getItem("genre_ids"));(0,t.default)(d.gallery,e.results,r),(0,o.default)(d.movieKey,e)}).catch(e=>console.log(e));
 },{"./sass/main.scss":"clu1","./js/get-refs":"EGsz","./js/fetchGenres":"ePT3","./js/saveGenresToLocalStorage":"jxhk","./js/renderTrending":"inKK","./js/fetchPopularMovies":"gyxV","./js/addTestWatchedQueue":"ajZK","./js/addDataToLocalStorage":"AQ9I"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.f37e9ffd.js.map
+//# sourceMappingURL=/team10-js-project/src.786ecf0c.js.map
