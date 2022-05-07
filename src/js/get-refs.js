@@ -27,5 +27,7 @@ export default function getRefs() {
     // посилання кнопок подробиць фільму
     addToWatched: document.querySelector('.film__watched'),
     addToQueue: document.querySelector('.film__queue'),
+    // ключ для збереження фільмів у локальному сховищі
+    movieKey: 'currentFilms',
   };
 }

@@ -5,6 +5,7 @@ import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';
 import fetchPopularMovies from './js/fetchPopularMovies';
 import addTestWatchedQueue from './js/addTestWatchedQueue';
+import addDataToLocalStorage from './js/addDataToLocalStorage'
 
 const refs = getRefs();
 
@@ -14,7 +15,8 @@ fetchPopularMovies(1)
   .then(response => {
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
     renderTrending(refs.gallery, response.results, genres);
-    localStorage.setItem('currentFilms', JSON.stringify(response));
+    
+    addDataToLocalStorage(refs.movieKey, response);
   }).catch(error => console.log(error));
 
 // addTestWatchedQueue();
