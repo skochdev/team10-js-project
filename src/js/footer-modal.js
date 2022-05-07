@@ -18,7 +18,7 @@ function onFooterModalClose() {
   window.removeEventListener('keydown', onEscape);
   REFS.footerCloseBtnRef.removeEventListener('click', onFooterModalClose);
   REFS.footerModalBackdrop.classList.add('is-hidden');
-  setBodyOverflow('initial');
+  setBodyOverflow('auto');
 }
 
 // Закрываем мобильное меню на более широких экранах
