@@ -100,4 +100,4 @@ module.exports=require("./lib/axios");
 },{"./get-refs":"EGsz","./fetchPopularMovies":"gyxV","./fetchGenres":"ePT3","./renderTrending":"inKK"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=l(require("./js/get-refs")),r=l(require("./js/fetchGenres")),s=l(require("./js/saveGenresToLocalStorage")),t=l(require("./js/renderTrending")),a=l(require("./js/fetchPopularMovies")),u=l(require("./js/addTestWatchedQueue"));function l(e){return e&&e.__esModule?e:{default:e}}const i=(0,e.default)();(0,s.default)(),(0,a.default)(1).then(e=>{const r=JSON.parse(localStorage.getItem("genre_ids"));(0,t.default)(i.gallery,e.results,r),localStorage.setItem("currentFilms",JSON.stringify(e))}).catch(e=>console.log(e));
 },{"./sass/main.scss":"clu1","./js/get-refs":"EGsz","./js/fetchGenres":"ePT3","./js/saveGenresToLocalStorage":"jxhk","./js/renderTrending":"inKK","./js/fetchPopularMovies":"gyxV","./js/addTestWatchedQueue":"ajZK"}]},{},["Focm"], null)
-//# sourceMappingURL=/team10-js-project/src.ddf91ceb.js.map
+//# sourceMappingURL=/team10-js-project/src.9bf6187b.js.map
