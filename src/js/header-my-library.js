@@ -35,6 +35,8 @@ function onMyLibraryBtnClick() {
     refs.myLibraryRef.classList.add('current'); // додається помаранчеве підкреслення кнопки My library
     refs.homeRef.classList.remove('current');  // знімається помаранчеве підкреслення з кнопки Home
     header.classList.add('header__my-library'); // видаляється фонове зображення Home
+  watchedBtn.classList.add('active');
+  libraryButton('watched');
 }
 
 function onWatchedBtnClick() {
