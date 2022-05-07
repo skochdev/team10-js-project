@@ -14,5 +14,10 @@ fetchPopularMovies(1)
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
     renderTrending(refs.gallery, response.results, genres);
     localStorage.setItem('trending', JSON.stringify(response));
-  })
-  .catch(error => console.log(error));
+  }).catch(error => console.log(error));
+
+
+  
+
+
+

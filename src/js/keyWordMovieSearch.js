@@ -1,6 +1,7 @@
 import getRefs from './get-refs';
 import renderTrending from './renderTrending';
 import fetchKeyWord from './fetchKeyWord';
+import onLoaderHidden from './onLoaderHidden';
 
 const refs = getRefs();
 let searchQuery = '';
@@ -30,10 +31,12 @@ function onFetchMovieRequest(movies) {
   }
 
   renderTrending(refs.gallery, moviesArray, genres);
+  onLoaderHidden();
 }
 
 function onFetchMovieError() {
   const errorNotification = 'Search result not successful. Enter the correct movie name and';
+  onLoaderHidden();
 
   refs.errorWindowRef.innerHTML = errorNotification;
 }
