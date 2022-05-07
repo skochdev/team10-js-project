@@ -30,5 +30,7 @@ export default function getRefs() {
     addToQueue: document.querySelector('.film__queue'),
     // ключ для збереження фільмів у локальному сховищі
     movieKey: 'currentFilms',
+    // рефа до кнопки наверх
+    goTopBtn: document.querySelector('.btn-up'),
   };
 }

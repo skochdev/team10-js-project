@@ -6,6 +6,7 @@ import renderTrending from './js/renderTrending';
 import fetchPopularMovies from './js/fetchPopularMovies';
 import addTestWatchedQueue from './js/addTestWatchedQueue';
 import addDataToLocalStorage from './js/addDataToLocalStorage'
+import onScroll from './js/scrollUpBtn';
 
 const refs = getRefs();
 
@@ -21,6 +22,6 @@ fetchPopularMovies(1)
 
 // addTestWatchedQueue();
 
-
+onScroll();
 
 

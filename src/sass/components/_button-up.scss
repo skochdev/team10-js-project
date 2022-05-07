@@ -1,0 +1,35 @@
+.btn-up {
+    display: none;
+
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 99;
+    color: $hover-orange;
+    background-color: rgba($color: $hover-orange, $alpha: 0.5);
+    border: none;
+    outline:none;
+    border-radius: 50%;
+
+}
+
+.icon-up {
+    fill: $hover-orange;
+}
+
+.btn-up:hover {
+    background-color: $hover-orange;
+    color: $text-color-white;
+
+}
+
+.btn-up:hover > .icon-up {
+fill: $background-white;
+}
+
+.show {
+    display: block;
+}
