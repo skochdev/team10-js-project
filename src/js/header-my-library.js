@@ -9,7 +9,6 @@ const myLibraryBtnItem = document.querySelector('.library-btn__item'); // кно
 const watchedBtn = document.querySelector('.watched-btn');
 const queueBtn = document.querySelector('.queue-btn');
 const logo = document.querySelector('.logo__link');
-const searchTextError = document.querySelector('.header_error');
 
 
 refs.homeRef.addEventListener('click', onHeaderHomeBtnClick); // homeRef: document.querySelector('[data-link="home"]')
@@ -22,7 +21,7 @@ logo.addEventListener('click', onHeaderHomeBtnClick);
 function onHeaderHomeBtnClick() {
     myLibraryBtnItem.classList.add('is-hidden');  // приховуються кнопки Watched та Queue
     form.classList.remove('is-hidden'); // з'являється форма
-    searchTextError.classList.remove('is-hidden'); // з'являється помилковий текст у разі введення некоректного запиту
+    refs.errorWindowRef.classList.remove('is-hidden'); // з'являється помилковий текст у разі введення некоректного запиту
     refs.homeRef.classList.add('current'); // додається помаранчеве підкреслення кнопки Home
     refs.myLibraryRef.classList.remove('current'); // знімається помаранчеве підкреслення з кнопки My library
     header.classList.remove('header__my-library');  // видаляється фонове зображення My library
@@ -30,7 +29,7 @@ function onHeaderHomeBtnClick() {
 
 function onMyLibraryBtnClick() {
     form.classList.add('is-hidden'); // приховується форма
-    searchTextError.classList.add('is-hidden'); // зникає помилковий текст у разі введення некоректного запиту
+    refs.errorWindowRef.classList.add('is-hidden'); // зникає помилковий текст у разі введення некоректного запиту
     myLibraryBtnItem.classList.remove('is-hidden'); // додаються кнопки Watched та Queue
     refs.myLibraryRef.classList.add('current'); // додається помаранчеве підкреслення кнопки My library
     refs.homeRef.classList.remove('current');  // знімається помаранчеве підкреслення з кнопки Home
