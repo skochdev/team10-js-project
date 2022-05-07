@@ -39,7 +39,6 @@
   font-weight: inherit;
   line-height: 1.15;
   text-transform: uppercase;
-  word-break: break-all;
 
   @media screen and (min-width: $desktop) {
     font-size: 30px;
@@ -98,7 +97,6 @@
 
 .film__original-title {
     text-transform: uppercase;
-    word-break: break-all;
 }
 
 .film__about-caption {
@@ -109,7 +107,6 @@
 .film__about {
   margin-bottom: 20px;
   line-height: 1.67;
-  word-break: break-all;
 }
 
 .film__buttons {
