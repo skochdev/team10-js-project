@@ -4,7 +4,7 @@ import  getGenres  from './getGenres';
 export default function renderMovieCard(film, genres, mode) {
   let genre = '';
   if (film.genre_ids.length === 0) {
-    genre = 'Not Available';
+    genre = 'Genre Not Available';
   } else if (film.genre_ids.length > 3) {
     genre = getGenres(film.genre_ids.slice(0, 2), genres) + ', Other';
   } else {
@@ -28,7 +28,7 @@ export default function renderMovieCard(film, genres, mode) {
     film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
   }
   if (mode !== 'library') {
-    return `<li class="movie__item">
+    return `<li class="movie__item" data-index-number="${film.id}">
     <img class="movie__poster"
       src="https://image.tmdb.org/t/p/w342${film.poster_path}"
       alt="${film.title} Poster"
