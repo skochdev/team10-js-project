@@ -7,8 +7,8 @@
   background-color: $text-color-black;
   background-position: top;
   width: 100%;
-  height: 216px;
-  padding-bottom: 97px;
+  height: 230px;
+  padding-bottom: 85px;
   padding-top: 46px;
   margin: 0 auto;
 
@@ -17,12 +17,12 @@
     background-color: $text-color-black;
     background-position: bottom;
     width: 100%;
-    height: 216px;
-    padding-bottom: 97px;
+    height: 230px;
+    padding-bottom: 65px;
     padding-top: 46px;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(../images/inernal-header320.jpg);
+      url(../images/inernal-header320.jpg);
   }
 }
 
@@ -33,10 +33,10 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header320@2x.jpg);
 
-      &__my-library {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    &__my-library {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header320@2x.jpg);
-      }
+    }
   }
 }
 
@@ -47,16 +47,22 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header320@3x.jpg);
 
-      &__my-library {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-          url(../images/inernal-header320@3x.jpg);
-      }
+    &__my-library {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/inernal-header320@3x.jpg);
+    }
   }
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
+
+  & {
+    @media screen and (max-width: 767px) {
+      align-items: baseline;
+    }
+  }
 }
 
 .logo__link {
@@ -80,9 +86,9 @@
   display: none;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: $mobile) {
   .navigation {
-    margin-bottom: 60px;
+    margin-bottom: 52px;
   }
 }
 
@@ -175,10 +181,10 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768.jpg);
 
-      &__my-library {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-          url(../images/inernal-header768.jpg);
-      }
+    &__my-library {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/inernal-header768.jpg);
+    }
   }
 }
 
@@ -189,10 +195,10 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768@2x.jpg);
 
-      &__my-library {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-          url(../images/inernal-header768@2x.jpg);
-      }
+    &__my-library {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/inernal-header768@2x.jpg);
+    }
   }
 }
 
@@ -203,10 +209,10 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768@3x.jpg);
 
-      &__my-library {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-          url(../images/inernal-header768@3x.jpg);
-      }
+    &__my-library {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/inernal-header768@3x.jpg);
+    }
   }
 }
 
@@ -231,13 +237,6 @@
   .logo__link {
     padding: 0;
     height: 35px;
-    align-items: center;
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  .navigation {
-    margin-bottom: 52px;
   }
 }
 
@@ -258,14 +257,13 @@
     max-width: 100%;
     margin: auto;
     background-size: cover;
-    
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header1024.jpg);
-        max-width: 100%;
-        margin: auto;
-        background-size: cover;
+      max-width: 100%;
+      margin: auto;
+      background-size: cover;
     }
   }
 }
@@ -319,7 +317,7 @@
 
   & {
     @media screen and (min-width: $tablet) {
-        text-align: center;
+      text-align: center;
     }
   }
 }
