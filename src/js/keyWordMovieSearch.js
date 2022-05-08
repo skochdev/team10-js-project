@@ -9,6 +9,9 @@ let searchQuery = '';
 
 refs.headerFormRef.addEventListener('submit', onFormSubmit);
 
+// console.log(refs.errorWindowRef);
+
+
 function onFormSubmit(evt) {
   evt.preventDefault();
   refs.errorWindowRef.innerHTML = '';
