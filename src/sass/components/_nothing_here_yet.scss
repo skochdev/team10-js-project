@@ -1,0 +1,58 @@
+.nothing-here {
+  position: relative;
+  margin-top: 5px;
+}
+
+.nothing-here__text {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-align: center;
+  font-family: 'Roboto';
+  color: $hover-orange;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 25px;
+  }
+}
+
+.nothing-here__image {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 50px 50px rgb(252, 244, 237) inset;
+}
+
+.nothing-here__artBy {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  display: block;
+  font-size: 6px;
+  color: $text-color-light-gray;
+  margin-top: 15px;
+  text-align: right;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 12px;
+    bottom: 20px;
+    right: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 12px;
+    bottom: 20px;
+    right: 80px;
+  }
+}
+.nothing-here__author-link {
+  text-decoration: underline;
+}
