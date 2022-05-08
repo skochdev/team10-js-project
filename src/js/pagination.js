@@ -1,6 +1,8 @@
 // import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
-// import fetchKeyWord from './fetchKeyWord';
+import fetchPopularMovies from './fetchPopularMovies';
+import { updateCurrentPage } from '../index';
+import fetchKeyWord from './fetchKeyWord';
 
 const container = document.getElementById('pagination2');
 
@@ -32,6 +34,16 @@ export const pagination = ({ totalItems, page }) => {
         '</a>',
     },
   };
-  const pagination = new Pagination(container, options);
-  return pagination;
+
+  const paginate = new Pagination(container, options);
+
+  paginate.on('afterMove', onPageClick);
+
+  function onPageClick(event) {
+    updateCurrentPage(event.page);
+    // fetchKeyWord(searchQuery, event.page);
+    // fetchPopularMovies(event.page);
+  }
+
+  return paginate;
 };

@@ -1,4 +1,4 @@
-import  getGenres  from './getGenres';
+import getGenres from './getGenres';
 
 // Картка details модалка фільму
 

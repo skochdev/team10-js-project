@@ -22,6 +22,7 @@ function onFormSubmit(evt) {
   fetchKeyWord(searchQuery, paginationSettings.startPage)
     .then(onFetchMovieRequest)
     .catch(onFetchMovieError);
+
   refs.headerFormRef.searchQuery.value = '';
 }
 
@@ -29,7 +30,7 @@ function onFetchMovieRequest(movies) {
   const moviesArray = movies.data.results;
   const genres = JSON.parse(localStorage.getItem('genre_ids'));
   const totalItems = movies.data.total_results;
-  const page = paginationSettings.startPage;
+  const page = movies.data.page;
 
   pagination({ totalItems, page });
 
