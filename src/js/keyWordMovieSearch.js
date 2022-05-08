@@ -3,12 +3,12 @@ import renderTrending from './renderTrending';
 import fetchKeyWord from './fetchKeyWord';
 import onLoaderHidden from './onLoaderHidden';
 import addDataToLocalStorage from './addDataToLocalStorage';
+import { pagination, paginationSettings } from './pagination';
 
 const refs = getRefs();
 let searchQuery = '';
 
 refs.headerFormRef.addEventListener('submit', onFormSubmit);
-console.log(refs.errorWindowRef);
 
 function onFormSubmit(evt) {
   evt.preventDefault();
@@ -19,15 +19,21 @@ function onFormSubmit(evt) {
     return;
   }
 
-  fetchKeyWord(searchQuery, 1).then(onFetchMovieRequest).catch(onFetchMovieError);
+  fetchKeyWord(searchQuery, paginationSettings.startPage)
+    .then(onFetchMovieRequest)
+    .catch(onFetchMovieError);
   refs.headerFormRef.searchQuery.value = '';
 }
 
 function onFetchMovieRequest(movies) {
   const moviesArray = movies.data.results;
   const genres = JSON.parse(localStorage.getItem('genre_ids'));
+  const totalItems = movies.data.total_results;
+  const page = paginationSettings.startPage;
 
-  if (movies.data.total_results === 0) {
+  pagination({ totalItems, page });
+
+  if (totalItems === 0) {
     throw new Error(res.status);
   }
 
