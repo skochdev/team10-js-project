@@ -7,8 +7,10 @@ import fetchPopularMovies from './js/fetchPopularMovies';
 import addTestWatchedQueue from './js/addTestWatchedQueue';
 import addDataToLocalStorage from './js/addDataToLocalStorage';
 import renderingPlaceholder from './js/renderingPlaceholder';
-
 import { before } from 'lodash';
+import addDataToLocalStorage from './js/addDataToLocalStorage'
+import onScroll from './js/scrollUpBtn';
+
 
 const refs = getRefs();
 
@@ -24,3 +26,5 @@ fetchPopularMovies(1)
   .catch(error => console.log(error));
 
 // addTestWatchedQueue();
+
+onScroll();

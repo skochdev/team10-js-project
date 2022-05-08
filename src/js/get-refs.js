@@ -16,6 +16,7 @@ export default function getRefs() {
     homeRef: document.querySelector('[data-link="home"]'),
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
     errorWindowRef: document.querySelector('[data-errorWindow="errorWindow"]'),
+    libButtons: document.querySelector('.library-btn__item'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
     gallery: document.querySelector('.gallery'),
@@ -29,5 +30,7 @@ export default function getRefs() {
     addToQueue: document.querySelector('.film__queue'),
     // ключ для збереження фільмів у локальному сховищі
     movieKey: 'currentFilms',
+    // рефа до кнопки наверх
+    goTopBtn: document.querySelector('.btn-up'),
   };
 }

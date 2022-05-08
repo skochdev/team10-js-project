@@ -1,10 +1,14 @@
 html {
-  scroll-behavior: smooth;
   height: 100%;
 }
 
 body {
+  scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   background-color: rgb(252, 244, 237);
+}
+
+main {
+  min-height: 600px;
 }
