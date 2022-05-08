@@ -1,5 +1,5 @@
 import  getGenres  from './getGenres';
-import film from './openCard'
+
 // Картка details модалка фільму
 
 export default function renderMovie(container, film, genres) {
