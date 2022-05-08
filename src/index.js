@@ -14,19 +14,16 @@ const refs = getRefs();
 
 saveGenresToLocalStorage();
 
-export const updateCurrentPage = value => {
-  return value;
-};
-
 fetchPopularMovies(1)
   .then(response => {
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
+
     const totalItems = response.total_results;
     const page = response.page;
-
+    paginationSettings.searchType = 1;
     pagination({ totalItems, page });
-    renderTrending(refs.gallery, response.results, genres);
 
+    renderTrending(refs.gallery, response.results, genres);
     addDataToLocalStorage(refs.movieKey, response);
   })
   .catch(error => console.log(error));

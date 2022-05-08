@@ -1,13 +1,17 @@
-// import getRefs from './get-refs';
+import '../sass/main.scss';
+import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
 import fetchPopularMovies from './fetchPopularMovies';
-import { updateCurrentPage } from '../index';
 import fetchKeyWord from './fetchKeyWord';
+import renderTrending from './renderTrending';
+import addDataToLocalStorage from './addDataToLocalStorage';
+import 'tui-pagination/dist/tui-pagination.css';
 
-const container = document.getElementById('pagination2');
+const refs = getRefs();
 
 export const paginationSettings = {
   startPage: 1,
+  searchType: '',
 };
 
 export const pagination = ({ totalItems, page }) => {
@@ -35,15 +39,33 @@ export const pagination = ({ totalItems, page }) => {
     },
   };
 
-  const paginate = new Pagination(container, options);
+  const paginate = new Pagination(refs.paginationContainer, options);
 
   paginate.on('afterMove', onPageClick);
 
   function onPageClick(event) {
-    updateCurrentPage(event.page);
-    // fetchKeyWord(searchQuery, event.page);
-    // fetchPopularMovies(event.page);
-  }
+    if (paginationSettings.searchType === 2) {
+      const searchQuery = localStorage.getItem('searchQuery');
+      fetchKeyWord(searchQuery, event.page)
+        .then(response => {
+          const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
+          renderTrending(refs.gallery, response.data.results, genres);
+
+          addDataToLocalStorage(refs.movieKey, response);
+        })
+        .catch(error => console.log(error));
+    } else {
+      fetchPopularMovies(event.page)
+        .then(response => {
+          const genres = JSON.parse(localStorage.getItem('genre_ids'));
+
+          renderTrending(refs.gallery, response.results, genres);
+
+          addDataToLocalStorage(refs.movieKey, response);
+        })
+        .catch(error => console.log(error));
+    }
+  }
   return paginate;
 };

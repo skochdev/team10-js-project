@@ -14,6 +14,7 @@ function onFormSubmit(evt) {
   evt.preventDefault();
   refs.errorWindowRef.innerHTML = '';
   searchQuery = refs.headerFormRef.searchQuery.value;
+  addDataToLocalStorage('searchQuery', searchQuery);
 
   if (searchQuery === '') {
     return;
@@ -27,6 +28,7 @@ function onFormSubmit(evt) {
 }
 
 function onFetchMovieRequest(movies) {
+  paginationSettings.searchType = 2;
   const moviesArray = movies.data.results;
   const genres = JSON.parse(localStorage.getItem('genre_ids'));
   const totalItems = movies.data.total_results;
@@ -44,7 +46,7 @@ function onFetchMovieRequest(movies) {
 }
 
 function onFetchMovieError() {
-  const errorNotification = 'Search result not successful. Enter the correct movie name and';
+  const errorNotification = 'Please, enter the correct movie name and try again';
   onLoaderHidden();
 
   refs.errorWindowRef.innerHTML = errorNotification;

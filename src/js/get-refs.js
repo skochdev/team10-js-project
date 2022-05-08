@@ -22,6 +22,7 @@ export default function getRefs() {
     gallery: document.querySelector('.gallery'),
     loader: document.querySelector('.loader'),
     movieItemRef: document.querySelectorAll('.movie__item'),
+    paginationContainer: document.querySelector('#pagination2'),
     // footer related refs // рефи з футера
     footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
     studentsModal: document.querySelector('[data-studentsModal]'),
