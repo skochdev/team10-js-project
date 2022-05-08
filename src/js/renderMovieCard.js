@@ -28,12 +28,12 @@ export default function renderMovieCard(film, genres, mode) {
     film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
   }
   if (mode !== 'library') {
-    return `<li class="movie__item" data-id="${film.id}">
-    <img class="movie__poster " 
+    return `<li class="movie__item" data-index-number="${film.id}">
+    <img class="movie__poster"
       src="https://image.tmdb.org/t/p/w342${film.poster_path}"
       alt="${film.title} Poster"
     />
-    <div class="movie__caption" data-id="${film.id}">
+    <div class="movie__caption">
       <h2 class="movie__title">${film.title}</h2>
       <p class="movie__genre">${genre} | ${film.release_date.slice(
       0,

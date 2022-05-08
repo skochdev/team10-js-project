@@ -32,7 +32,5 @@ export default function getRefs() {
     movieKey: 'currentFilms',
     // рефа до кнопки наверх
     goTopBtn: document.querySelector('.btn-up'),
-    galleryList: document.querySelector('[data-action="galleryList"]'),
-    render:document.querySelector('.container main__wrapper')
   };
 }
