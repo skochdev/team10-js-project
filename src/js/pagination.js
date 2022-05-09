@@ -44,9 +44,10 @@ export const pagination = ({ totalItems, page }) => {
   paginate.on('afterMove', onPageClick);
 
   function onPageClick(event) {
-    if (paginationSettings.searchType === 2) {
+    if (paginationSettings.searchType === 'keyWord') {
       const searchQuery = localStorage.getItem('searchQuery');
-      fetchKeyWord(searchQuery, event.page)
+      const searchQueryParse = JSON.parse(searchQuery);
+      fetchKeyWord(searchQueryParse, event.page)
         .then(response => {
           const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
@@ -67,5 +68,6 @@ export const pagination = ({ totalItems, page }) => {
         .catch(error => console.log(error));
     }
   }
+
   return paginate;
 };

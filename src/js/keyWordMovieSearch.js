@@ -28,7 +28,7 @@ function onFormSubmit(evt) {
 }
 
 function onFetchMovieRequest(movies) {
-  paginationSettings.searchType = 2;
+  paginationSettings.searchType = 'keyWord';
   const moviesArray = movies.data.results;
   const genres = JSON.parse(localStorage.getItem('genre_ids'));
   const totalItems = movies.data.total_results;

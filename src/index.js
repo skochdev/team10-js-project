@@ -14,13 +14,13 @@ const refs = getRefs();
 
 saveGenresToLocalStorage();
 
-fetchPopularMovies(1)
+fetchPopularMovies(paginationSettings.startPage)
   .then(response => {
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
     const totalItems = response.total_results;
     const page = response.page;
-    paginationSettings.searchType = 1;
+    paginationSettings.searchType = 'popular';
     pagination({ totalItems, page });
 
     renderTrending(refs.gallery, response.results, genres);
