@@ -57,20 +57,15 @@
 .header__wrapper {
   display: flex;
   justify-content: space-between;
-
-  & {
-    @media screen and (max-width: 767px) {
-      align-items: baseline;
-    }
-  }
-}
-
-.logo__link {
-  display: flex;
+  margin-bottom: 41px;
   align-items: baseline;
-  margin-bottom: 0;
-  padding-left: 0;
+
 }
+
+// .logo__link {
+//   display: flex;
+//   align-items: center;
+// }
 
 .logo__link:hover > .logo__icon {
   stroke: $hover-orange;
@@ -78,19 +73,17 @@
 }
 
 .logo__icon {
-  margin-right: 8px;
+  & {
+    @media screen and (min-width: $tablet) {
+        margin-right: 8px;
+    }
+  }
   stroke: $logo-color;
 }
 
-.logo__text {
-  display: none;
-}
-
-@media screen and (min-width: $mobile) {
-  .navigation {
-    margin-bottom: 52px;
-  }
-}
+// .logo__text {
+//   display: none;
+// }
 
 .navigation__list {
   display: flex;
@@ -220,7 +213,7 @@
 
 @media screen and (min-width: $tablet) {
   .logo__text {
-    display: block;
+    // display: block;
     font-weight: 500;
     font-size: 30px;
     line-height: 1.16;
@@ -236,15 +229,7 @@
 }
 
 @media screen and (min-width: $tablet) {
-  .logo__link {
-    padding: 0;
-    height: 35px;
-  }
-}
-
-@media screen and (min-width: $tablet) {
   .navigation__list {
-    padding-top: 9px;
     padding-left: 0;
     align-items: center;
   }
