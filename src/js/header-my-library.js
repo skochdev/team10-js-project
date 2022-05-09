@@ -36,6 +36,7 @@ function onMyLibraryBtnClick() {
     refs.homeRef.classList.remove('current');  // знімається помаранчеве підкреслення з кнопки Home
     header.classList.add('header__my-library'); // видаляється фонове зображення Home
   watchedBtn.classList.add('active');
+  refs.paginationContainer.classList.add('visually-hidden');
   libraryButton('watched');
 }
 
