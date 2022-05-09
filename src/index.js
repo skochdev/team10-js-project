@@ -14,9 +14,8 @@ saveGenresToLocalStorage();
 
 fetchPopularMovies(1)
   .then(response => {
-    const genres = JSON.parse(localStorage.getItem('genre_ids'));
-    renderTrending(refs.gallery, response.results, genres);
-    
+    renderTrending(refs.gallery, response.results);
+
     addDataToLocalStorage(refs.movieKey, response);
   }).catch(error => console.log(error));
 
