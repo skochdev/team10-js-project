@@ -1,5 +1,6 @@
-import getRefs from "./get-refs";
-import renderTrending from "./renderTrending";
+import getRefs from './get-refs';
+import renderTrending from './renderTrending';
+import nothing_here from './nothing_here';
 
 // функції передається рядок 'queue' або 'watched'
 export default function libraryButton(storage) {
@@ -8,7 +9,8 @@ export default function libraryButton(storage) {
     renderTrending(refs.gallery, JSON.parse(localStorage.getItem(storage)));
     return;
   } else {
-    refs.gallery.innerHTML = '';
+    refs.gallery.innerHTML = nothing_here();
+    // refs.gallery.innerHTML = '';
     console.info(`Your ${storage} library is empty!`);
   }
 }
