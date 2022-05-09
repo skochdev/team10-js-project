@@ -1,8 +1,12 @@
 import getGenres from './getGenres';
 
-// Картка details модалка фільму
+import fetchGenres from './fetchGenres';
 
-export default function renderMovie(container, film, genres) {
+
+// Картка details для модалки фільму
+
+export default function renderMovie(container, film) {
+  const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
   let genre = '';
   if (!film.title) {
     if (film.original_title) {

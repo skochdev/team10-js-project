@@ -13,8 +13,10 @@ refs.headerFormRef.addEventListener('submit', onFormSubmit);
 function onFormSubmit(evt) {
   evt.preventDefault();
   refs.errorWindowRef.innerHTML = '';
-  searchQuery = refs.headerFormRef.searchQuery.value;
+
+  searchQuery = refs.headerFormRef.searchQuery.value.trim();
   addDataToLocalStorage('searchQuery', searchQuery);
+
 
   if (searchQuery === '') {
     return;
