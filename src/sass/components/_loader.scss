@@ -3,7 +3,14 @@
    top: 10px;
    right: 20px;
    z-index: 11;
+   opacity: 0;
+   transition: 0.7s;
+   
 }
+.loader.active{
+   opacity: 1;
+}
+
 .mul7 {
       height: 35px;
       width: 35px;
