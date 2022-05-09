@@ -20,14 +20,10 @@ saveGenresToLocalStorage();
 fetchPopularMovies(paginationSettings.startPage)
   .then(response => {
 
-    const genres = JSON.parse(localStorage.getItem('genre_ids'));
-
     const totalItems = response.total_results;
     const page = response.page;
     paginationSettings.searchType = 'popular';
     pagination({ totalItems, page });
-
-    renderTrending(refs.gallery, response.results, genres);
 
     renderTrending(refs.gallery, response.results);
 
