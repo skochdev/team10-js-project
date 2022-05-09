@@ -12,10 +12,11 @@
 
 .movie__item {
   background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  transform: scale(1);
-  transition: $box-shadow-transition, $transform-transition;
+  transition: $box-shadow-transition;
 
   @media screen and (min-width: $tablet) {
     @include fbasis(2, 32px);
@@ -58,6 +59,7 @@
 .js-placeholder {
   object-fit: contain;
   padding: 30px;
+  background-color: rgb(41, 37, 34);
 
   @media screen and (min-width: $tablet) and (max-width: 1023px) {
     position: absolute;
