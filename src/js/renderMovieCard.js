@@ -31,25 +31,29 @@ export default function renderMovieCard(film, mode) {
   }
   if (mode !== 'library') {
     return `<li class="movie__item" data-index-number="${film.id}">
-    <img class="movie__poster"
-      src="https://image.tmdb.org/t/p/w342${film.poster_path}"
-      alt="${film.title} Poster"
-    />
-    <div class="movie__caption">
-      <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
-    </div>
+    <a href="#" class="movie__link" data-id="${film.id}">
+      <img class="movie__poster"
+        src="https://image.tmdb.org/t/p/w342${film.poster_path}"
+        alt="${film.title} Poster"
+      />
+      <div class="movie__caption">
+        <h2 class="movie__title">${film.title}</h2>
+        <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
+      </div>
+    </a>
   </li>`;
   } else {
-    return `<li class="movie__item">
-    <img class="movie__poster"
-      src="https://image.tmdb.org/t/p/w342${film.poster_path}"
-      alt="${film.title} Poster"
-    />
-    <div class="movie__caption">
-      <h2 class="movie__title">${film.title}</h2>
-      <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
-    </div>
+    return `<li class="movie__item" data-index-number="${film.id}">
+    <a href="#" class="movie__link" data-id="${film.id}">
+      <img class="movie__poster"
+        src="https://image.tmdb.org/t/p/w342${film.poster_path}"
+        alt="${film.title} Poster"
+      />
+      <div class="movie__caption">
+        <h2 class="movie__title">${film.title}</h2>
+        <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
+      </div>
+    </a>
   </li>`;
   }
 }
