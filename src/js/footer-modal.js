@@ -11,6 +11,7 @@ function onFooterModalOpen() {
   window.addEventListener('keydown', onEscape);
   REFS.footerModalBackdrop.classList.remove('is-hidden');
   setBodyOverflow('hidden');
+  REFS.goTopBtn.classList.remove('show');
 }
 
 function onFooterModalClose() {
@@ -19,6 +20,9 @@ function onFooterModalClose() {
   REFS.footerCloseBtnRef.removeEventListener('click', onFooterModalClose);
   REFS.footerModalBackdrop.classList.add('is-hidden');
   setBodyOverflow('auto');
+  if (window.pageYOffset > document.documentElement.clientHeight) {
+    REFS.goTopBtn.classList.add('show');
+  }
 }
 
 // Закрываем мобильное меню на более широких экранах
