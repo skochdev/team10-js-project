@@ -8,6 +8,7 @@ import addDataToLocalStorage from './addDataToLocalStorage';
 import 'tui-pagination/dist/tui-pagination.css';
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
+import renderingPlaceholder from './renderingPlaceholder';
 
 const refs = getRefs();
 
@@ -55,6 +56,7 @@ export const pagination = ({ totalItems, page }) => {
           const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
           renderTrending(refs.gallery, response.data.results, genres);
+          renderingPlaceholder();
           onLoaderHidden();
 
           addDataToLocalStorage(refs.movieKey, response);
@@ -66,6 +68,7 @@ export const pagination = ({ totalItems, page }) => {
           const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
           renderTrending(refs.gallery, response.results, genres);
+          renderingPlaceholder();
           onLoaderHidden();
 
           addDataToLocalStorage(refs.movieKey, response);

@@ -6,13 +6,13 @@ import fetchPopularMovies from './js/fetchPopularMovies';
 import addTestWatchedQueue from './js/addTestWatchedQueue';
 import addDataToLocalStorage from './js/addDataToLocalStorage';
 import onScroll from './js/scrollUpBtn';
+import renderingPlaceholder from './js/renderingPlaceholder';
 
 import { pagination, paginationSettings } from './js/pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 import onLoaderHidden from './js/onLoaderHidden';
 import onLoaderVisible from './js/onLoaderVisible';
-
 
 const refs = getRefs();
 
@@ -21,13 +21,14 @@ onLoaderVisible();
 
 fetchPopularMovies(paginationSettings.startPage)
   .then(response => {
-
     const totalItems = response.total_results;
     const page = response.page;
     paginationSettings.searchType = 'popular';
     pagination({ totalItems, page });
 
     renderTrending(refs.gallery, response.results);
+
+    renderingPlaceholder();
 
     addDataToLocalStorage(refs.movieKey, response);
 
