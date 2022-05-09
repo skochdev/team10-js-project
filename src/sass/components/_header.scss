@@ -62,10 +62,10 @@
 
 }
 
-// .logo__link {
-//   display: flex;
-//   align-items: center;
-// }
+.logo__link {
+  display: flex;
+  align-items: center;
+}
 
 .logo__link:hover > .logo__icon {
   stroke: $hover-orange;
@@ -75,15 +75,18 @@
 .logo__icon {
   & {
     @media screen and (min-width: $tablet) {
-        margin-right: 8px;
+        margin-right: 10px;
     }
   }
   stroke: $logo-color;
 }
 
-// .logo__text {
-//   display: none;
-// }
+.logo__text {
+  @media screen and (max-width:767px) {
+      display: none;
+  }
+
+}
 
 .navigation__list {
   display: flex;
@@ -217,6 +220,7 @@
     font-weight: 500;
     font-size: 30px;
     line-height: 1.16;
+    padding-top: 2px;
     color: $text-color-white;
   }
 }
