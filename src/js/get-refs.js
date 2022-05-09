@@ -11,12 +11,19 @@
 
 export default function getRefs() {
   return {
+    // рефи header --- Home ---- My library
+    // ------ HOME --------
+    headerRef: document.querySelector('.header'),
+    logoRef: document.querySelector('.logo__link'),
     headerFormRef: document.querySelector('[data-form-type="search-form"]'),
     searchBtnRef: document.querySelector('[data-action="search-button"]'),
     homeRef: document.querySelector('[data-link="home"]'),
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
     errorWindowRef: document.querySelector('[data-errorWindow="errorWindow"]'),
+    //  ------- MY LIBRARY -------
     libButtons: document.querySelector('.library-btn__item'),
+    libWatchedBtn: document.querySelector('.watched-btn'),
+    libQueueBtn: document.querySelector('.queue-btn'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
     gallery: document.querySelector('.gallery'),
