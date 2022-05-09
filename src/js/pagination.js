@@ -6,6 +6,8 @@ import fetchKeyWord from './fetchKeyWord';
 import renderTrending from './renderTrending';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import 'tui-pagination/dist/tui-pagination.css';
+import onLoaderHidden from './onLoaderHidden';
+import onLoaderVisible from './onLoaderVisible';
 
 const refs = getRefs();
 
@@ -44,6 +46,7 @@ export const pagination = ({ totalItems, page }) => {
   paginate.on('afterMove', onPageClick);
 
   function onPageClick(event) {
+    onLoaderVisible();
     if (paginationSettings.searchType === 'keyWord') {
       const searchQuery = localStorage.getItem('searchQuery');
       const searchQueryParse = JSON.parse(searchQuery);
@@ -52,6 +55,7 @@ export const pagination = ({ totalItems, page }) => {
           const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
           renderTrending(refs.gallery, response.data.results, genres);
+          onLoaderHidden();
 
           addDataToLocalStorage(refs.movieKey, response);
         })
@@ -62,6 +66,7 @@ export const pagination = ({ totalItems, page }) => {
           const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
           renderTrending(refs.gallery, response.results, genres);
+          onLoaderHidden();
 
           addDataToLocalStorage(refs.movieKey, response);
         })

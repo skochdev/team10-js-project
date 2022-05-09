@@ -11,11 +11,13 @@ import { pagination, paginationSettings } from './js/pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 import onLoaderHidden from './js/onLoaderHidden';
+import onLoaderVisible from './js/onLoaderVisible';
 
 
 const refs = getRefs();
 
 saveGenresToLocalStorage();
+onLoaderVisible();
 
 fetchPopularMovies(paginationSettings.startPage)
   .then(response => {
@@ -28,6 +30,8 @@ fetchPopularMovies(paginationSettings.startPage)
     renderTrending(refs.gallery, response.results);
 
     addDataToLocalStorage(refs.movieKey, response);
+
+    onLoaderHidden();
   })
   .catch(error => console.log(error));
 
