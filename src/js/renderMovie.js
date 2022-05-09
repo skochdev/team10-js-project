@@ -1,13 +1,13 @@
 import getGenres from './getGenres';
-
 import fetchGenres from './fetchGenres';
-
+import empty from '../images/no-image-placeholder.svg';
 
 // Картка details для модалки фільму
 
 export default function renderMovie(container, film) {
   const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
   let genre = '';
+  let poster = '';
   if (!film.title) {
     if (film.original_title) {
       film.title = film.original_title;
@@ -20,7 +20,17 @@ export default function renderMovie(container, film) {
     }
   }
   if (!film.poster_path) {
-    film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
+    poster = `<img class="film__poster"
+      src="${empty}"
+      alt="${film.title} Poster"
+    />`;
+  } else {
+    poster = `<img class="film__poster"
+      srcset="https://image.tmdb.org/t/p/w342${film.poster_path} 342w, https://image.tmdb.org/t/p/w500${film.poster_path} 500w"
+      sizes="(max-width: 1023px) 342px, 500px"
+      src="https://image.tmdb.org/t/p/w500${film.poster_path}"
+      alt="${film.title} Poster"
+    />`;
   }
   if (!film.popularity) {
     film.popularity = 'Not Available';
@@ -37,12 +47,7 @@ export default function renderMovie(container, film) {
     film.overview = 'Not Available';
   }
   const markup = `<div class="film__card" data-index-number="${film.id}">
-    <img class="film__poster"
-      srcset="https://image.tmdb.org/t/p/w342${film.poster_path} 342w, https://image.tmdb.org/t/p/w500${film.poster_path} 500w"
-      sizes="(max-width: 1023px) 342px, 500px"
-      src="https://image.tmdb.org/t/p/w500${film.poster_path}"
-      alt="${film.title} Poster"
-    />
+    ${poster}
     <div class="film__caption">
       <h2 class="film__title">${film.title}</h2>
         <ul class="film__list">
@@ -70,7 +75,6 @@ export default function renderMovie(container, film) {
           <button class="film__button film__queue" type="button">Add to queue</button>
         </div>
       </div>
-    </div>
-  `;
+    </div>`;
   container.insertAdjacentHTML('beforeend', markup);
 }
