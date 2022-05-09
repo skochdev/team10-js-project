@@ -1,6 +1,5 @@
 import './sass/main.scss';
 import getRefs from './js/get-refs';
-import fetchGenres from './js/fetchGenres';
 import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';
 import fetchPopularMovies from './js/fetchPopularMovies';
@@ -16,11 +15,6 @@ saveGenresToLocalStorage();
 fetchPopularMovies(1)
   .then(response => {
     renderTrending(refs.gallery, response.results);
-
-    const genres = JSON.parse(localStorage.getItem('genre_ids'));
-    renderTrending(refs.gallery, response.results, genres);
-    onLoaderHidden();
-
     addDataToLocalStorage(refs.movieKey, response);
   }).catch(error => console.log(error));
 
