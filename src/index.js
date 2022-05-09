@@ -7,6 +7,7 @@ import fetchPopularMovies from './js/fetchPopularMovies';
 import addTestWatchedQueue from './js/addTestWatchedQueue';
 import addDataToLocalStorage from './js/addDataToLocalStorage'
 import onScroll from './js/scrollUpBtn';
+import onLoaderHidden from './js/onLoaderHidden';
 
 const refs = getRefs();
 
@@ -16,7 +17,7 @@ fetchPopularMovies(1)
   .then(response => {
     const genres = JSON.parse(localStorage.getItem('genre_ids'));
     renderTrending(refs.gallery, response.results, genres);
-    
+    onLoaderHidden();
     addDataToLocalStorage(refs.movieKey, response);
   }).catch(error => console.log(error));
 
