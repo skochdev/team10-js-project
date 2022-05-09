@@ -11,6 +11,7 @@
   padding-bottom: 85px;
   padding-top: 46px;
   margin: 0 auto;
+  transition: 1000ms $transition-default-timing;
 
   &__my-library {
     background-repeat: no-repeat;
@@ -21,6 +22,7 @@
     padding-bottom: 65px;
     padding-top: 46px;
     margin: 0 auto;
+    transition: 1000ms $transition-default-timing;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/inernal-header320.jpg);
   }
