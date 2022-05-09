@@ -55,19 +55,20 @@
   }
 }
 
-.js-placeholder{
-object-fit: contain;
+.js-placeholder {
+  object-fit: contain;
+  padding: 30px;
 
-@media screen and (min-width: $tablet) and (max-width: 1023px) {
+  @media screen and (min-width: $tablet) and (max-width: 1023px) {
     position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      clip: rect(0 0 0 0);
-}
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
 }
 
 .movie__caption {
