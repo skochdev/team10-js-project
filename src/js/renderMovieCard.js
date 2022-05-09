@@ -1,5 +1,7 @@
 import getGenres from './getGenres';
+
 import fetchGenres from './fetchGenres';
+
 
 // картка фільму головної сторінки, передається об'єкт фільму та у разі потреби mode='library'
 export default function renderMovieCard(film, mode) {
@@ -43,6 +45,7 @@ export default function renderMovieCard(film, mode) {
     </a>
   </li>`;
   } else {
+
     return `<li class="movie__item" data-index-number="${film.id}">
     <a href="#" class="movie__link" data-id="${film.id}">
       <img class="movie__poster"
@@ -54,6 +57,7 @@ export default function renderMovieCard(film, mode) {
         <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote">${film.vote_average.toFixed(1)}</p>
       </div>
     </a>
+
   </li>`;
   }
 }

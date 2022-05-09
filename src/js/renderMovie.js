@@ -1,5 +1,7 @@
 import getGenres from './getGenres';
+
 import fetchGenres from './fetchGenres';
+
 
 // Картка details для модалки фільму
 
