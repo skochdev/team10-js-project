@@ -1,12 +1,12 @@
 import getGenres from './getGenres';
-
 import fetchGenres from './fetchGenres';
-
+import empty from '../images/no-image-placeholder.svg';
 
 // картка фільму головної сторінки, передається об'єкт фільму та у разі потреби mode='library'
 export default function renderMovieCard(film, mode) {
   const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
   let genre = '';
+  let poster = '';
   if (film.genre_ids.length === 0) {
     genre = 'Genre Not Available';
   } else if (film.genre_ids.length > 3) {
@@ -29,13 +29,15 @@ export default function renderMovieCard(film, mode) {
     film.release_date = 'N/A';
   }
   if (!film.poster_path) {
-    film.poster_path = '/rTjDoLo2eTggYVGNPKjfAX9SqT5.jpg';
+    poster = empty;
+  } else {
+    poster = 'https://image.tmdb.org/t/p/w342' + film.poster_path;
   }
   if (mode !== 'library') {
     return `<li class="movie__item" data-index-number="${film.id}">
     <a href="#" class="movie__link" data-id="${film.id}">
       <img class="movie__poster"
-        src="https://image.tmdb.org/t/p/w342${film.poster_path}"
+        src="${poster}"
         alt="${film.title} Poster"
       />
       <div class="movie__caption">
@@ -49,7 +51,7 @@ export default function renderMovieCard(film, mode) {
     return `<li class="movie__item" data-index-number="${film.id}">
     <a href="#" class="movie__link" data-id="${film.id}">
       <img class="movie__poster"
-        src="https://image.tmdb.org/t/p/w342${film.poster_path}"
+        src="${poster}"
         alt="${film.title} Poster"
       />
       <div class="movie__caption">
