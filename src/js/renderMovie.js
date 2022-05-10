@@ -8,6 +8,7 @@ export default function renderMovie(container, film) {
   const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
   let genre = '';
   let poster = '';
+  let popularity = 'Not Available';
   if (!film.title) {
     if (film.original_title) {
       film.title = film.original_title;
@@ -23,6 +24,7 @@ export default function renderMovie(container, film) {
     poster = `<img class="film__poster"
       src="${empty}"
       alt="${film.title} Poster"
+      loading="lazy"
     />`;
   } else {
     poster = `<img class="film__poster"
@@ -30,10 +32,11 @@ export default function renderMovie(container, film) {
       sizes="(max-width: 1023px) 342px, 500px"
       src="https://image.tmdb.org/t/p/w500${film.poster_path}"
       alt="${film.title} Poster"
+      loading="lazy"
     />`;
   }
-  if (!film.popularity) {
-    film.popularity = 'Not Available';
+  if (film.popularity) {
+    popularity = film.popularity.toFixed(1);
   }
   if (!film.original_title) {
     film.original_title = 'Not Available';
@@ -57,7 +60,7 @@ export default function renderMovie(container, film) {
           </li>
           <li class="film__item">
             <p class="film__item-caption">Popularity</p>
-            <p class="film__popularity">${film.popularity}</p>
+            <p class="film__popularity">${popularity}</p>
           </li>
           <li class="film__item">
             <p class="film__item-caption">Original Title</p>
