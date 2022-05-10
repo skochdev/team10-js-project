@@ -73,7 +73,9 @@
   color: $text-color-light-gray;
 }
 
-.film__vote, .film__votes, .film__popularity {
+.film__vote,
+.film__votes,
+.film__popularity {
   line-height: 1.17;
 }
 
@@ -91,12 +93,14 @@
   background-color: $background-gray;
 }
 
-.film__original-title, .film__genre, .film__about-caption {
+.film__original-title,
+.film__genre,
+.film__about-caption {
   line-height: 1.33;
 }
 
 .film__original-title {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .film__about-caption {
@@ -138,6 +142,11 @@
   @media screen and (min-width: $desktop) {
     min-width: 136px;
   }
+
+  &:hover:not(.film__button-active) {
+    color: $hover-orange;
+    border: 1px solid $hover-orange;
+  }
 }
 
 .film__button-active {
@@ -166,6 +175,6 @@
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 14px 8px 12px  8px;
+    padding: 14px 8px 12px 8px;
   }
 }

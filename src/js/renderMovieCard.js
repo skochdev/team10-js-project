@@ -39,6 +39,7 @@ export default function renderMovieCard(film, mode) {
       <img class="movie__poster"
         src="${poster}"
         alt="${film.title} Poster"
+        loading="lazy"
       />
       <div class="movie__caption">
         <h2 class="movie__title">${film.title}</h2>
@@ -53,6 +54,7 @@ export default function renderMovieCard(film, mode) {
       <img class="movie__poster"
         src="${poster}"
         alt="${film.title} Poster"
+        loading="lazy"
       />
       <div class="movie__caption">
         <h2 class="movie__title">${film.title}</h2>
