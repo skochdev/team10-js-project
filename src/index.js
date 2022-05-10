@@ -25,7 +25,7 @@ renderMainPage();
 
 onScroll();
 
-///------- пока не удаляйте ----------
+///------- пока не удаляйте, это теперь переехало в renderMainPage.js ----------
 // fetchPopularMovies(paginationSettings.startPage)
 //   .then(response => {
 //     const totalItems = response.total_results;
