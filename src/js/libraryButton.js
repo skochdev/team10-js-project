@@ -9,8 +9,8 @@ export default function libraryButton(storage) {
     renderTrending(refs.gallery, JSON.parse(localStorage.getItem(storage)));
     return;
   } else {
-    refs.mainRef.innerHTML = nothing_here();
-    // refs.gallery.innerHTML = '';
-    console.info(`Your ${storage} library is empty!`);
+    // refs.mainRef.innerHTML = nothing_here();
+    refs.gallery.innerHTML = nothing_here();
+    // console.info(`Your ${storage} library is empty!`);
   }
 }
