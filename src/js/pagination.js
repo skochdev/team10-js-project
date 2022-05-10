@@ -1,3 +1,4 @@
+import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/main.scss';
 import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
@@ -5,12 +6,13 @@ import fetchPopularMovies from './fetchPopularMovies';
 import fetchKeyWord from './fetchKeyWord';
 import renderTrending from './renderTrending';
 import addDataToLocalStorage from './addDataToLocalStorage';
-import 'tui-pagination/dist/tui-pagination.css';
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
 import renderingPlaceholder from './renderingPlaceholder';
+import icons from '../images/icons.svg';
 
 const refs = getRefs();
+const arrowIconNext = `${icons}#icon-arrow-next`;
 
 export const paginationSettings = {
   startPage: 1,
@@ -28,8 +30,8 @@ export const pagination = ({ totalItems, page }) => {
       page: '<a href="#" class="tui-page-btn">{{page}}</a>',
       currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
       moveButton:
-        '<a href="#" class="tui-page-btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '<a href="#" class="tui-page-btn tui-{{type}} hide-{{type}}">' +
+        `<svg class="tui-ico-{{type}}" width="16" height="16"><use href="${arrowIconNext}"></use></svg>` +
         '</a>',
       disabledMoveButton:
         '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
