@@ -32,7 +32,6 @@ function onFormSubmit(evt) {
 function onFetchMovieRequest(movies) {
   paginationSettings.searchType = 'keyWord';
   const moviesArray = movies.data.results;
-  const genres = JSON.parse(localStorage.getItem('genre_ids'));
   const totalItems = movies.data.total_results;
   const page = movies.data.page;
 
@@ -42,7 +41,7 @@ function onFetchMovieRequest(movies) {
     throw new Error(res.status);
   }
 
-  renderTrending(refs.gallery, moviesArray, genres);
+  renderTrending(refs.gallery, moviesArray);
   addDataToLocalStorage(refs.movieKey, movies.data);
   onLoaderHidden();
 }
