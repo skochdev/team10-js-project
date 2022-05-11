@@ -7,7 +7,7 @@ export default function addFilm(storage, film_id) {
   let array = [];
   let film_obj = {};
   if (localStorage.getItem(refs.movieKey)) {
-    film_obj = JSON.parse(localStorage.getItem(refs.movieKey)).find(element => element.id === film_id);
+    film_obj = JSON.parse(localStorage.getItem(refs.movieKey)).results.find(element => element.id === Number(film_id));
   } else {
     const fetchedObj = fetchMovieById(film_id);
     fetchedObj.genre_ids = fetchedObj.genres.map(item => item.id);
@@ -18,5 +18,4 @@ export default function addFilm(storage, film_id) {
   }
   array.push(film_obj);
   localStorage.setItem(storage, JSON.stringify(array));
-  renderTrending(refs.gallery, array);
 }
