@@ -19,7 +19,6 @@ import onHeaderHomeBtnClick from './header-my-library';
 const refs = getRefs();
 
 export default function renderMainPage() {
-    console.log('retro')
 
 fetchPopularMovies(paginationSettings.startPage).then(response => {
     const totalItems = response.total_results;
