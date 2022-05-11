@@ -33,21 +33,6 @@ export default function renderMovieCard(film, mode) {
   } else {
     poster = 'https://image.tmdb.org/t/p/w342' + film.poster_path;
   }
-  if (mode !== 'library') {
-    return `<li class="movie__item" data-id="${film.id}">
-    <a href="#" class="movie__link" data-id="${film.id}">
-      <img class="movie__poster"
-        src="${poster}"
-        alt="${film.title} Poster"
-        loading="lazy"
-      />
-      <div class="movie__caption" data-id="${film.id} >
-        <h2 class="movie__title">${film.title}</h2>
-        <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote visually-hidden">${film.vote_average.toFixed(1)}</p>
-      </div>
-    </a>
-  </li>`;
-  } else {
 
     return `<li class="movie__item" data-id="${film.id}">
     <a href="#" class="movie__link" data-id="${film.id}">
@@ -64,4 +49,4 @@ export default function renderMovieCard(film, mode) {
 
   </li>`;
   }
-}
+
