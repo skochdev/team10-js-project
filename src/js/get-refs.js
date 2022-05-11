@@ -27,6 +27,7 @@ export default function getRefs() {
     libQueueBtn: document.querySelector('.queue-btn'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
+    filterBtn: document.querySelector('.filter__btn'),
     gallery: document.querySelector('.gallery'),
     loader: document.querySelector('.loader'),
     movieItemRef: document.querySelectorAll('.movie__item'),
