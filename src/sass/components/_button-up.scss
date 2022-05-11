@@ -1,37 +1,43 @@
 .btn-up {
-    display: none;
+  display: none;
 
-    height: 45px;
-    width: 45px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 110px;
-    right: 20px;
-    z-index: 99;
-    color: $hover-orange;
-    background-color: rgba($color: $hover-orange, $alpha: 0.5);
-    border: none;
-    outline:none;
-    border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 180px;
+  right: 20px;
+  z-index: 99;
+  color: $hover-orange;
+  background-color: rgba($color: rgb(209, 209, 209), $alpha: 0.5);
+  border: none;
+  outline: none;
+  border-radius: 50%;
 
+  @media screen and(min-width: 1200px) {
+    right: 140px;
+  }
+
+  @media screen and(min-width: 1400px) {
+    right: 240px;
+  }
 }
 
 .icon-up {
-    fill: $hover-orange;
+  fill: $hover-orange;
 }
 
 .btn-up:hover {
-    background-color: $hover-orange;
-    color: $text-color-white;
-
+  background-color: $hover-orange;
+  color: $text-color-white;
 }
 
 .btn-up:hover > .icon-up {
-fill: $background-white;
+  fill: $background-white;
 }
 
 .show {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
