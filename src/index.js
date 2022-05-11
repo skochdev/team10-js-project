@@ -14,29 +14,32 @@ import 'tui-pagination/dist/tui-pagination.css';
 
 import onLoaderHidden from './js/onLoaderHidden';
 import onLoaderVisible from './js/onLoaderVisible';
+import renderMainPage from './js/renderMainPage';
 
 const refs = getRefs();
 
 saveGenresToLocalStorage();
 onLoaderVisible();
-
-fetchPopularMovies(paginationSettings.startPage)
-  .then(response => {
-    const totalItems = response.total_results;
-    const page = response.page;
-    paginationSettings.searchType = 'popular';
-    pagination({ totalItems, page });
-
-    renderTrending(refs.gallery, response.results);
-
-    renderingPlaceholder();
-
-    addDataToLocalStorage(refs.movieKey, response);
-
-    onLoaderHidden();
-  })
-  .catch(error => console.log(error));
+renderMainPage();
 
 // addTestWatchedQueue();
 
 onScroll();
+
+///------- пока не удаляйте, это теперь переехало в renderMainPage.js ----------
+// fetchPopularMovies(paginationSettings.startPage)
+//   .then(response => {
+//     const totalItems = response.total_results;
+//     const page = response.page;
+//     paginationSettings.searchType = 'popular';
+//     pagination({ totalItems, page });
+
+//     renderTrending(refs.gallery, response.results);
+
+//     renderingPlaceholder();
+
+//     addDataToLocalStorage(refs.movieKey, response);
+
+//     onLoaderHidden();
+//   })
+//   .catch(error => console.log(error));

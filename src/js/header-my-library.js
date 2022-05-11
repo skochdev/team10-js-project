@@ -4,14 +4,14 @@ import libraryButton from './libraryButton';
 const refs = getRefs();
 
 
-refs.homeRef.addEventListener('click', onHeaderHomeBtnClick); // homeRef: document.querySelector('[data-link="home"]')
+// refs.homeRef.addEventListener('click', onHeaderHomeBtnClick); // homeRef: document.querySelector('[data-link="home"]')
 refs.myLibraryRef.addEventListener('click', onMyLibraryBtnClick); // myLibraryRef: document.querySelector('[data-link="my-library"]')
 refs.libWatchedBtn.addEventListener('click', onWatchedBtnClick);
 refs.libQueueBtn.addEventListener('click', onQueueBtnClick);
-refs.logoRef.addEventListener('click', onHeaderHomeBtnClick);
+// refs.logoRef.addEventListener('click', onHeaderHomeBtnClick);
 
 
-function onHeaderHomeBtnClick() {
+export default function onHeaderHomeBtnClick() {
     refs.libButtons.classList.add('is-hidden');  // приховуються кнопки Watched та Queue
     refs.headerFormRef.classList.remove('is-hidden'); // з'являється форма
     refs.errorWindowRef.classList.remove('is-hidden'); // з'являється помилковий текст у разі введення некоректного запиту
