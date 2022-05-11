@@ -71,7 +71,6 @@
 
 .logo__link:hover > .logo__icon {
   stroke: $hover-orange;
-  transition: stroke 250ms $transition-default-timing;
 }
 
 .logo__icon {
@@ -81,13 +80,14 @@
     }
   }
   stroke: $logo-color;
+  fill: none;
+  transition: $stroke-transition;
 }
 
 .logo__text {
   @media screen and (max-width:767px) {
       display: none;
   }
-
 }
 
 .navigation__list {
