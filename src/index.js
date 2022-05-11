@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import onDarkMode from './js/darkTheme';
 import getRefs from './js/get-refs';
 import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';

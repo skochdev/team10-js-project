@@ -17,6 +17,7 @@
   text-align: center;
   font-family: 'Roboto';
   color: $hover-orange;
+  z-index: 1;
 
   @media screen and (min-width: $tablet) {
     font-size: 20px;
