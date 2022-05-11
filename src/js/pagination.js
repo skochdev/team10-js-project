@@ -12,7 +12,9 @@ import renderingPlaceholder from './renderingPlaceholder';
 import icons from '../images/icons.svg';
 
 const refs = getRefs();
-const arrowIconNext = `${icons}#icon-arrow-next`;
+const arrowPrev = `${icons}#icon-arrow-prev`;
+const arrowNext = `${icons}#icon-arrow-next`;
+const dots = `${icons}#icon-dots`;
 
 export const paginationSettings = {
   startPage: 1,
@@ -22,24 +24,58 @@ export const paginationSettings = {
 export const pagination = ({ totalItems, page }) => {
   const options = {
     totalItems,
+    totalPages: Math.ceil(totalItems / 20),
     itemsPerPage: 20,
     visiblePages: 5,
     page,
     centerAlign: true,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
     template: {
       page: '<a href="#" class="tui-page-btn">{{page}}</a>',
       currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-      moveButton:
-        '<a href="#" class="tui-page-btn tui-{{type}} hide-{{type}}">' +
-        `<svg class="tui-ico-{{type}}" width="16" height="16"><use href="${arrowIconNext}"></use></svg>` +
-        '</a>',
+      moveButton: type => {
+        let template = '';
+
+        if (type.type === 'first') {
+          template =
+            '<a href="#" class="tui-page-btn tui-first">' +
+            '<span class="tui-ico-{{type}}">1</span>' +
+            '</a>';
+        }
+
+        if (type.type === 'last') {
+          template =
+            '<a href="#" class="tui-page-btn tui-last">' +
+            '<span class="tui-ico-{{type}}">' +
+            options.totalPages +
+            '</span>' +
+            '</a>';
+        }
+
+        if (type.type === 'prev') {
+          template =
+            '<a href="#" class="tui-page-btn tui-prev">' +
+            `<svg class="tui-ico-{{type}}" width="16" height="16"><use href="${arrowPrev}"></use></svg>` +
+            '</a>';
+        }
+
+        if (type.type === 'next') {
+          template =
+            '<a href="#" class="tui-page-btn tui-next">' +
+            `<svg class="tui-ico-{{type}}" width="16" height="16"><use href="${arrowNext}"></use></svg>` +
+            '</a>';
+        }
+
+        return template;
+      },
       disabledMoveButton:
         '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
         '<span class="tui-ico-{{type}}">{{type}}</span>' +
         '</span>',
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="tui-ico-ellip">...</span>' +
+        `<svg class="tui-ico-ellip" width="14" height="14"><use href="${dots}"></use></svg>` +
         '</a>',
     },
   };
