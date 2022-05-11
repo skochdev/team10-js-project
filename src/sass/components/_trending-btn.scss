@@ -1,16 +1,25 @@
-.trending__buttons_wrapper {
-    // display: flex;
+.filter__buttons_wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .filter__list {
+
+    @media screen and (min-width: $tablet) {
     display: flex;
-    justify-content: center;
-    // padding-bottom: 30px;
+    position: absolute;
+    padding-top: 10px;
+    }
 }
 
-.filter__item {
-    margin: 0 8px;
-    
+.filter__item:not(:last-child) {
+    @media screen and (max-width: $tablet) {
+    margin: 8px auto;
+    }
+
+    @media screen and (min-width: $tablet) {
+        margin-right: 10px;
+    }
 }
 
 .filter__btn {
@@ -23,8 +32,8 @@
     line-height: 1.5;
     width: 200px;
     padding: 5px;
+    transition: $box-shadow-transition;
     
-
 &:hover,
 &:focus {
     background-color: $hover-orange;
@@ -35,4 +44,11 @@
     }
     
 }
+
+.filter__btn.active {
+    background-color: $hover-orange;
+    color: $text-color-white;
+}
+
+
 
