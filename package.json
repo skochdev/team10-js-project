@@ -29,6 +29,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "darkmode-js": "^1.5.7",
     "tui-pagination": "^3.4.1"
   }
 }

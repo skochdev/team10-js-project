@@ -11,6 +11,7 @@
   padding-bottom: 85px;
   padding-top: 46px;
   margin: 0 auto;
+  isolation: isolate;
   transition: 1000ms $transition-default-timing;
 
   &__my-library {
@@ -22,6 +23,8 @@
     padding-bottom: 65px;
     padding-top: 46px;
     margin: 0 auto;
+    isolation: isolate;
+    
     transition: 1000ms $transition-default-timing;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/inernal-header320.jpg);
@@ -61,7 +64,6 @@
   justify-content: space-between;
   margin-bottom: 41px;
   align-items: baseline;
-
 }
 
 .logo__link {
@@ -71,23 +73,23 @@
 
 .logo__link:hover > .logo__icon {
   stroke: $hover-orange;
-  transition: stroke 250ms $transition-default-timing;
 }
 
 .logo__icon {
   & {
     @media screen and (min-width: $tablet) {
-        margin-right: 10px;
+      margin-right: 10px;
     }
   }
   stroke: $logo-color;
+  fill: none;
+  transition: $stroke-transition;
 }
 
 .logo__text {
-  @media screen and (max-width:767px) {
-      display: none;
+  @media screen and (max-width: 767px) {
+    display: none;
   }
-
 }
 
 .navigation__list {
