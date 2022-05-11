@@ -2,6 +2,9 @@ import getGenres from './getGenres';
 import fetchGenres from './fetchGenres';
 import empty from '../images/no-image-placeholder.svg';
 
+
+
+
 // Картка details для модалки фільму
 
 export default function renderMovie(container, film) {

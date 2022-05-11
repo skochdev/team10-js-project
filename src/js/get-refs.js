@@ -41,5 +41,9 @@ export default function getRefs() {
     movieKey: 'currentFilms',
     // рефа до кнопки наверх
     goTopBtn: document.querySelector('.btn-up'),
+    // галерея фильму
+    galleryList: document.querySelector('[data-action="galleryList"]'),
+    filmModalBackdrop: document.querySelector('[data-filmModalBackdrop]'),
+    filmModalContainer: document.querySelector('[data-action="filmModalContainer"]'),
   };
 }
