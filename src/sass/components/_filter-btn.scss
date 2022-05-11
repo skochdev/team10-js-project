@@ -4,7 +4,6 @@
 }
 
 .filter__list {
-
     @media screen and (min-width: $tablet) {
     display: flex;
     position: absolute;
@@ -49,6 +48,4 @@
     background-color: $hover-orange;
     color: $text-color-white;
 }
-
-
 
