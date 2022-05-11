@@ -59,7 +59,7 @@ export default function renderMovie(container, film) {
         <ul class="film__list">
           <li class="film__item">
             <p class="film__item-caption">Vote / Votes</p>
-            <p class="film__rating"><span class="film__vote">${film.vote_average}</span>/<span class="film__votes">${film.vote_count}</span></p>
+            <p class="film__rating"><span class="film__vote">${film.vote_average}</span> / <span class="film__votes">${film.vote_count}</span></p>
           </li>
           <li class="film__item">
             <p class="film__item-caption">Popularity</p>
