@@ -7,7 +7,7 @@
       margin: 50px 0 60px 0;
     }
   }
-  
+
   .tui-page-btn.tui-first.hide-first,
   .tui-page-btn.tui-first.tui-is-disabled,
   .tui-page-btn.tui-last.hide-last,
@@ -65,7 +65,11 @@
       color: $text-color-white;
     }
   }
-  
+
+  .darkmode--activated .tui-page-btn {
+      color: $text-color-white;
+  }
+
   .tui-pagination .tui-is-selected {
     color: $text-color-white;
     background: $hover-orange;
@@ -122,3 +126,11 @@
     fill: $text-color-black;
     transition: all 250ms ease-in-out;
   }
+
+.darkmode--activated .tui-ico-ellip {
+  fill: $text-color-white;
+}
+
+.darkmode--activated .tui-pagination * {
+  fill: $text-color-white;
+}

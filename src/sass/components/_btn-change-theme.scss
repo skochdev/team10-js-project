@@ -1,61 +1,70 @@
-
 // .darkmode-background {
 //   background: transparent !important;
 // }
 
 .dark-toggle {
-    cursor: pointer;
-    display: inline-block;
-    padding-left: 20px;
-    position: absolute;
-    top: 190px;
-    right: 25px;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 20px;
+  position: absolute;
+  top: 190px;
+  right: 25px;
 }
 
 .dark-toggle-switch {
-    display: inline-block;
-    background: rgb(238, 238, 238);
-    border-radius: 16px;
-    width: 48px;
-    height: 22px;
-    position: relative;
-    vertical-align: middle;
-    transition: background 0.25s;
-    top: -2px;
+  display: inline-block;
+  background: rgb(238, 238, 238);
+  border-radius: 16px;
+  width: 48px;
+  height: 22px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  top: -2px;
 }
 
 .dark-toggle-switch:before,
 .dark-toggle-switch:after {
-    content: "";
+  content: '';
 }
 
 .dark-toggle-switch:before {
-    display: block;
-    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.534);
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition: left 0.25s;
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.534);
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
 }
 
 .dark-toggle:hover .dark-toggle-switch:before {
-    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.753);
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.753);
 }
 
-.dark-toggle-checkbox:checked+.dark-toggle-switch {
-    background: rgb(54, 54, 54);
+.dark-toggle-checkbox:checked + .dark-toggle-switch {
+  background: rgb(54, 54, 54);
 }
 
-.dark-toggle-checkbox:checked+.dark-toggle-switch:before {
-    left: 30px;
+.dark-toggle-checkbox:checked + .dark-toggle-switch:before {
+  left: 30px;
 }
 
 .dark-toggle-checkbox {
-    position: absolute;
-    visibility: hidden;
+  position: absolute;
+  visibility: hidden;
+}
+
+.dark-toggle-label {
+    margin-right: 5px;
+    position: relative;
+    font-weight: 500;
+    font-size: 17px;
+    text-transform: uppercase;
+    line-height: 1.16;
+    color: $text-color-white;
 }

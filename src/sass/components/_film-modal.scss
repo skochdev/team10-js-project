@@ -46,6 +46,14 @@
   }
 }
 
+.darkmode--activated .film__modal {
+    background-color: #1f1f1f;
+}
+
+.darkmode--activated .film__caption {
+    color: $text-color-white;
+}
+
 .film__modal-backdrop.is-hidden .film__modal {
   transform: translate(-100% -100%);
 }

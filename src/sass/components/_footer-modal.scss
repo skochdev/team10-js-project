@@ -41,6 +41,11 @@
   }
 }
 
+.darkmode--activated .footer__modal {
+  background-color: #272727;
+  color: $hover-orange;
+}
+
 .footer__modal-backdrop.is-hidden .footer__modal {
   transform: translate(-100% -100%);
 }
@@ -83,6 +88,11 @@
   @media screen and(min-width: $desktop) {
     width: calc((100% - 5 * 15px) / 5);
   }
+}
+
+.darkmode--activated .student-card {
+  background-color: #272727;
+  color: $hover-orange;
 }
 
 .student-card__image {

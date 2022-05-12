@@ -92,9 +92,18 @@
   color: $hover-orange;
 }
 
+.darkmode--activated .movie__genre {
+  color: #0094f7;
+}
+
 .movie__vote {
   padding: 1px 9px 1px 10px;
   border-radius: 5px;
   color: $text-color-white;
   background-color: $hover-orange;
+}
+
+.darkmode--activated .movie__vote {
+  color: $text-color-white;
+  background-color: #0094f7;
 }
