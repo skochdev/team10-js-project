@@ -27,15 +27,24 @@
         placeholder="Search Movies"
       />
 
-      <button class="btn__search" type="submit" data-action="search-button" aria-label="Search movie">
+      <button
+        class="btn__search"
+        type="submit"
+        data-action="search-button"
+        aria-label="Search movie"
+      >
         <svg class="icon__search" width="12" height="12">
           <use href="./images/icons.svg#icon-search"></use>
         </svg>
       </button>
     </form>
     <div class="dark-mode dark-toggle">
-      <span class="dark-toggle-label">Dark Mode</span>
-      <input class="dark-toggle-checkbox" id="dark-toggle" type="checkbox">
+      <span class="dark-toggle-label">
+        <svg class="dark-mode__theme-icon">
+          <use href="/images/icons.svg#icon-brightness-contrast"></use>
+        </svg>
+      </span>
+      <input class="dark-toggle-checkbox" id="dark-toggle" type="checkbox" />
       <div class="dark-toggle-switch"></div>
     </div>
     <div class="header_error" data-errorWindow="errorWindow"></div>
@@ -60,5 +69,4 @@
       <div class="mul7circ m7c12"></div>
     </div>
   </div>
-  
 </header>
