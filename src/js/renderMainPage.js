@@ -14,34 +14,32 @@ import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
 import onHeaderHomeBtnClick from './header-my-library';
 
-
-
 const refs = getRefs();
 
 export default function renderMainPage() {
 
-fetchPopularMovies(paginationSettings.startPage).then(response => {
-    const totalItems = response.total_results;
-    const page = response.page;
-    paginationSettings.searchType = 'popular';
-    pagination({ totalItems, page });
 
-    renderTrending(refs.gallery, response.results);
+  fetchPopularMovies(paginationSettings.startPage)
+    .then(response => {
+      const totalItems = response.total_results;
+      const page = response.page;
+      paginationSettings.searchType = 'popular';
+      pagination({ totalItems, page });
 
-    renderingPlaceholder();
+      renderTrending(refs.gallery, response.results);
 
-    addDataToLocalStorage(refs.movieKey, response);
-    refs.paginationContainer.classList.remove('visually-hidden');
-    onHeaderHomeBtnClick();
-    refs.libQueueBtn.classList.remove('active');
-    refs.libWatchedBtn.classList.add('active');
-    
+      renderingPlaceholder();
 
-    onLoaderHidden();
-  })
-  .catch(error => console.log(error));
+      addDataToLocalStorage(refs.movieKey, response);
+      refs.paginationContainer.classList.remove('visually-hidden');
+      onHeaderHomeBtnClick();
+      refs.libQueueBtn.classList.remove('active');
+      refs.libWatchedBtn.classList.add('active');
+
+      onLoaderHidden();
+    })
+    .catch(error => console.log(error));
 }
 
 refs.homeRef.addEventListener('click', renderMainPage);
 refs.logoRef.addEventListener('click', renderMainPage);
-
