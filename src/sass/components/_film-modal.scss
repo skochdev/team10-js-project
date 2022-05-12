@@ -1,54 +1,51 @@
 .film__modal-backdrop {
-    position: fixed;
-    overflow-y: scroll;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(44, 44, 44, 0.692);
-    opacity: 1;
-    transition: opacity 200ms $transition-default-timing;
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 44, 44, 0.692);
+  opacity: 1;
+  transition: opacity 200ms $transition-default-timing;
 }
 
-
 .film__modal-backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .film__modal {
-    position: relative;
-    display: block;
-    
-    
-    width: 280px;
+  position: relative;
+  display: block;
+
+  width: 280px;
+  margin: 20px auto;
+  padding-top: 48px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
+
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
     margin: 20px auto;
-    padding-top: 48px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #ffffff;
+  }
 
-@media screen and (min-width: 480px) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 450px;
-     margin: 20px auto;
-    }
+  @media screen and (min-width: $tablet) {
+    width: 550px;
+  }
 
-    @media screen and (min-width: $tablet) {
-        width: 550px;
-    }
-
-    @media screen and (min-width: $desktop) {
-        width: 800px;
-    }
+  @media screen and (min-width: $desktop) {
+    width: 800px;
+  }
 }
 
 .film__modal-backdrop.is-hidden .film__modal {
-    transform: translate(-100% -100%);
+  transform: translate(-100% -100%);
 }
-
-
