@@ -21,6 +21,7 @@ export default function getRefs() {
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
     errorWindowRef: document.querySelector('[data-errorWindow="errorWindow"]'),
     changeTheme: document.querySelector('.dark-mode'),
+    themeIcon: document.querySelector('.dark-mode__theme-icon'),
     //  ------- MY LIBRARY -------
     libButtons: document.querySelector('.library-btn__item'),
     libWatchedBtn: document.querySelector('.watched-btn'),
