@@ -5,9 +5,12 @@ import fetchKeyWord from './fetchKeyWord';
 import onLoaderHidden from './onLoaderHidden';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import { pagination, paginationSettings } from './pagination';
+import { debounce, throttle } from 'lodash';
+import '../sass/main.scss';
 
 const refs = getRefs();
 let searchQuery = '';
+let timeOut = null;
 
 refs.headerFormRef.addEventListener('submit', onFormSubmit);
 
@@ -48,8 +51,18 @@ function onFetchMovieRequest(movies) {
 }
 
 function onFetchMovieError() {
-  const errorNotification = 'Please, enter the correct movie name and try again';
+  const errorNotification = 'Please, enter the correct movie name and try again' ;
   onLoaderHidden();
 
-  refs.errorWindowRef.innerHTML = errorNotification;
+  refs.headerFormRef.classList.add('is-visible')
+  refs.headerFormRef.classList.remove('out-visible')
+
+  timeOut = setTimeout(() => { errorNotification; hideErrorNotification()}, 3000)
+ 
+  refs.errorWindowRef.innerHTML = errorNotification;  
+}
+
+function hideErrorNotification() {
+  refs.headerFormRef.classList.add('out-visible')
+  refs.headerFormRef.classList.remove('is-visible')
 }

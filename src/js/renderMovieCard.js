@@ -42,7 +42,7 @@ export default function renderMovieCard(film) {
         loading="lazy"        
       />
       <span class="movie__vote">${film.vote_average.toFixed(1)}</span>
-      </div>
+  </div>
       <div class="movie__caption">
         <h2 class="movie__title">${film.title}</h2>
         <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)}        

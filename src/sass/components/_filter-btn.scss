@@ -72,8 +72,17 @@
 }
 }
 
-.filter__btn.active {
-    background-color: $hover-orange;
-    color: $text-color-white;
+// .filter__btn.active {
+//     background-color: $hover-orange;
+//     color: $text-color-white;
+// }
+
+.is-visible {
+    visibility: visible;
+    opacity: 1;
 }
 
+.out-visible {
+    visibility: visible;
+    opacity: 0;
+}
