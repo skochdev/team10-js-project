@@ -10,7 +10,9 @@ refs.galleryList.addEventListener('click', openCard);
 const container = refs.filmModalContainer
 
 export default function openCard(event) {
-  let cardId = Number(event.target.parentNode.dataset.id);
+  event.preventDefault();
+  if (!event.target.closest('.movie__item').dataset.id) return;
+  let cardId = Number(event.target.closest('.movie__item').dataset.id);
   let cardFilm = [];
   if (!refs.libButtons.classList.contains('is-hidden') && refs.libWatchedBtn.classList.contains('active')) {
     cardFilm = JSON.parse(localStorage.getItem('watched'));
