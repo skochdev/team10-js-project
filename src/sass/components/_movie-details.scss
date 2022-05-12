@@ -133,6 +133,7 @@
   background-color: transparent;
   border: 1px solid $text-color-black;
   border-radius: 5px;
+  transition: $color-transition, $border-color-transition, $bgc-transition;
 
   @media screen and (min-width: $tablet) {
     min-width: 125px;
@@ -142,9 +143,14 @@
     min-width: 136px;
   }
 
+  &:hover.film__button-active {
+    background-color: $hover-orange-dark;
+    border-color: $hover-orange-dark;
+  }
+
   &:hover:not(.film__button-active) {
     color: $hover-orange;
-    border: 1px solid $hover-orange;
+    border-color: $hover-orange;
   }
 }
 
