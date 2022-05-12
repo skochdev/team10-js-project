@@ -7,11 +7,12 @@ import isFilmInStorage from './isFilmInStorage';
 const refs = getRefs();
 
 refs.galleryList.addEventListener('click', openCard);
-const container = refs.filmModalContainer
+const container = refs.filmModalContainer;
 
 export default function openCard(event) {
-  event.preventDefault();
+  if (!event.target.closest('.movie__item')) return;
   if (!event.target.closest('.movie__item').dataset.id) return;
+  event.preventDefault();
   let cardId = Number(event.target.closest('.movie__item').dataset.id);
   let cardFilm = [];
   if (!refs.libButtons.classList.contains('is-hidden') && refs.libWatchedBtn.classList.contains('active')) {
@@ -46,8 +47,8 @@ export default function openCard(event) {
 
 function onEscape(e) {
     if (e.code === 'Escape') {
-        refs.filmModalBackdrop.classList.add('is-hidden');
-         container.innerHTML= ''
+      refs.filmModalBackdrop.classList.add('is-hidden');
+      container.innerHTML = '';
     }
 return
 }
