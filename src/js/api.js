@@ -53,3 +53,8 @@ export async function fetchSimilarMoviesById(movie_id, page = 1) {
   const { data } = await axios(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${API_KEY}&language=en-US&page=${page}`);
   return data;
 }
+// Запит відео-роликів фільму за ідентифікатором
+export async function fetchSimilarMoviesById(movie_id) {
+  const { data } = await axios(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`);
+  return data;
+}
