@@ -31,7 +31,6 @@ export default function getRefs() {
     gallery: document.querySelector('.gallery'),
     loader: document.querySelector('.loader'),
     movieItemRef: document.querySelectorAll('.movie__item'),
-    paginationContainer: document.querySelector('#pagination2'),
     // footer related refs // рефи з футера
     footerModalBackdrop: document.querySelector('[data-footerModalBackdrop]'),
     studentsModal: document.querySelector('[data-studentsModal]'),
@@ -47,5 +46,7 @@ export default function getRefs() {
     galleryList: document.querySelector('[data-action="galleryList"]'),
     filmModalBackdrop: document.querySelector('[data-filmModalBackdrop]'),
     filmModalContainer: document.querySelector('[data-action="filmModalContainer"]'),
+    // рефа pagination
+    paginationContainer: document.querySelector('#pagination2'),
   };
 }

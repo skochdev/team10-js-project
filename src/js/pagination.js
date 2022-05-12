@@ -39,7 +39,7 @@ export const pagination = ({ totalItems, page }) => {
 
         if (type.type === 'first') {
           template =
-            '<a href="#" class="tui-page-btn tui-first">' +
+            '<a href="#" class="tui-page-btn tui-first hide-first ">' +
             '<span class="tui-ico-{{type}}">1</span>' +
             '</a>';
         }
@@ -84,29 +84,51 @@ export const pagination = ({ totalItems, page }) => {
 
   paginate.on('afterMove', onPageClick);
 
+  function hideBtn(page, lastPage) {
+    const firstBtn = document.querySelector('.tui-first');
+    const lastBtn = document.querySelector('.tui-last');
+
+    if (page < 4) {
+      firstBtn.classList.add('hide-first');
+    }
+
+    if (page >= 4) {
+      firstBtn.classList.remove('hide-first');
+    }
+
+    if (page > lastPage) {
+      lastBtn.classList.add('hide-last');
+    }
+    if (page <= lastPage) {
+      lastBtn.classList.remove('hide-last');
+    }
+  }
+
   function onPageClick(event) {
     onLoaderVisible();
+    window.scrollTo(0, 0); // scroll to top when pagination is clickec
     if (paginationSettings.searchType === 'keyWord') {
       const searchQuery = localStorage.getItem('searchQuery');
       const searchQueryParse = JSON.parse(searchQuery);
       fetchKeyWord(searchQueryParse, event.page)
         .then(response => {
-
+          const lastPage = response.data.total_pages - 3;
           renderTrending(refs.gallery, response.data.results);
+          hideBtn(event.page, lastPage);
           renderingPlaceholder();
           onLoaderHidden();
 
-          addDataToLocalStorage(refs.movieKey, response);
+          addDataToLocalStorage(refs.movieKey, response.data);
         })
         .catch(error => console.log(error));
     } else {
       fetchPopularMovies(event.page)
         .then(response => {
-
+          const lastPage = response.total_pages - 3;
           renderTrending(refs.gallery, response.results);
+          hideBtn(event.page, lastPage);
           renderingPlaceholder();
           onLoaderHidden();
-
           addDataToLocalStorage(refs.movieKey, response);
         })
         .catch(error => console.log(error));

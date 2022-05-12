@@ -5,7 +5,7 @@ import renderTrending from "./renderTrending";
 export default function deleteFilm(storage, film_id) {
   const array = JSON.parse(localStorage.getItem(storage));
   const refs = getRefs();
-  const indexForDelete = array.findIndex(element => element.id === film_id);
+  const indexForDelete = array.findIndex(element => element.id === Number(film_id));
   if (indexForDelete === -1) {
     console.error(`Film is absent in ${storage} library!`)
     return;
@@ -13,10 +13,8 @@ export default function deleteFilm(storage, film_id) {
     array.splice(indexForDelete, 1);
     if (array.length > 0) {
       localStorage.setItem(storage, JSON.stringify(array));
-      renderTrending(refs.gallery, array);
     } else {
       localStorage.removeItem(storage);
-      refs.gallery.innerHTML = '';
     }
   }
 }

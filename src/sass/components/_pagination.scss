@@ -26,6 +26,7 @@
         display: flex
     }
   }
+  
 
   a.tui-page-btn.tui-last{
     order: 0;
@@ -37,6 +38,7 @@
 
   .tui-pagination .tui-next {
     margin-left: 0;
+    order: 1;
   }
   
   .tui-pagination .tui-prev {

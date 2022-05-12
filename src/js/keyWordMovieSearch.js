@@ -1,5 +1,6 @@
 import getRefs from './get-refs';
 import renderTrending from './renderTrending';
+import renderingPlaceholder from './renderingPlaceholder';
 import fetchKeyWord from './fetchKeyWord';
 import onLoaderHidden from './onLoaderHidden';
 import addDataToLocalStorage from './addDataToLocalStorage';
@@ -16,7 +17,6 @@ function onFormSubmit(evt) {
 
   searchQuery = refs.headerFormRef.searchQuery.value.trim();
   addDataToLocalStorage('searchQuery', searchQuery);
-
 
   if (searchQuery === '') {
     return;
@@ -42,6 +42,7 @@ function onFetchMovieRequest(movies) {
   }
 
   renderTrending(refs.gallery, moviesArray);
+  renderingPlaceholder();
   addDataToLocalStorage(refs.movieKey, movies.data);
   onLoaderHidden();
 }
