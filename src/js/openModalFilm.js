@@ -3,6 +3,7 @@ import renderMovie from './renderMovie';
 import { modalQueueButton, modalWatchedButton } from './modalLibraryButtons';
 import isFilmInStorage from './isFilmInStorage';
 import setBodyOverflow from './footer-modal';
+import onScroll from './scrollUpBtn';
 
 const refs = getRefs();
 
@@ -65,8 +66,10 @@ function onEscape(e) {
     // включает обратно скролл на body, когда модалка закрывается
     setBodyOverflow('auto');
 
-    // включает кнопку ВВЕРХ при закрытии модалки
-    refs.goTopBtn.classList.add('show');
+    // включает кнопку ВВЕРХ при закрытии модалки, проверяя высоту
+    if (window.pageYOffset > document.documentElement.clientHeight) {
+      refs.goTopBtn.classList.add('show');
+    }
   }
   return;
 }
