@@ -106,6 +106,7 @@ export const pagination = ({ totalItems, page }) => {
 
   function onPageClick(event) {
     onLoaderVisible();
+    window.scrollTo(0, 0); // scroll to top when pagination is clickec
     if (paginationSettings.searchType === 'keyWord') {
       const searchQuery = localStorage.getItem('searchQuery');
       const searchQueryParse = JSON.parse(searchQuery);
