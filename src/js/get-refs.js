@@ -20,12 +20,14 @@ export default function getRefs() {
     homeRef: document.querySelector('[data-link="home"]'),
     myLibraryRef: document.querySelector('[data-link="my-library"]'),
     errorWindowRef: document.querySelector('[data-errorWindow="errorWindow"]'),
+    changeTheme: document.querySelector('.dark-mode'),
     //  ------- MY LIBRARY -------
     libButtons: document.querySelector('.library-btn__item'),
     libWatchedBtn: document.querySelector('.watched-btn'),
     libQueueBtn: document.querySelector('.queue-btn'),
     // рефа тегу <main> з index.html
     mainRef: document.querySelector('main'),
+    filterBtn: document.querySelector('.filter__btn'),
     gallery: document.querySelector('.gallery'),
     loader: document.querySelector('.loader'),
     movieItemRef: document.querySelectorAll('.movie__item'),
@@ -41,5 +43,9 @@ export default function getRefs() {
     movieKey: 'currentFilms',
     // рефа до кнопки наверх
     goTopBtn: document.querySelector('.btn-up'),
+    // галерея фильму
+    galleryList: document.querySelector('[data-action="galleryList"]'),
+    filmModalBackdrop: document.querySelector('[data-filmModalBackdrop]'),
+    filmModalContainer: document.querySelector('[data-action="filmModalContainer"]'),
   };
 }

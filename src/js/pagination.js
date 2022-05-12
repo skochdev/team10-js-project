@@ -91,9 +91,8 @@ export const pagination = ({ totalItems, page }) => {
       const searchQueryParse = JSON.parse(searchQuery);
       fetchKeyWord(searchQueryParse, event.page)
         .then(response => {
-          const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
-          renderTrending(refs.gallery, response.data.results, genres);
+          renderTrending(refs.gallery, response.data.results);
           renderingPlaceholder();
           onLoaderHidden();
 
@@ -103,9 +102,8 @@ export const pagination = ({ totalItems, page }) => {
     } else {
       fetchPopularMovies(event.page)
         .then(response => {
-          const genres = JSON.parse(localStorage.getItem('genre_ids'));
 
-          renderTrending(refs.gallery, response.results, genres);
+          renderTrending(refs.gallery, response.results);
           renderingPlaceholder();
           onLoaderHidden();
 

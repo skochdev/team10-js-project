@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import onDarkMode from './js/darkTheme';
 import getRefs from './js/get-refs';
 import saveGenresToLocalStorage from './js/saveGenresToLocalStorage';
 import renderTrending from './js/renderTrending';
@@ -25,7 +26,7 @@ renderMainPage();
 
 onScroll();
 
-///------- пока не удаляйте ----------
+///------- пока не удаляйте, это теперь переехало в renderMainPage.js ----------
 // fetchPopularMovies(paginationSettings.startPage)
 //   .then(response => {
 //     const totalItems = response.total_results;

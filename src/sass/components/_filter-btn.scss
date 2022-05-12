@@ -1,0 +1,51 @@
+.filter__buttons_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.filter__list {
+    @media screen and (min-width: $tablet) {
+    display: flex;
+    position: absolute;
+    padding-top: 10px;
+    }
+}
+
+.filter__item:not(:last-child) {
+    @media screen and (max-width: $tablet) {
+    margin: 8px auto;
+    }
+
+    @media screen and (min-width: $tablet) {
+        margin-right: 10px;
+    }
+}
+
+.filter__btn {
+    background-color: $text-color-white;
+    color: $hover-orange;
+    border: 2px solid $hover-orange;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 200px;
+    padding: 5px;
+    transition: $box-shadow-transition;
+    
+&:hover,
+&:focus {
+    background-color: $hover-orange;
+    color: $text-color-white;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
+        1px 4px 6px rgba(116, 63, 30, 0.2);
+    }
+    
+}
+
+.filter__btn.active {
+    background-color: $hover-orange;
+    color: $text-color-white;
+}
+

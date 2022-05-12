@@ -2,6 +2,9 @@ import getGenres from './getGenres';
 import fetchGenres from './fetchGenres';
 import empty from '../images/no-image-placeholder.svg';
 
+
+
+
 // Картка details для модалки фільму
 
 export default function renderMovie(container, film) {
@@ -56,7 +59,7 @@ export default function renderMovie(container, film) {
         <ul class="film__list">
           <li class="film__item">
             <p class="film__item-caption">Vote / Votes</p>
-            <p class="film__rating"><span class="film__vote">${film.vote_average}</span>/<span class="film__votes">${film.vote_count}</span></p>
+            <p class="film__rating"><span class="film__vote">${film.vote_average}</span> / <span class="film__votes">${film.vote_count}</span></p>
           </li>
           <li class="film__item">
             <p class="film__item-caption">Popularity</p>
