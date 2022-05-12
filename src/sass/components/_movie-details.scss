@@ -133,6 +133,7 @@
   background-color: transparent;
   border: 1px solid $text-color-black;
   border-radius: 5px;
+  transition: $color-transition, $border-color-transition;
 
   @media screen and (min-width: $tablet) {
     min-width: 125px;
@@ -144,7 +145,7 @@
 
   &:hover:not(.film__button-active) {
     color: $hover-orange;
-    border: 1px solid $hover-orange;
+    border-color: $hover-orange;
   }
 }
 
@@ -152,6 +153,13 @@
   color: $text-color-white;
   background-color: $hover-orange;
   border-color: $hover-orange;
+  transition: $border-color-transition,
+  $bgc-transition;
+
+  &:hover {
+    background-color: $hover-orange-dark;
+    border-color: $hover-orange-dark;
+  }
 }
 
 .film__watched {
