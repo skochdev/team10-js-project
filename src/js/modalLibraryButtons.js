@@ -14,7 +14,7 @@ export function modalQueueButton(event) {
     document.querySelector('.film__queue').textContent = 'Delete from queue';
   } else {
     deleteFilm('queue', id);
-    document.querySelector('.film__queue').textContent = 'Add from queue';
+    document.querySelector('.film__queue').textContent = 'Add to queue';
   }
   if (!refs.libButtons.classList.contains('is-hidden') && refs.libQueueBtn.classList.contains('active')) {
     if (localStorage.getItem('queue')) {
