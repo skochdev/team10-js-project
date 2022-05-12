@@ -23,14 +23,17 @@ export default function openCard(event) {
     const cardIndex = cardFilm.findIndex(item => item.id === cardId);
     const film = cardFilm[cardIndex];
   refs.filmModalBackdrop.classList.remove('is-hidden');
-
   renderMovie(container, film);
   window.addEventListener('keydown', onEscape);
-  if (isFilmInStorage('watched', cardId)) {
-  document.querySelector('.film__watched').textContent = 'Delete from watched';
+  if (localStorage.getItem('watched')) {
+    if (isFilmInStorage('watched', cardId)) {
+      document.querySelector('.film__watched').textContent = 'Delete from watched';
+    }
   }
-  if (isFilmInStorage('queue', cardId)) {
-  document.querySelector('.film__queue').textContent = 'Delete from queue';
+  if (localStorage.getItem('queue')) {
+    if (isFilmInStorage('queue', cardId)) {
+      document.querySelector('.film__queue').textContent = 'Delete from queue';
+    }
   }
   document.querySelector('.film__watched').addEventListener('click', modalWatchedButton);
   document.querySelector('.film__queue').addEventListener('click', modalQueueButton);
