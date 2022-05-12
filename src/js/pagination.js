@@ -118,7 +118,7 @@ export const pagination = ({ totalItems, page }) => {
           renderingPlaceholder();
           onLoaderHidden();
 
-          addDataToLocalStorage(refs.movieKey, response);
+          addDataToLocalStorage(refs.movieKey, response.data);
         })
         .catch(error => console.log(error));
     } else {
