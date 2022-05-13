@@ -51,5 +51,7 @@ export default function getRefs() {
     filmModalContainer: document.querySelector('[data-action="filmModalContainer"]'),
     // рефа pagination
     paginationContainer: document.querySelector('#pagination2'),
+    // рефа модалки фільму
+    filmModalCloseBtn: document.querySelector('.film__modal-closeBtn'),
   };
 }

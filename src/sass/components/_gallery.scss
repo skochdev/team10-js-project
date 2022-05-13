@@ -1,15 +1,14 @@
-.main__wrapper {
+.main-section {
 
-@media screen and (min-width: $mobile) {
+  @media screen and (min-width: $mobile) {
     padding-top: 20px;
     padding-bottom: 40px;
-}
+  }
 
-@media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     padding-top: 60px;
     padding-bottom: 60px;
-}
-
+  }
 }
 
 

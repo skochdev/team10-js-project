@@ -143,6 +143,11 @@
     min-width: 136px;
   }
 
+  .darkmode--activated & {
+    color: $text-color-white;
+    border-color: $text-color-white;
+  }
+
   &:hover:not(.film__button-active) {
     color: $hover-orange;
     border-color: $hover-orange;
@@ -154,6 +159,10 @@
   background-color: $hover-orange;
   border-color: $hover-orange;
   transition: $border-color-transition, $bgc-transition;
+
+  .darkmode--activated & {
+    border-color: $hover-orange;
+  }
 
   &:hover {
     background-color: $hover-orange-dark;

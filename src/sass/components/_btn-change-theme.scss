@@ -15,13 +15,14 @@
 .dark-mode__theme-icon {
   width: 20px;
   height: 20px;
-  fill: $hover-orange;
+  fill: white;
 }
 
 .dark-mode__theme-icon.dark-fill {
   width: 20px;
   height: 20px;
-  fill: rgb(77, 160, 199);
+
+  fill: $hover-orange;
 }
 
 .dark-toggle-switch {
