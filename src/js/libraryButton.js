@@ -7,10 +7,10 @@ export default function libraryButton(storage) {
   const refs = getRefs();
   if (localStorage.getItem(storage)) {
     renderTrending(refs.gallery, JSON.parse(localStorage.getItem(storage)));
+    const votes = refs.gallery.querySelectorAll('.movie__vote');
+    votes.forEach(item => item.classList.remove('movie__vote--position'));
     return;
   } else {
-    // refs.mainRef.innerHTML = nothing_here();
     refs.gallery.innerHTML = nothing_here();
-    // console.info(`Your ${storage} library is empty!`);
   }
 }
