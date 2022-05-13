@@ -47,7 +47,6 @@
 
 .film__modal-closeBtn {
   position: absolute;
-  background-color: $hover-orange;
   top: 8px;
   right: 8px;
   background-color: transparent;
@@ -66,6 +65,15 @@
   &:hover,
   :focus {
     fill: $hover-orange;
+  }
+}
+
+.darkmode--activated .film__modal-close {
+  fill: $hover-orange;
+
+  &:hover,
+  :focus {
+    fill: white;
   }
 }
 
