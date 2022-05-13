@@ -45,13 +45,37 @@
   }
 }
 
+.film__modal-closeBtn {
+  position: absolute;
+  background-color: $hover-orange;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.film__modal-close {
+  width: 14px;
+  height: 14px;
+  transition: $fill-transition;
+
+  &:hover,
+  :focus {
+    fill: $hover-orange;
+  }
+}
+
 .darkmode--activated .film__modal {
-    background-color: #1f1f1f;
-    border: 1px solid $text-color-light-gray;
+  background-color: #1f1f1f;
+  border: 1px solid $text-color-light-gray;
 }
 
 .darkmode--activated .film__caption {
-    color: $text-color-white;
+  color: $text-color-white;
 }
 
 .film__modal-backdrop.is-hidden .film__modal {

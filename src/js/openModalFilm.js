@@ -11,6 +11,8 @@ refs.galleryList.addEventListener('click', openCard);
 const container = refs.filmModalContainer;
 
 export default function openCard(event) {
+  refs.filmModalCloseBtn.addEventListener('click', onFilmModalClose);
+
   if (!event.target.closest('.movie__item')) return;
   if (!event.target.closest('.movie__item').dataset.id) return;
   refs.goTopBtn.classList.remove('show'); // убирает кнопку ВВЕРХ при отркрытии модалки
@@ -55,6 +57,13 @@ export default function openCard(event) {
   refs.filmModalBackdrop.addEventListener('click', onBackdropClick);
 }
 
+function onFilmModalClose() {
+  refs.filmModalCloseBtn.removeEventListener('click', onFilmModalClose);
+  window.removeEventListener('keydown', onEscape);
+  setBodyOverflow('auto');
+  refs.filmModalBackdrop.classList.add('is-hidden');
+}
+
 function onEscape(e) {
   if (e.code === 'Escape') {
     refs.filmModalBackdrop.classList.add('is-hidden');
@@ -69,14 +78,12 @@ function onEscape(e) {
   return;
 }
 
-
 function onBackdropClick(event) {
-
   if (event.currentTarget === event.target) {
     if (window.pageYOffset > document.documentElement.clientHeight) {
       refs.goTopBtn.classList.add('show');
-};
-refs.filmModalBackdrop.classList.add('is-hidden');
+    }
+    refs.filmModalBackdrop.classList.add('is-hidden');
     container.innerHTML = '';
     // включает обратно скролл на body, когда модалка закрывается
     setBodyOverflow('auto');
