@@ -34,7 +34,6 @@ export default function renderMovieCard(film) {
     poster = 'https://image.tmdb.org/t/p/w342' + film.poster_path;
   }
   return `<li class="movie__item" data-id="${film.id}">
-    <div class="movie__card">
       <a href="#" class="movie__link" data-id="${film.id}">
         <img class="movie__poster"
           src="${poster}"
@@ -46,6 +45,5 @@ export default function renderMovieCard(film) {
           <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote movie__vote--position">${film.vote_average.toFixed(1)}</span></p>
         </div>
       </a>
-    </div>
   </li>`;
 }
