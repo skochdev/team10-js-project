@@ -39,7 +39,7 @@ function onFooterModalBackdropClick(e) {
   }
 }
 
-function setBodyOverflow(value) {
+export default function setBodyOverflow(value) {
   document.body.style.overflow = value;
 }
 

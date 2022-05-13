@@ -9,8 +9,6 @@
   }
 }
 
-
-
 .film__poster {
   width: 100%;
   height: auto;
@@ -155,8 +153,7 @@
   color: $text-color-white;
   background-color: $hover-orange;
   border-color: $hover-orange;
-  transition: $border-color-transition,
-  $bgc-transition;
+  transition: $border-color-transition, $bgc-transition;
 
   &:hover {
     background-color: $hover-orange-dark;

@@ -123,6 +123,8 @@
   position: relative;
 }
 
+
+
 .header__input {
   width: 100%;
   border-top: none;
@@ -141,6 +143,10 @@
     border-bottom: 1px solid $hover-orange;
     transition: border-bottom 500ms;
   }
+}
+
+.header__input:focus-visible {
+  outline: none;
 }
 
 .header__input::placeholder {
@@ -316,6 +322,7 @@
   }
 }
 
+
 .is-visible {
   visibility: visible;
   opacity: 1;
@@ -325,3 +332,4 @@
   visibility: visible;
   opacity: 0;
 }
+

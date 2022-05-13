@@ -4,11 +4,24 @@
 
 .dark-toggle {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding-left: 20px;
   position: absolute;
   top: 190px;
   right: 25px;
+}
+
+.dark-mode__theme-icon {
+  width: 20px;
+  height: 20px;
+  fill: $hover-orange;
+}
+
+.dark-mode__theme-icon.dark-fill {
+  width: 20px;
+  height: 20px;
+  fill: rgb(77, 160, 199);
 }
 
 .dark-toggle-switch {
@@ -60,11 +73,11 @@
 }
 
 .dark-toggle-label {
-    margin-right: 5px;
-    position: relative;
-    font-weight: 500;
-    font-size: 17px;
-    text-transform: uppercase;
-    line-height: 1.16;
-    color: $text-color-white;
+  margin-right: 5px;
+  position: relative;
+  font-weight: 500;
+  font-size: 17px;
+  text-transform: uppercase;
+  line-height: 1.16;
+  color: $text-color-white;
 }
