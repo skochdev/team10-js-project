@@ -29,16 +29,17 @@
 
   @media screen and (min-width: 480px) {
     width: 80vw;
-    margin: 20px auto;
   }
 
   @media screen and (min-width: $tablet) {
     width: 704px;
+    margin: 219px auto 0px;
     padding: 40px 36px;
   }
 
   @media screen and (min-width: $desktop) {
     width: 814px;
+    margin: 151px auto 0px;
     padding-left: 16px;
     padding-right: 16px;
   }
