@@ -13,6 +13,7 @@ export default function addFilm(storage, film_id) {
     fetchedObj.genre_ids = fetchedObj.genres.map(item => item.id);
     film_obj = fetchedObj;
   }
+  if (!film_obj) return;
   if (localStorage.getItem(storage)) {
     array = JSON.parse(localStorage.getItem(storage));
   }
