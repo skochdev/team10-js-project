@@ -11,13 +11,10 @@ refs.galleryList.addEventListener('click', openCard);
 const container = refs.filmModalContainer;
 
 export default function openCard(event) {
-  refs.goTopBtn.classList.remove('show'); // убирает кнопку ВВЕРХ при отркрытии модалки
-
-  // выключает скролл на body, когда модалка открыта
-  setBodyOverflow('hidden');
-
   if (!event.target.closest('.movie__item')) return;
   if (!event.target.closest('.movie__item').dataset.id) return;
+  refs.goTopBtn.classList.remove('show'); // убирает кнопку ВВЕРХ при отркрытии модалки
+  setBodyOverflow('hidden'); // выключает скролл на body, когда модалка открыта
   event.preventDefault();
 
   let cardId = Number(event.target.closest('.movie__item').dataset.id);
@@ -34,8 +31,7 @@ export default function openCard(event) {
   ) {
     cardFilm = JSON.parse(localStorage.getItem('queue'));
   } else {
-    const cardObj = JSON.parse(localStorage.getItem('currentFilms'));
-    cardFilm = cardObj.results;
+    cardFilm = JSON.parse(localStorage.getItem('currentFilms')).results;
   }
   const cardIndex = cardFilm.findIndex(item => item.id === cardId);
   const film = cardFilm[cardIndex];
@@ -62,10 +58,8 @@ function onEscape(e) {
   if (e.code === 'Escape') {
     refs.filmModalBackdrop.classList.add('is-hidden');
     container.innerHTML = '';
-
     // включает обратно скролл на body, когда модалка закрывается
     setBodyOverflow('auto');
-
     // включает кнопку ВВЕРХ при закрытии модалки, проверяя высоту
     if (window.pageYOffset > document.documentElement.clientHeight) {
       refs.goTopBtn.classList.add('show');

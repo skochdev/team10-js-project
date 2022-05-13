@@ -1,5 +1,3 @@
-import 'tui-pagination/dist/tui-pagination.css';
-import '../sass/main.scss';
 import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
 import fetchPopularMovies from './fetchPopularMovies';
