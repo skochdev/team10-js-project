@@ -93,10 +93,6 @@
   color: $hover-orange;
 }
 
-.darkmode--activated .movie__genre {
-  color: #0094f7;
-}
-
 .movie__vote {
   display: inline-block;
   margin-left: 8px;
@@ -116,5 +112,4 @@
 
 .darkmode--activated .movie__vote {
   color: $text-color-white;
-  background-color: #0094f7;
 }
