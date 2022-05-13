@@ -51,6 +51,15 @@ export const pagination = ({ totalItems, page }) => {
             '</a>';
         }
 
+        if (type.type === 'last' && options.totalPages < 7) {
+          template =
+            '<a href="#" class="tui-page-btn tui-last hide-last">' +
+            '<span class="tui-ico-{{type}}">' +
+            options.totalPages +
+            '</span>' +
+            '</a>';
+        }
+
         if (type.type === 'prev') {
           template =
             '<a href="#" class="tui-page-btn tui-prev">' +
@@ -82,7 +91,7 @@ export const pagination = ({ totalItems, page }) => {
 
   paginate.on('afterMove', onPageClick);
 
-  function hideBtn(page, lastPage) {
+  function hideBtn(page, lastPage, lastPageFixed) {
     const firstBtn = document.querySelector('.tui-first');
     const lastBtn = document.querySelector('.tui-last');
 
@@ -90,15 +99,20 @@ export const pagination = ({ totalItems, page }) => {
       firstBtn.classList.add('hide-first');
     }
 
-    if (page >= 4) {
+    if (page >= 4 && lastPage >= 7) {
       firstBtn.classList.remove('hide-first');
     }
 
-    if (page > lastPage) {
+    if (page > lastPageFixed) {
       lastBtn.classList.add('hide-last');
     }
-    if (page <= lastPage) {
+    if (page <= lastPageFixed) {
       lastBtn.classList.remove('hide-last');
+    }
+
+    if (lastPage < 7 && page <= 4) {
+      lastBtn.classList.add('hide-last');
+      firstBtn.classList.add('hide-first');
     }
   }
 
@@ -110,9 +124,10 @@ export const pagination = ({ totalItems, page }) => {
       const searchQueryParse = JSON.parse(searchQuery);
       fetchKeyWord(searchQueryParse, event.page)
         .then(response => {
-          const lastPage = response.data.total_pages - 3;
+          const lastPage = response.data.total_pages;
+          const lastPageFixed = lastPage - 3;
+          hideBtn(event.page, lastPage, lastPageFixed);
           renderTrending(refs.gallery, response.data.results);
-          hideBtn(event.page, lastPage);
           renderingPlaceholder();
           onLoaderHidden();
 
@@ -122,9 +137,10 @@ export const pagination = ({ totalItems, page }) => {
     } else {
       fetchPopularMovies(event.page)
         .then(response => {
-          const lastPage = response.total_pages - 3;
+          const lastPage = response.total_pages;
+          const lastPageFixed = lastPage - 3;
           renderTrending(refs.gallery, response.results);
-          hideBtn(event.page, lastPage);
+          hideBtn(event.page, lastPage, lastPageFixed);
           renderingPlaceholder();
           onLoaderHidden();
           addDataToLocalStorage(refs.movieKey, response);

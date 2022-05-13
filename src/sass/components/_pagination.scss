@@ -8,6 +8,14 @@
     }
   }
 
+    .tui-page-btn{
+      margin-right: 3px;
+    }
+
+    .tui-page-btn:last-child {
+      margin-right: 0;
+    }
+
   .tui-page-btn.tui-first.hide-first,
   .tui-page-btn.tui-first.tui-is-disabled,
   .tui-page-btn.tui-last.hide-last,
@@ -29,6 +37,7 @@
 
 
   a.tui-page-btn.tui-last{
+    margin-right: 3px;
     order: 0;
   }
 
@@ -38,11 +47,12 @@
 
   .tui-pagination .tui-next {
     margin-left: 0;
+    margin-right: 0;
     order: 1;
   }
 
   .tui-pagination .tui-prev {
-    margin-right: 0;
+    margin-right: 3px;
     order: -2;
   }
 
