@@ -43,7 +43,7 @@
 }
 
 .darkmode--activated .footer__modal {
-  background-color: #272727;
+  background-color: #2b2a29;
   color: $hover-orange;
 }
 
@@ -55,6 +55,10 @@
   text-align: center;
   margin-bottom: 20px;
   color: $text-color-gray;
+}
+
+.darkmode--activated .footer__modal-title {
+  color: $background-white;
 }
 
 .footer__modal-students {
@@ -86,10 +90,13 @@
   }
 }
 
+.darkmode--activated .student-card__student-name {
+  color: white;
+}
+
 .student-card {
   text-align: center;
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
   width: 100%;
   height: 100%;
   margin: 15px;
@@ -104,7 +111,6 @@
 }
 
 .darkmode--activated .student-card {
-  background-color: #272727;
   color: $hover-orange;
 }
 
