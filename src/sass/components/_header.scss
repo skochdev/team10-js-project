@@ -3,6 +3,7 @@
 .header {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(../images/header320.jpg);
+    background-size: cover;
   background-repeat: no-repeat;
   background-color: $text-color-black;
   background-position: top;
@@ -12,6 +13,7 @@
   padding-top: 46px;
   margin: 0 auto;
   isolation: isolate;
+
   transition: 1000ms $transition-default-timing;
 
   &__my-library {
@@ -27,6 +29,7 @@
     transition: 1000ms $transition-default-timing;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/inernal-header320.jpg);
+      background-size: cover;
   }
 }
 
@@ -36,10 +39,12 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header320@2x.jpg);
+      background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header320@2x.jpg);
+        background-size: cover;
     }
   }
 }
@@ -50,10 +55,12 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header320@3x.jpg);
+      background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header320@3x.jpg);
+        background-size: cover;
     }
   }
 }
@@ -123,8 +130,6 @@
   position: relative;
 }
 
-
-
 .header__input {
   width: 100%;
   border-top: none;
@@ -187,10 +192,12 @@
     padding-top: 41px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768.jpg);
+      background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header768.jpg);
+        background-size: cover;
     }
   }
 }
@@ -201,10 +208,12 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768@2x.jpg);
+      background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header768@2x.jpg);
+        background-size: cover;
     }
   }
 }
@@ -215,10 +224,12 @@
   .header {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header768@3x.jpg);
+      background-size: cover;
 
     &__my-library {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/inernal-header768@3x.jpg);
+        background-size: cover;
     }
   }
 }
