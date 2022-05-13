@@ -20,9 +20,11 @@ function onFooterModalClose() {
   REFS.footerCloseBtnRef.removeEventListener('click', onFooterModalClose);
   REFS.footerModalBackdrop.classList.add('is-hidden');
   setBodyOverflow('auto');
-  if (window.pageYOffset > document.documentElement.clientHeight) {
-    REFS.goTopBtn.classList.add('show', onFooterModalClose);
-  }
+
+  // ошибку в консоль выводит, не понимаю что там такое
+  // if (window.pageYOffset > document.documentElement.clientHeight) {
+  //   REFS.goTopBtn.classList.add('show', onFooterModalClose);
+  // }
 }
 
 // Закрываем мобильное меню на более широких экранах
