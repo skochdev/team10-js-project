@@ -150,3 +150,12 @@
     fill: $hover-orange;
   }
 }
+
+.darkmode--activated .footer__close-icon {
+  fill: $hover-orange;
+
+  &:hover,
+  :focus {
+    fill: $background-white;
+  }
+}
