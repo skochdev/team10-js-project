@@ -52,6 +52,7 @@ export default function openCard(event) {
   }
   document.querySelector('.film__watched').addEventListener('click', modalWatchedButton);
   document.querySelector('.film__queue').addEventListener('click', modalQueueButton);
+  refs.filmModalBackdrop.addEventListener('click', onBackdropClick);
 }
 
 function onEscape(e) {
@@ -66,4 +67,19 @@ function onEscape(e) {
     }
   }
   return;
+}
+
+
+function onBackdropClick(event) {
+
+  if (event.currentTarget === event.target) {
+    if (window.pageYOffset > document.documentElement.clientHeight) {
+      refs.goTopBtn.classList.add('show');
+};
+refs.filmModalBackdrop.classList.add('is-hidden');
+    container.innerHTML = '';
+    // включает обратно скролл на body, когда модалка закрывается
+    setBodyOverflow('auto');
+    refs.filmModalBackdrop.removeEventListener('click', onBackdropClick);
+  }
 }
