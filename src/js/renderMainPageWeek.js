@@ -13,13 +13,11 @@ import 'tui-pagination/dist/tui-pagination.css';
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
 import onHeaderHomeBtnClick from './header-my-library';
-
-
+import sortMovies from './sortMovies';
 
 const refs = getRefs();
 
 export default function renderMainPage() {
-
 fetchPopularMovies(paginationSettings.startPage, 'week').then(response => {
     const totalItems = response.total_results;
     const page = response.page;
@@ -35,7 +33,9 @@ fetchPopularMovies(paginationSettings.startPage, 'week').then(response => {
     onHeaderHomeBtnClick();
     refs.libQueueBtn.classList.remove('active');
     refs.libWatchedBtn.classList.add('active');
-    
+  
+    refs.filterBtnWeekly.classList.add('active');
+    refs.filterBtnDaily.classList.remove('active');    
 
     onLoaderHidden();
   })

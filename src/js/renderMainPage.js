@@ -13,6 +13,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
 import onHeaderHomeBtnClick from './header-my-library';
+import sortMovies from './sortMovies';
+import renderMainPageWeek from './renderMainPageWeek';
 
 const refs = getRefs();
 
@@ -33,6 +35,9 @@ export default function renderMainPage() {
       onHeaderHomeBtnClick();
       refs.libQueueBtn.classList.remove('active');
       refs.libWatchedBtn.classList.add('active');
+
+      refs.filterBtnDaily.classList.add('active');
+      refs.filterBtnWeekly.classList.remove('active');
 
       onLoaderHidden();
     })
