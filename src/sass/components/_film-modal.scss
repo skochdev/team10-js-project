@@ -19,30 +19,32 @@
 .film__modal {
   position: relative;
   display: block;
-
   width: 280px;
   margin: 20px auto;
   padding-top: 48px;
   padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ffffff;
+  background-color: $background-white;
 
-  @media screen and (min-width: 480px) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    margin: 20px auto;
-  }
+  // @media screen and (min-width: 480px) {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   width: 450px;
+  //   margin: 20px auto;
+  // }
 
   @media screen and (min-width: $tablet) {
-    width: 550px;
+    width: 704px;
+    padding: 40px 36px;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 800px;
+    width: 814px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
