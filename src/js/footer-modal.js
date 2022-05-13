@@ -21,7 +21,7 @@ function onFooterModalClose() {
   REFS.footerModalBackdrop.classList.add('is-hidden');
   setBodyOverflow('auto');
   if (window.pageYOffset > document.documentElement.clientHeight) {
-    REFS.goTopBtn.classList.add('show');
+    REFS.goTopBtn.classList.add('show', onFooterModalClose);
   }
 }
 
