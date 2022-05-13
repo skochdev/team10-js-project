@@ -33,7 +33,9 @@ export default function renderMainPage() {
       refs.paginationContainer.classList.remove('visually-hidden');
       onHeaderHomeBtnClick();
       refs.libQueueBtn.classList.remove('active');
-      refs.libWatchedBtn.classList.add('active');       
+      refs.libWatchedBtn.classList.add('active');  
+      
+      refs.filterBtnWeekly.classList.remove('active');
 
       onLoaderHidden();
     })
