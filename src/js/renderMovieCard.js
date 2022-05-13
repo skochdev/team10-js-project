@@ -35,11 +35,18 @@ export default function renderMovieCard(film) {
   }
   return `<li class="movie__item" data-id="${film.id}">
       <a href="#" class="movie__link" data-id="${film.id}">
+        <div class="thumb">
         <img class="movie__poster"
           src="${poster}"
           alt="${film.title} Poster"
           loading="lazy"
         />
+        <div class="overlay">
+        <p class="overlay-text">
+            ${film.overview}
+        </p>
+    </div> 
+        </div>
         <div class="movie__caption">
           <h2 class="movie__title">${film.title}</h2>
           <p class="movie__genre">${genre} | ${film.release_date.slice(0, 4)} <span class="movie__vote movie__vote--position">${film.vote_average.toFixed(1)}</span></p>
