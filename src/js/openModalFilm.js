@@ -62,6 +62,7 @@ function onFilmModalClose() {
   window.removeEventListener('keydown', onEscape);
   setBodyOverflow('auto');
   refs.filmModalBackdrop.classList.add('is-hidden');
+  container.innerHTML = '';
 }
 
 function onEscape(e) {
