@@ -21,8 +21,8 @@
   width: 290px;
   margin: 0 auto;
   border-radius: 2px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -33,11 +33,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 750px;
+    width: 550px;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 900px;
+    width: 750px;
   }
 }
 
@@ -62,6 +62,14 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: -15px;
+}
+
+.student-card:nth-child(1) .student-card__image {
+  object-position: top -10px;
+}
+
+.student-card:nth-child(2) .student-card__image {
+  object-position: top;
 }
 
 .student-card__student-name {
@@ -90,7 +98,7 @@
   }
 
   @media screen and(min-width: $desktop) {
-    // width: calc((100% - 5 * 15px) / 5);
+    width: calc((100% - 4 * 15px) / 4);
   }
 }
 
@@ -108,7 +116,7 @@
   object-position: center;
 
   @media screen and(min-width: $tablet) {
-    height: 200px;
+    height: 150px;
   }
 }
 
