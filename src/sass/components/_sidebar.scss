@@ -18,15 +18,11 @@
   text-transform: uppercase;
 }
 
-.sidebar__list {}
-
 .sidebar__item {
   &:hover {
     color: $hover-orange;
   }
 }
-
-.sidebar__link {}
 
 .sidebar__link--active {
   font-weight: 700;
@@ -38,7 +34,3 @@
     text-decoration: underline;
   }
 }
-
-.sidebar__header-genres {}
-
-.sidebar__list-genres {}
