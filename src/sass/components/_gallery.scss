@@ -1,12 +1,12 @@
 .main-section {
 
   @media screen and (min-width: $mobile) {
-    padding-top: 20px;
+    // padding-top: 10px;
     padding-bottom: 40px;
   }
 
   @media screen and (min-width: $tablet) {
-    padding-top: 60px;
+    padding-top: 10px;
     padding-bottom: 60px;
   }
 }
