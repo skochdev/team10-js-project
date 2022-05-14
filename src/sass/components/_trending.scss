@@ -61,7 +61,7 @@
 .js-placeholder {
   object-fit: contain;
   padding: 30px;
-  background-color: rgb(41, 37, 34);
+  background-color: $text-color-white;
 
   @media screen and (min-width: $tablet) and (max-width: 1023px) {
     position: absolute;
@@ -72,6 +72,10 @@
     overflow: hidden;
     border: 0;
     clip: rect(0 0 0 0);
+  }
+
+  .darkmode--activated & {
+    background-color: $text-color-black;
   }
 }
 
