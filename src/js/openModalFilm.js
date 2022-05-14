@@ -33,7 +33,7 @@ export default function openCard(event) {
   ) {
     cardFilm = JSON.parse(localStorage.getItem('queue'));
   } else {
-    cardFilm = JSON.parse(localStorage.getItem('currentFilms')).results;
+    cardFilm = JSON.parse(localStorage.getItem(refs.movieKey)).results;
   }
   const cardIndex = cardFilm.findIndex(item => item.id === cardId);
   const film = cardFilm[cardIndex];

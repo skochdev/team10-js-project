@@ -1,12 +1,10 @@
 import getGenres from './getGenres';
-import fetchGenres from './fetchGenres';
+import { fetchGenres } from './api';
 import empty from '../images/no-image-placeholder.svg';
 
 // картка фільму головної сторінки, передається об'єкт фільму
 export default function renderMovieCard(film) {
-  const genres = localStorage.getItem('genre_ids')
-    ? JSON.parse(localStorage.getItem('genre_ids'))
-    : fetchGenres();
+  const genres = localStorage.getItem('genre_ids') ? JSON.parse(localStorage.getItem('genre_ids')) : fetchGenres();
   let genre = '';
   let poster = '';
   let releaseYear = 'Year Not Available';

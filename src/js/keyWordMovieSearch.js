@@ -1,11 +1,10 @@
 import getRefs from './get-refs';
 import renderTrending from './renderTrending';
 import renderingPlaceholder from './renderingPlaceholder';
-import fetchKeyWord from './fetchKeyWord';
+import { fetchKeyWord } from './api';
 import onLoaderHidden from './onLoaderHidden';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import { pagination, paginationSettings } from './pagination';
-import { debounce, throttle } from 'lodash';
 
 const refs = getRefs();
 let searchQuery = '';
@@ -33,9 +32,9 @@ function onFormSubmit(evt) {
 
 function onFetchMovieRequest(movies) {
   paginationSettings.searchType = 'keyWord';
-  const moviesArray = movies.data.results;
-  const totalItems = movies.data.total_results;
-  const page = movies.data.page;
+  const moviesArray = movies.results;
+  const totalItems = movies.total_results;
+  const page = movies.page;
 
   pagination({ totalItems, page });
 
@@ -43,9 +42,9 @@ function onFetchMovieRequest(movies) {
     throw new Error(res.status);
   }
 
-  renderTrending(refs.gallery, moviesArray);
+  renderTrending(refs.gallery, movies.results);
   renderingPlaceholder();
-  addDataToLocalStorage(refs.movieKey, movies.data);
+  addDataToLocalStorage(refs.movieKey, movies);
   onLoaderHidden();
 }
 
@@ -57,8 +56,8 @@ function onFetchMovieError() {
   refs.errorWindowRef.classList.remove('out-visible')
 
   timeOut = setTimeout(() => { errorNotification; hideErrorNotification()}, 3000)
- 
-  refs.errorWindowRef.innerHTML = errorNotification;  
+
+  refs.errorWindowRef.innerHTML = errorNotification;
 }
 
 function hideErrorNotification() {

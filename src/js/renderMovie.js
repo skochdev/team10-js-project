@@ -1,9 +1,6 @@
 import getGenres from './getGenres';
-import fetchGenres from './fetchGenres';
+import { fetchGenres } from './api';
 import empty from '../images/no-image-placeholder.svg';
-
-
-
 
 // Картка details для модалки фільму
 

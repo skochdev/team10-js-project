@@ -1,7 +1,7 @@
 import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
-import fetchPopularMovies from './fetchPopularMovies';
-import fetchKeyWord from './fetchKeyWord';
+import { fetchTrendingMovies } from './api';
+import { fetchKeyWord } from './api';
 import renderTrending from './renderTrending';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import onLoaderHidden from './onLoaderHidden';
@@ -118,24 +118,23 @@ export const pagination = ({ totalItems, page }) => {
 
   function onPageClick(event) {
     onLoaderVisible();
-    window.scrollTo(0, 0); // scroll to top when pagination is clickec
+    window.scrollTo(0, 0); // scroll to top when pagination is clicked
     if (paginationSettings.searchType === 'keyWord') {
       const searchQuery = localStorage.getItem('searchQuery');
       const searchQueryParse = JSON.parse(searchQuery);
       fetchKeyWord(searchQueryParse, event.page)
         .then(response => {
-          const lastPage = response.data.total_pages;
+          const lastPage = response.total_pages;
           const lastPageFixed = lastPage - 3;
           hideBtn(event.page, lastPage, lastPageFixed);
-          renderTrending(refs.gallery, response.data.results);
+          renderTrending(refs.gallery, response.results);
           renderingPlaceholder();
           onLoaderHidden();
-
-          addDataToLocalStorage(refs.movieKey, response.data);
+          addDataToLocalStorage(refs.movieKey, response);
         })
         .catch(error => console.log(error));
     } else {
-      fetchPopularMovies(event.page)
+      fetchTrendingMovies(event.page)
         .then(response => {
           const lastPage = response.total_pages;
           const lastPageFixed = lastPage - 3;
@@ -148,6 +147,5 @@ export const pagination = ({ totalItems, page }) => {
         .catch(error => console.log(error));
     }
   }
-
   return paginate;
 };
