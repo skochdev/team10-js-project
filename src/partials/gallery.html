@@ -1,18 +1,36 @@
 <section class="main-section">
-<div class="filter__buttons_wrapper">
-        <ul class="filter__list">
-            <li class="filter__item">
-                <button class="filter__btn" type="button" data-action="day">Daily trending</button>
-            </li>
-            <li class="filter__item">
-                <button class="filter__btn" type="button" data-action="week">Weekly trending</button>
-            </li>
-        </ul>
-    </div> 
+  <div class="filter__buttons_wrapper">
+    <ul class="filter__list">
+      <li class="filter__item">
+        <button class="filter__btn" type="button" data-action="day">Daily trending</button>
+      </li>
+      <li class="filter__item">
+        <button class="filter__btn" type="button" data-action="week">Weekly trending</button>
+      </li>
+    </ul>
+  </div>
   <div class="container main__wrapper">
     <h1 class="visually-hidden">Discover the latest and most popular movies with Filmoteka</h1>
     <ul class="gallery movie__list" data-action="galleryList"></ul>
     <div id="pagination2" class="tui-pagination"></div>
+    <div class="sidebar visually-hidden">
+      <h2 class="sidebar__header">Sort by:</h2>
+      <ul class="sidebar__list">
+        <li class="sidebar__item"><a class="sidebar__link" href="#" data-sortBy="Name">Name</a></li>
+        <li class="sidebar__item"><a class="sidebar__link" href="#" data-sortBy="Vote">Vote</a></li>
+        <li class="sidebar__item">
+          <a class="sidebar__link" href="#" data-sortBy="Popularity">Popularity</a>
+        </li>
+        <li class="sidebar__item"><a class="sidebar__link" href="#" data-sortBy="Year">Year</a></li>
+        <li class="sidebar__item">
+          <a class="sidebar__link sidebar__link--active" href="#" data-sortBy="AdditionDate"
+            >Library Addition Date</a
+          >
+        </li>
+      </ul>
+      <h2 class="sidebar__header sidebar__header-genres">Genres:</h2>
+      <ul class="sidebar__list sidebar__list-genres"></ul>
+    </div>
   </div>
   <button type="button" class="btn-up">
     <svg class="icon-up" width="12" height="12">
