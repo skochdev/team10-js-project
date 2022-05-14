@@ -1,15 +1,14 @@
 // .darkmode-background {
 //   background: transparent !important;
 // }
-
 .dark-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding-left: 20px;
   position: absolute;
-  top: 190px;
-  right: 25px;
+  top: 150px;
+  right: 32px;
+  z-index: 1000;
 }
 
 .dark-mode__theme-icon {
