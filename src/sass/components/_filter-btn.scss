@@ -45,6 +45,11 @@
     
 }
 
+.filter__btn.active {
+    background-color: $hover-orange;
+    color: $text-color-white;
+}
+
 .darkmode--activated .filter__btn {
     background-color: $text-color-black;
     &:hover,
@@ -72,8 +77,5 @@
 }
 }
 
-// .filter__btn.active {
-//     background-color: $hover-orange;
-//     color: $text-color-white;
-// }
+
 
