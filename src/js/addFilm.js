@@ -1,5 +1,5 @@
 import getRefs from "./get-refs";
-import fetchMovieById from "./fetchMovieById";
+import { fetchMovieById } from "./api";
 
 // функції передається рядок 'queue' або 'watched', ідентифікатор фільму
 export default function addFilm(storage, film_id) {

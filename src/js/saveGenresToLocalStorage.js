@@ -1,4 +1,4 @@
-import fetchGenres from './fetchGenres';
+import { fetchGenres } from "./api";
 
 export default function saveGenresToLocalStorage() {
   return fetchGenres().then(data => {

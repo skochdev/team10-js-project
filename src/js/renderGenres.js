@@ -1,5 +1,5 @@
 import getRefs from './get-refs';
-import fetchGenres from './fetchGenres';
+import { fetchGenres } from './api';
 
 const refs = getRefs();
 // перелік жанрів для виведення до бічної панелі сортування бібліотеки фільмів
