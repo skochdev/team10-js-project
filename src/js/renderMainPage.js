@@ -22,7 +22,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        refs.filterBtnDaily.classList.add('filter__btn--active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
