@@ -1,82 +1,91 @@
-.filter__buttons_wrapper {
-  margin-bottom: 32px;
-}
-
 .filter__list {
   width: 100%;
 
-    @media screen and (min-width: $tablet) {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 32px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .filter__item:not(:last-child) {
-    @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     margin: 8px auto;
-    }
+  }
 }
 
 .filter__btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
-    background-color: $text-color-white;
-    color: $hover-orange;
-    border: 2px solid $hover-orange;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.67;
-    width: 200px;
-    padding: 5px;
-    transition: $box-shadow-transition;
+  background-color: $text-color-white;
+  color: $hover-orange;
+  border: 1px solid $hover-orange;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1;
+  min-width: 70px;
+  padding: 5px;
+  transition: $box-shadow-transition;
 
   @media screen and (min-width: $tablet) {
-    font-size: 14px;
+    font-size: 13px;
   }
 
-&:hover,
-&:focus {
+  @media screen and (min-width: $desktop) {
+    height: 30px;
+    min-width: 90px;
+  }
+
+  &:hover,
+  &:focus {
     background-color: $hover-orange;
     color: $text-color-white;
     cursor: pointer;
     box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
-        1px 4px 6px rgba(116, 63, 30, 0.2);
-    }
+      1px 4px 6px rgba(116, 63, 30, 0.2);
+  }
 }
 
 .filter__btn--active {
-    background-color: $hover-orange;
-    color: $text-color-white;
+  background-color: $hover-orange;
+  color: $text-color-white;
 }
 
 .darkmode--activated .filter__btn {
-    background-color: $text-color-black;
-    &:hover,
-    &:focus {
-            background-color: $hover-orange;
-            color: $text-color-white;
-            cursor: pointer;
-            box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
-                1px 4px 6px rgba(116, 63, 30, 0.2);
-        }
+  background-color: $text-color-black;
+  &:hover,
+  &:focus {
+    background-color: $hover-orange;
+    color: $text-color-white;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
+      1px 4px 6px rgba(116, 63, 30, 0.2);
+  }
 }
 
-    .darkmode--activated .filter__btn {
-            background-color: $text-color-white;
-            color: #0094f7;
-            border-color: #0094f7;
+.darkmode--activated .filter__btn {
+  background-color: $hover-orange;
+  color: $text-color-white;
+  border-color: $hover-orange;
 
-            &:hover,
-            &:focus {
-                color: $text-color-black;
-                background-color: #0094f7;
-                box-shadow: none;
-            }
+  &:hover,
+  &:focus {
+    color: $text-color-black;
+    background-color: $hover-orange;
+    box-shadow: none;
+  }
 }
-
-
-
