@@ -1,14 +1,33 @@
 // .darkmode-background {
 //   background: transparent !important;
 // }
+
 .dark-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 150px;
-  right: 32px;
+  top: 172px;
+  right: 50%;
+  transform: translate(480px, 0);
   z-index: 1000;
+
+  & {
+    @media screen and (min-width: $mobile) {
+      top: 190px;
+      transform: translate(138px, 0);
+    }
+
+    @media screen and (min-width: $tablet) {
+      top: 180px;
+      transform: translate(348px, 0);
+    }
+
+    @media screen and (min-width: $desktop) {
+      top: 172px;
+      transform: translate(480px, 0);
+    }
+  }
 }
 
 .dark-mode__theme-icon {
