@@ -36,7 +36,7 @@ export async function fetchTrendingMovies(page = 1, period = 'day') {
 export async function fetchTopRatedMovies(page = 1) {
   onLoaderVisible();
   const { data } = await axios(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en&page=${page}`,
   );
   return data;
 }

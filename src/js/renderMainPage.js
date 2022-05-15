@@ -10,7 +10,7 @@ import addDataToLocalStorage from './addDataToLocalStorage';
 import renderingPlaceholder from './renderingPlaceholder';
 import { pagination, paginationSettings } from './pagination';
 import onLoaderHidden from './onLoaderHidden';
-import onHeaderHomeBtnClick from './header-my-library';
+// import onHeaderHomeBtnClick from './header-my-library';
 
 const refs = getRefs();
 
@@ -26,10 +26,10 @@ export default function renderMainPage(mode = 'day') {
         renderingPlaceholder();
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
         onLoaderHidden();
       })
       .catch(error => console.log(error));
+    return;
   } else if (mode === 'week') {
     fetchTrendingMovies(paginationSettings.startPage, 'week')
       .then(response => {
@@ -41,10 +41,10 @@ export default function renderMainPage(mode = 'day') {
         renderingPlaceholder();
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
         onLoaderHidden();
       })
       .catch(error => console.log(error));
+    return;
   } else if (mode === 'topRated') {
     fetchTopRatedMovies(paginationSettings.startPage)
       .then(response => {
@@ -56,10 +56,10 @@ export default function renderMainPage(mode = 'day') {
         renderingPlaceholder();
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
         onLoaderHidden();
       })
       .catch(error => console.log(error));
+    return;
   } else if (mode === 'upcoming') {
     fetchUpcomingMovies(paginationSettings.startPage)
       .then(response => {
@@ -71,36 +71,35 @@ export default function renderMainPage(mode = 'day') {
         renderingPlaceholder();
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
         onLoaderHidden();
       })
       .catch(error => console.log(error));
+    return;
   } else {
     fetchNowPlayingMovies(paginationSettings.startPage)
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
         paginationSettings.searchType = 'nowPlayingMovies';
-        pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
-        addDataToLocalStorage(refs.movieKey, response);
+        pagination({ totalItems, page });
         refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
+        addDataToLocalStorage(refs.movieKey, response);
         onLoaderHidden();
       })
       .catch(error => console.log(error));
   }
 }
 
-refs.homeRef.addEventListener('click', renderMainPage);
-refs.logoRef.addEventListener('click', renderMainPage);
+// refs.homeRef.addEventListener('click', renderMainPage('day'));
+// refs.logoRef.addEventListener('click', renderMainPage('day'));
 refs.filterList.addEventListener('click', onFilterClick);
 
 function onFilterClick(event) {
   if (event.target.nodeName !== 'BUTTON') return;
   const currentBtn = event.target;
-  const previousBtn = document.querySelector('.filter__btn--active');
+  const previousBtn = refs.filterList.querySelector('.filter__btn--active');
   const mode = event.target.dataset.action;
   renderMainPage(mode);
   changeActiveButton(currentBtn, previousBtn);
