@@ -1,10 +1,17 @@
 .sidebar {
   position: absolute;
-  top: 0;
+  top: 300px;
   left: 50%;
   transform: translate(530px, 0);
   font-size: 14px;
   color: $text-color-black;
+
+  & {
+    @media screen and (max-width: 1023px) {
+        display: none;
+      }
+  }
+
 
   .darkmode--activated & {
     color: $text-color-white;
