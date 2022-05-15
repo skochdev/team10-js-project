@@ -32,7 +32,6 @@ export default function getRefs() {
     filterBtnDaily: document.querySelector('[data-action="day"]'),
     filterBtnWeekly: document.querySelector('[data-action="week"]'),
     filterBtnTopRated: document.querySelector('[data-action="topRated"]'),
-    filterBtnPopular: document.querySelector('[data-action="popular"]'),
     filterBtnUpcoming: document.querySelector('[data-action="upcoming"]'),
     filterBtnNowPlaying: document.querySelector('[data-action="nowPlaying"]'),
     gallery: document.querySelector('.gallery'),
