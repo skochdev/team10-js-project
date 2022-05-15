@@ -22,8 +22,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         refs.filterBtnDaily.classList.add('filter__btn--active');
         onLoaderHidden();
       })
@@ -40,8 +38,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
@@ -57,8 +53,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
@@ -74,8 +68,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
@@ -91,8 +83,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
@@ -108,8 +98,6 @@ export default function renderMainPage(mode = 'day') {
         addDataToLocalStorage(refs.movieKey, response);
         refs.paginationContainer.classList.remove('visually-hidden');
         onHeaderHomeBtnClick();
-        // refs.libQueueBtn.classList.remove('active');
-        // refs.libWatchedBtn.classList.add('active');
         onLoaderHidden();
       })
       .catch(error => console.log(error));
