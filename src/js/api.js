@@ -27,7 +27,10 @@ export async function fetchTrendingMovies(page = 1, period = 'day') {
 // Запит фільмів з найбільшими оцінками (рейтингом)
 export async function fetchTopRatedMovies(page = 1) {
   onLoaderVisible();
-  const { data } = await axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`);
+  if (page > 500) {
+    page = 1;
+  }
+  const { data } = await axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en&page=${page}`);
   return data;
 }
 // Запит популярних фільмів (за користувацькою ознакою популярності)
