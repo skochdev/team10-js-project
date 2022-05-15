@@ -1,14 +1,15 @@
 import getRefs from "./get-refs";
 import libraryButton from './libraryButton';
 import librarySidebar from "./librarySidebar";
+import renderMainPage from './renderMainPage';
 
 const refs = getRefs();
 
-// refs.homeRef.addEventListener('click', onHeaderHomeBtnClick); // homeRef: document.querySelector('[data-link="home"]')
+refs.homeRef.addEventListener('click', onHeaderHomeBtnClick); // homeRef: document.querySelector('[data-link="home"]')
 refs.myLibraryRef.addEventListener('click', onMyLibraryBtnClick); // myLibraryRef: document.querySelector('[data-link="my-library"]')
 refs.libWatchedBtn.addEventListener('click', onWatchedBtnClick);
 refs.libQueueBtn.addEventListener('click', onQueueBtnClick);
-// refs.logoRef.addEventListener('click', onHeaderHomeBtnClick);
+refs.logoRef.addEventListener('click', onHeaderHomeBtnClick);
 
 
 export default function onHeaderHomeBtnClick() {
@@ -22,6 +23,7 @@ export default function onHeaderHomeBtnClick() {
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.remove('visually-hidden');
     refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
     refs.filterBtnDaily.classList.add('filter__btn--active');
+    renderMainPage('day');
 }
 
 function onMyLibraryBtnClick() {

@@ -1,6 +1,4 @@
 .filter__list {
-  width: 100%;
-
   display: none;
 
   @media screen and (min-width: $tablet) {
@@ -10,32 +8,15 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  @media screen and (min-width: $desktop) {
-    margin-bottom: 32px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
-.filter__item{
-  @media screen and (min-width: $tablet) {
-      flex: 0 0 25%;
-    }
-}
-
-.filter__item:not(:last-child) {
-  @media screen and (max-width: 767px) {
-    margin: 8px auto;
-  }
-}
+// .filter__item{
+//   @media screen and (min-width: $tablet) {
+      // flex: 0 0 25%;
+//     }
+// }
 
 .filter__btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   background-color: $text-color-white;
   color: $hover-orange;
   border: 1px solid $hover-orange;
