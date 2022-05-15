@@ -1,24 +1,19 @@
 import getRefs from './get-refs';
-import saveGenresToLocalStorage from './saveGenresToLocalStorage';
 import renderTrending from './renderTrending';
-import fetchPopularMovies from './fetchPopularMovies';
-import addTestWatchedQueue from './addTestWatchedQueue';
+import { fetchTrendingMovies } from './api';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import onScroll from './scrollUpBtn';
 import renderingPlaceholder from './renderingPlaceholder';
-
 import { pagination, paginationSettings } from './pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
 import onHeaderHomeBtnClick from './header-my-library';
-import sortMovies from './sortMovies';
+import renderMainPage from './renderMainPage';
 
 const refs = getRefs();
 
-export default function renderMainPage() {
-fetchPopularMovies(paginationSettings.startPage, 'week').then(response => {
+export default function renderMainPageWeek() {
+fetchTrendingMovies(paginationSettings.startPage, 'week').then(response => {
     const totalItems = response.total_results;
     const page = response.page;
     paginationSettings.searchType = 'popular';
@@ -33,9 +28,9 @@ fetchPopularMovies(paginationSettings.startPage, 'week').then(response => {
     onHeaderHomeBtnClick();
     refs.libQueueBtn.classList.remove('active');
     refs.libWatchedBtn.classList.add('active');
-  
+
     refs.filterBtnWeekly.classList.add('active');
-    refs.filterBtnDaily.classList.remove('active');    
+    refs.filterBtnDaily.classList.remove('active');
 
     onLoaderHidden();
   })
@@ -44,4 +39,6 @@ fetchPopularMovies(paginationSettings.startPage, 'week').then(response => {
 
 refs.homeRef.addEventListener('click', renderMainPage);
 refs.logoRef.addEventListener('click', renderMainPage);
+refs.filterBtnDaily.addEventListener('click', renderMainPage);
+refs.filterBtnWeekly.addEventListener('click', renderMainPageWeek);
 
