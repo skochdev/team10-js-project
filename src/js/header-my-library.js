@@ -19,7 +19,7 @@ export default function onHeaderHomeBtnClick() {
     refs.myLibraryRef.classList.remove('current'); // знімається помаранчеве підкреслення з кнопки My library
     refs.headerRef.classList.remove('header__my-library');  // видаляється фонове зображення My library
     refs.mainRef.querySelector('.sidebar').classList.add('visually-hidden');
-    refs.filterList.classList.remove('visually-hidden');
+    refs.mainRef.querySelector('.filter__buttons_wrapper').classList.remove('visually-hidden');
 }
 
 function onMyLibraryBtnClick() {
@@ -33,7 +33,7 @@ function onMyLibraryBtnClick() {
     refs.paginationContainer.classList.add('visually-hidden');
     libraryButton('watched');
     librarySidebar();
-    refs.filterList.classList.remove('visually-hidden');
+    refs.mainRef.querySelector('.filter__buttons_wrapper').classList.add('visually-hidden');
 }
 
 function onWatchedBtnClick() {
