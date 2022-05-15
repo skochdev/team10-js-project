@@ -79,3 +79,9 @@
       1px 4px 6px rgba(116, 63, 30, 0.2);
   }
 }
+
+.darkmode--activated .filter__btn--active {
+  background-color: $background-white;
+  background-color: $hover-orange;
+  color: $text-color-white;
+}
