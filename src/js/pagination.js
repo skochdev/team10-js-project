@@ -1,6 +1,11 @@
 import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
-import { fetchTrendingMovies } from './api';
+import {
+  fetchTrendingMovies,
+  fetchTopRatedMovies,
+  fetchUpcomingMovies,
+  fetchNowPlayingMovies,
+} from './api';
 import { fetchKeyWord } from './api';
 import renderGallery from './renderGallery';
 import addDataToLocalStorage from './addDataToLocalStorage';
@@ -20,6 +25,9 @@ export const paginationSettings = {
 };
 
 export const pagination = ({ totalItems, page }) => {
+  const searchQuery = localStorage.getItem('searchQuery');
+  const searchQueryParse = JSON.parse(searchQuery);
+  let currentPage;
   const options = {
     totalItems,
     totalPages: Math.ceil(totalItems / 20),
@@ -91,6 +99,47 @@ export const pagination = ({ totalItems, page }) => {
 
   paginate.on('afterMove', onPageClick);
 
+  function onPageClick(event) {
+    currentPage = event.page;
+    onLoaderVisible();
+    window.scrollTo(0, 0); // scroll to top when pagination is clicked
+    if (paginationSettings.searchType === 'keyWord') {
+      fetchKeyWord(searchQueryParse, event.page)
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    } else if (paginationSettings.searchType === 'trendingDay') {
+      fetchTrendingMovies(event.page)
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    } else if (paginationSettings.searchType === 'trendingWeek') {
+      fetchTrendingMovies(event.page, 'week')
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    } else if (paginationSettings.searchType === 'topRated') {
+      fetchTopRatedMovies(event.page)
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    } else if (paginationSettings.searchType === 'upcoming') {
+      fetchUpcomingMovies(event.page)
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    } else {
+      fetchNowPlayingMovies(event.page)
+        .then(onPageClickSuccess)
+        .catch(error => console.log(error));
+    }
+  }
+
+  function onPageClickSuccess(response) {
+    const lastPage = response.total_pages;
+    const lastPageFixed = lastPage - 3;
+    hideBtn(currentPage, lastPage, lastPageFixed);
+    renderGallery(response.results);
+    renderingPlaceholder();
+    onLoaderHidden();
+    addDataToLocalStorage(refs.movieKey, response);
+  }
+
   function hideBtn(page, lastPage, lastPageFixed) {
     const firstBtn = document.querySelector('.tui-first');
     const lastBtn = document.querySelector('.tui-last');
@@ -116,36 +165,5 @@ export const pagination = ({ totalItems, page }) => {
     }
   }
 
-  function onPageClick(event) {
-    onLoaderVisible();
-    window.scrollTo(0, 0); // scroll to top when pagination is clicked
-    if (paginationSettings.searchType === 'keyWord') {
-      const searchQuery = localStorage.getItem('searchQuery');
-      const searchQueryParse = JSON.parse(searchQuery);
-      fetchKeyWord(searchQueryParse, event.page)
-        .then(response => {
-          const lastPage = response.total_pages;
-          const lastPageFixed = lastPage - 3;
-          hideBtn(event.page, lastPage, lastPageFixed);
-          renderGallery(response.results);
-          renderingPlaceholder();
-          onLoaderHidden();
-          addDataToLocalStorage(refs.movieKey, response);
-        })
-        .catch(error => console.log(error));
-    } else {
-      fetchTrendingMovies(event.page)
-        .then(response => {
-          const lastPage = response.total_pages;
-          const lastPageFixed = lastPage - 3;
-          renderGallery(response.results);
-          hideBtn(event.page, lastPage, lastPageFixed);
-          renderingPlaceholder();
-          onLoaderHidden();
-          addDataToLocalStorage(refs.movieKey, response);
-        })
-        .catch(error => console.log(error));
-    }
-  }
   return paginate;
 };
