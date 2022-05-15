@@ -25,6 +25,8 @@ export default function renderMainPage() {
       refs.libQueueBtn.classList.remove('active');
       refs.libWatchedBtn.classList.add('active');
       refs.filterBtnDaily.classList.add('active');
+      refs.filterBtnWeekly.classList.remove('active');
+
       onLoaderHidden();
     })
     .catch(error => console.log(error));
