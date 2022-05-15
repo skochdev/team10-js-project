@@ -2,7 +2,7 @@ import getRefs from './get-refs';
 import Pagination from 'tui-pagination';
 import { fetchTrendingMovies } from './api';
 import { fetchKeyWord } from './api';
-import renderTrending from './renderTrending';
+import renderGallery from './renderGallery';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import onLoaderHidden from './onLoaderHidden';
 import onLoaderVisible from './onLoaderVisible';
@@ -127,7 +127,7 @@ export const pagination = ({ totalItems, page }) => {
           const lastPage = response.total_pages;
           const lastPageFixed = lastPage - 3;
           hideBtn(event.page, lastPage, lastPageFixed);
-          renderTrending(refs.gallery, response.results);
+          renderGallery(response.results);
           renderingPlaceholder();
           onLoaderHidden();
           addDataToLocalStorage(refs.movieKey, response);
@@ -138,7 +138,7 @@ export const pagination = ({ totalItems, page }) => {
         .then(response => {
           const lastPage = response.total_pages;
           const lastPageFixed = lastPage - 3;
-          renderTrending(refs.gallery, response.results);
+          renderGallery(response.results);
           hideBtn(event.page, lastPage, lastPageFixed);
           renderingPlaceholder();
           onLoaderHidden();

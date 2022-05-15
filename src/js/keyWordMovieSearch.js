@@ -1,5 +1,5 @@
 import getRefs from './get-refs';
-import renderTrending from './renderTrending';
+import renderGallery from './renderGallery';
 import renderingPlaceholder from './renderingPlaceholder';
 import { fetchKeyWord } from './api';
 import onLoaderHidden from './onLoaderHidden';
@@ -42,7 +42,7 @@ function onFetchMovieRequest(movies) {
     throw new Error(res.status);
   }
 
-  renderTrending(refs.gallery, movies.results);
+  renderGallery(movies.results);
   renderingPlaceholder();
   addDataToLocalStorage(refs.movieKey, movies);
   onLoaderHidden();

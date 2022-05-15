@@ -2,7 +2,7 @@ import addFilm from './addFilm';
 import deleteFilm from './deleteFilm';
 import isFilmInStorage from './isFilmInStorage';
 import getRefs from './get-refs';
-import renderTrending from './renderTrending';
+import renderGallery from './renderGallery';
 import nothing_here from './nothing_here';
 
 const refs = getRefs();
@@ -27,7 +27,7 @@ export default function modalButton(event) {
   }
   if (!refs.libButtons.classList.contains('is-hidden') && libButtonRef.classList.contains('active')) {
     if (localStorage.getItem(storage)) {
-      renderTrending(refs.gallery, JSON.parse(localStorage.getItem(storage)));
+      renderGallery(JSON.parse(localStorage.getItem(storage)));
     } else {
       refs.gallery.innerHTML = nothing_here();
     }
