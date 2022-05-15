@@ -117,7 +117,6 @@ function onFilterClick(event) {
 }
 
 function changeActiveButton(current, previous) {
-  console.log(previous, current);
   previous.classList.remove('filter__btn--active');
   current.classList.add('filter__btn--active');
 }
