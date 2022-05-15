@@ -94,18 +94,3 @@ export default function renderMainPage(mode = 'day') {
 
 // refs.homeRef.addEventListener('click', renderMainPage('day'));
 // refs.logoRef.addEventListener('click', renderMainPage('day'));
-refs.filterList.addEventListener('click', onFilterClick);
-
-function onFilterClick(event) {
-  if (event.target.nodeName !== 'BUTTON') return;
-  const currentBtn = event.target;
-  const previousBtn = refs.filterList.querySelector('.filter__btn--active');
-  const mode = event.target.dataset.action;
-  renderMainPage(mode);
-  changeActiveButton(currentBtn, previousBtn);
-}
-
-function changeActiveButton(current, previous) {
-  previous.classList.remove('filter__btn--active');
-  current.classList.add('filter__btn--active');
-}
