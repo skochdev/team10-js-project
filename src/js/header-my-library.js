@@ -20,6 +20,8 @@ export default function onHeaderHomeBtnClick() {
     refs.headerRef.classList.remove('header__my-library');  // видаляється фонове зображення My library
     refs.mainRef.querySelector('.sidebar').classList.add('visually-hidden');
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.remove('visually-hidden');
+    refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+    refs.filterBtnDaily.classList.add('filter__btn--active');
 }
 
 function onMyLibraryBtnClick() {
