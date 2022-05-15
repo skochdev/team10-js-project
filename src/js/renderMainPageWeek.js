@@ -1,5 +1,5 @@
 import getRefs from './get-refs';
-import renderTrending from './renderTrending';
+import renderGallery from './renderGallery';
 import { fetchTrendingMovies } from './api';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import onScroll from './scrollUpBtn';
@@ -19,7 +19,7 @@ fetchTrendingMovies(paginationSettings.startPage, 'week').then(response => {
     paginationSettings.searchType = 'popular';
     pagination({ totalItems, page });
 
-    renderTrending(refs.gallery, response.results);
+    renderGallery(response.results);
 
     renderingPlaceholder();
 

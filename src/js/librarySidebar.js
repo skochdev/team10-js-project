@@ -1,6 +1,6 @@
 import getRefs from "./get-refs";
 import renderGenres from "./renderGenres";
-import renderTrending from "./renderTrending";
+import renderGallery from "./renderGallery";
 
 const refs = getRefs();
 
@@ -74,8 +74,7 @@ export default function librarySidebar() {
         changeActive(activeFilter, sidebar.querySelector('[data-genreid="all"]'));
       }
       renderSortedMovies(array);
-    }
-    if (event.target.dataset.genreid) {
+    } else if (event.target.dataset.genreid) {
       if (activeSort.dataset.sortby === 'Name') {
         array.sort((firstFilm, secondFilm) => firstFilm.title.localeCompare(secondFilm.title));
       } else if (activeSort.dataset.sortby === 'Vote') {
@@ -87,17 +86,16 @@ export default function librarySidebar() {
       }
       const newArr = array.filter(item => item.genre_ids.includes(Number(event.target.dataset.genreid)));
       const genreId = Number(event.target.dataset.genreid);
-      const genreSelector = `[data-genreid="${genreId}"]`;
+      const genreSelector = '[data-genreid="' + genreId + '"]';
       renderSortedMovies(newArr);
       changeActive(activeFilter, sidebar.querySelector(genreSelector));
       return;
     }
   });
-
 }
 
 function renderSortedMovies(array) {
-  renderTrending(refs.gallery, array);
+  renderGallery(array);
   const votes = refs.gallery.querySelectorAll('.movie__vote');
   votes.forEach(item => item.classList.remove('movie__vote--position'));
 }
