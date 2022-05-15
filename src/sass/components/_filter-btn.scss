@@ -39,7 +39,7 @@
   line-height: 1;
   min-width: 70px;
   padding: 5px;
-  transition: $box-shadow-transition;
+  transition: $box-shadow-transition, $fill-transition, $bgc-transition;
 
   @media screen and (min-width: $tablet) {
     font-size: 13px;
@@ -69,6 +69,7 @@
   background-color: $text-color-black;
   color: $text-color-white;
   background-color: transparent;
+
   &:hover,
   &:focus {
     background-color: $hover-orange;
