@@ -2,6 +2,7 @@ import getRefs from './get-refs';
 import renderGallery from './renderGallery';
 import renderingPlaceholder from './renderingPlaceholder';
 import { fetchKeyWord } from './api';
+import renderMainPage from './renderMainPage';
 import onLoaderHidden from './onLoaderHidden';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import { pagination, paginationSettings } from './pagination';
@@ -49,18 +50,22 @@ function onFetchMovieRequest(movies) {
 }
 
 function onFetchMovieError() {
-  const errorNotification = 'Please, enter the correct movie name and try again' ;
+  const errorNotification = 'Please, enter the correct movie name and try again';
+  renderMainPage('day');
   onLoaderHidden();
 
-  refs.errorWindowRef.classList.add('is-visible')
-  refs.errorWindowRef.classList.remove('out-visible')
+  refs.errorWindowRef.classList.add('is-visible');
+  refs.errorWindowRef.classList.remove('out-visible');
 
-  timeOut = setTimeout(() => { errorNotification; hideErrorNotification()}, 3000)
+  timeOut = setTimeout(() => {
+    errorNotification;
+    hideErrorNotification();
+  }, 3000);
 
   refs.errorWindowRef.innerHTML = errorNotification;
 }
 
 function hideErrorNotification() {
-  refs.errorWindowRef.classList.add('out-visible')
-  refs.errorWindowRef.classList.remove('is-visible')
+  refs.errorWindowRef.classList.add('out-visible');
+  refs.errorWindowRef.classList.remove('is-visible');
 }

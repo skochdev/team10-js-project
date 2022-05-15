@@ -13,6 +13,12 @@
     }
 }
 
+.filter__item{
+  @media screen and (min-width: $tablet) {
+      flex: 0 0 25%;
+    }
+}
+
 .filter__item:not(:last-child) {
     @media screen and (max-width: 767px) {
     margin: 8px auto;
