@@ -54,6 +54,10 @@ function onFetchMovieError() {
   renderMainPage('day');
   onLoaderHidden();
 
+  // after wrong query, this will take off the active class from selected filter button, and set to "Today"
+  document.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+  refs.filterBtnDaily.classList.add('filter__btn--active');
+
   refs.errorWindowRef.classList.add('is-visible');
   refs.errorWindowRef.classList.remove('out-visible');
 
