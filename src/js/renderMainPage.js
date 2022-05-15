@@ -6,6 +6,7 @@ import renderingPlaceholder from './renderingPlaceholder';
 import { pagination, paginationSettings } from './pagination';
 import onLoaderHidden from './onLoaderHidden';
 import onHeaderHomeBtnClick from './header-my-library';
+import renderMainPageWeek from './renderMainPageWeek';
 
 const refs = getRefs();
 
@@ -31,3 +32,5 @@ export default function renderMainPage() {
 
 refs.homeRef.addEventListener('click', renderMainPage);
 refs.logoRef.addEventListener('click', renderMainPage);
+refs.filterBtnDaily.addEventListener('click', renderMainPage);
+refs.filterBtnWeekly.addEventListener('click', renderMainPageWeek);
