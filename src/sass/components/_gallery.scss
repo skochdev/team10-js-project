@@ -3,12 +3,8 @@
   padding-bottom: 40px;
 
   @media screen and (min-width: $tablet) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  @media screen and (min-width: $desktop) {
     padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 
