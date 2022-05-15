@@ -1,15 +1,15 @@
 .filter__buttons_wrapper {
-    display: flex;
-    justify-content: center;
+  margin-bottom: 32px;
 }
 
-
 .filter__list {
-    padding-bottom: 10px;
+  width: 100%;
 
     @media screen and (min-width: $tablet) {
     display: flex;
-    // position: absolute;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
     }
 }
 
@@ -17,24 +17,26 @@
     @media screen and (max-width: 767px) {
     margin: 8px auto;
     }
-
-    @media screen and (min-width: $tablet) {
-        margin-right: 10px;
-    }
 }
 
 .filter__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
     background-color: $text-color-white;
     color: $hover-orange;
     border: 2px solid $hover-orange;
     border-radius: 6px;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.67;
     width: 200px;
     padding: 5px;
     transition: $box-shadow-transition;
 
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+  }
 
 &:hover,
 &:focus {

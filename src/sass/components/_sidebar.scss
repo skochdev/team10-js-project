@@ -1,13 +1,13 @@
 .sidebar {
   position: absolute;
-  top: 300px;
+  top: 0;
   left: 50%;
   transform: translate(530px, 0);
   font-size: 14px;
   color: $text-color-black;
 
   & {
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 1400px) {
         display: none;
       }
   }
