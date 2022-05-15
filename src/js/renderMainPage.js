@@ -1,6 +1,11 @@
 import getRefs from './get-refs';
 import renderGallery from './renderGallery';
-import { fetchTrendingMovies, fetchTopRatedMovies, fetchPopularMovies, fetchUpcomingMovies, fetchNowPlayingMovies } from './api';
+import {
+  fetchTrendingMovies,
+  fetchTopRatedMovies,
+  fetchUpcomingMovies,
+  fetchNowPlayingMovies,
+} from './api';
 import addDataToLocalStorage from './addDataToLocalStorage';
 import renderingPlaceholder from './renderingPlaceholder';
 import { pagination, paginationSettings } from './pagination';
@@ -15,7 +20,7 @@ export default function renderMainPage(mode = 'day') {
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
-        paginationSettings.searchType = 'popular';
+        paginationSettings.searchType = 'trendingDay';
         pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
@@ -30,7 +35,7 @@ export default function renderMainPage(mode = 'day') {
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
-        paginationSettings.searchType = 'popular';
+        paginationSettings.searchType = 'trendingWeek';
         pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
@@ -45,22 +50,7 @@ export default function renderMainPage(mode = 'day') {
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
-        paginationSettings.searchType = 'popular';
-        pagination({ totalItems, page });
-        renderGallery(response.results);
-        renderingPlaceholder();
-        addDataToLocalStorage(refs.movieKey, response);
-        refs.paginationContainer.classList.remove('visually-hidden');
-        onHeaderHomeBtnClick();
-        onLoaderHidden();
-      })
-      .catch(error => console.log(error));
-  } else if (mode === 'popular') {
-    fetchPopularMovies(paginationSettings.startPage)
-      .then(response => {
-        const totalItems = response.total_results;
-        const page = response.page;
-        paginationSettings.searchType = 'popular';
+        paginationSettings.searchType = 'topRated';
         pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
@@ -75,7 +65,7 @@ export default function renderMainPage(mode = 'day') {
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
-        paginationSettings.searchType = 'popular';
+        paginationSettings.searchType = 'upcoming';
         pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
@@ -90,7 +80,7 @@ export default function renderMainPage(mode = 'day') {
       .then(response => {
         const totalItems = response.total_results;
         const page = response.page;
-        paginationSettings.searchType = 'popular';
+        paginationSettings.searchType = 'nowPlayingMovies';
         pagination({ totalItems, page });
         renderGallery(response.results);
         renderingPlaceholder();
