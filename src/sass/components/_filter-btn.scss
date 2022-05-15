@@ -67,6 +67,8 @@
 
 .darkmode--activated .filter__btn {
   background-color: $text-color-black;
+  color: $text-color-white;
+  background-color: transparent;
   &:hover,
   &:focus {
     background-color: $hover-orange;
@@ -74,18 +76,5 @@
     cursor: pointer;
     box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
       1px 4px 6px rgba(116, 63, 30, 0.2);
-  }
-}
-
-.darkmode--activated .filter__btn {
-  background-color: $hover-orange;
-  color: $text-color-white;
-  border-color: $hover-orange;
-
-  &:hover,
-  &:focus {
-    color: $text-color-black;
-    background-color: $hover-orange;
-    box-shadow: none;
   }
 }
