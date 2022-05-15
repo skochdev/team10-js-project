@@ -1,6 +1,6 @@
 import getRefs from './get-refs';
 import renderMovie from './renderMovie';
-import { modalQueueButton, modalWatchedButton } from './modalLibraryButtons';
+import modalButton from './modalLibraryButtons';
 import isFilmInStorage from './isFilmInStorage';
 import setBodyOverflow from './footer-modal';
 import onScroll from './scrollUpBtn';
@@ -52,8 +52,8 @@ export default function openCard(event) {
       document.querySelector('.film__queue').textContent = 'Delete from queue';
     }
   }
-  document.querySelector('.film__watched').addEventListener('click', modalWatchedButton);
-  document.querySelector('.film__queue').addEventListener('click', modalQueueButton);
+  document.querySelector('.film__watched').addEventListener('click', modalButton);
+  document.querySelector('.film__queue').addEventListener('click', modalButton);
   refs.filmModalBackdrop.addEventListener('click', onBackdropClick);
 }
 

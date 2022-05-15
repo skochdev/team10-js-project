@@ -1,15 +1,15 @@
 .filter__buttons_wrapper {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
 
 
 .filter__list {
     padding-bottom: 10px;
-    
+
     @media screen and (min-width: $tablet) {
     display: flex;
-    // position: absolute;       
+    // position: absolute;
     }
 }
 
@@ -34,7 +34,7 @@
     width: 200px;
     padding: 5px;
     transition: $box-shadow-transition;
-    
+
 &:hover,
 &:focus {
     background-color: $hover-orange;
@@ -43,7 +43,7 @@
     box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
         1px 4px 6px rgba(116, 63, 30, 0.2);
     }
-    
+
 }
 
 .filter__btn.active {
@@ -51,32 +51,32 @@
     color: $text-color-white;
 }
 
-.darkmode--activated .filter__btn {
-    background-color: $text-color-black;
-    &:hover,
-    &:focus {
-            background-color: $hover-orange;
-            color: $text-color-white;
-            cursor: pointer;
-            box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
-                1px 4px 6px rgba(116, 63, 30, 0.2);
-        }
-}
+// .darkmode--activated .filter__btn {
+//     background-color: $text-color-black;
+//     &:hover,
+//     &:focus {
+//             background-color: $hover-orange;
+//             color: $text-color-white;
+//             cursor: pointer;
+//             box-shadow: 0px 4px 12px rgba(75, 49, 20, 0.2), 0px 4px 4px rgba(92, 63, 27, 0.2),
+//                 1px 4px 6px rgba(116, 63, 30, 0.2);
+//         }
+// }
 
-@media screen and (max-width: 767px) {
-    .darkmode--activated .filter__btn {
-            background-color: $text-color-white;
-            color: #0094f7;
-            border-color: #0094f7;
+// @media screen and (max-width: 767px) {
+//     .darkmode--activated .filter__btn {
+//             background-color: $text-color-white;
+//             color: #0094f7;
+//             border-color: #0094f7;
 
-            &:hover,
-            &:focus {
-                color: $text-color-black;
-                background-color: #0094f7;
-                box-shadow: none;
-            }
-}
-}
+//             &:hover,
+//             &:focus {
+//                 color: $text-color-black;
+//                 background-color: #0094f7;
+//                 box-shadow: none;
+//             }
+// }
+// }
 
 
 

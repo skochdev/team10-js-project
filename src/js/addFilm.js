@@ -8,6 +8,13 @@ export default function addFilm(storage, film_id) {
   let film_obj = {};
   if (localStorage.getItem(refs.movieKey)) {
     film_obj = JSON.parse(localStorage.getItem(refs.movieKey)).results.find(element => element.id === Number(film_id));
+    if (!film_obj) {
+      if (storage === 'watched') {
+        film_obj = JSON.parse(localStorage.getItem('queue')).find(element => element.id === Number(film_id));
+      } else {
+        film_obj = JSON.parse(localStorage.getItem('watched')).find(element => element.id === Number(film_id));
+      }
+    }
   } else {
     const fetchedObj = fetchMovieById(film_id);
     fetchedObj.genre_ids = fetchedObj.genres.map(item => item.id);
