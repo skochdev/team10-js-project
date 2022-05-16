@@ -24,7 +24,7 @@
   padding: 64px 24px;
 }
 
-.movie__item {
+.movie__link {
   &:hover .overlay,
   &:focus .overlay {
     transform: translateY(0);
