@@ -19,9 +19,11 @@ export default function onHeaderHomeBtnClick() {
     refs.myLibraryRef.classList.remove('current'); // знімається помаранчеве підкреслення з кнопки My library
     refs.headerRef.classList.remove('header__my-library');  // видаляється фонове зображення My library
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.remove('visually-hidden');
+  if (refs.mainRef.querySelector('.filter__btn--active')) {
     refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
-    refs.filterBtnDaily.classList.add('filter__btn--active');
-    renderMainPage('day');
+  }
+  refs.filterBtnDaily.classList.add('filter__btn--active');
+  renderMainPage('day');
 }
 
 function onMyLibraryBtnClick() {

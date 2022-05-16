@@ -46,9 +46,11 @@ function onFetchMovieRequest(movies) {
   renderGallery(movies.results);
   renderingPlaceholder();
   addDataToLocalStorage(refs.movieKey, movies);
-  refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
-  refs.filterBtnDaily.classList.add('filter__btn--active');
   onLoaderHidden();
+  if (refs.mainRef.querySelector('.filter__btn--active')) {
+    refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+  }
+
 }
 
 function onFetchMovieError() {
@@ -57,7 +59,9 @@ function onFetchMovieError() {
   onLoaderHidden();
 
   // after wrong query, this will take off the active class from selected filter button, and set to "Today"
-  document.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+  if (document.querySelector('.filter__btn--active')) {
+    document.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
+  }
   refs.filterBtnDaily.classList.add('filter__btn--active');
 
   refs.errorWindowRef.classList.add('is-visible');
