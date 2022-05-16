@@ -91,7 +91,13 @@
 }
 
 .darkmode--activated .student-card__student-name {
+  isolation: isolate;
   color: white;
+
+  &:hover,
+  &:focus {
+    color: $hover-orange;
+  }
 }
 
 .student-card {

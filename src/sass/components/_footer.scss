@@ -49,4 +49,11 @@
   margin-left: 10px;
   margin-right: 10px;
   fill: $hover-orange;
+
+  .darkmode--activated & {
+    // to remove darkmode shit, that makes it impossible to edit styles
+    isolation: isolate;
+    //
+    fill: $hover-orange;
+  }
 }
