@@ -27,6 +27,8 @@ function onFilterClick(event) {
 }
 
 function changeActiveButton(current, previous) {
-  previous.classList.remove('filter__btn--active');
+  if (previous) {
+    previous.classList.remove('filter__btn--active');
+  }
   current.classList.add('filter__btn--active');
 }
