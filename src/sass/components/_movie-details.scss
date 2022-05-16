@@ -50,7 +50,12 @@
 }
 
 .film__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 108px auto;
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 152px auto;
+  }
 
   &:not(:last-child) {
     margin-bottom: 8px;
@@ -58,13 +63,8 @@
 }
 
 .film__item-caption {
-  width: 108px;
   line-height: 1.33;
   color: $text-color-light-gray;
-
-  @media screen and (min-width: $desktop) {
-    width: 152px;
-  }
 }
 
 .film__rating {
