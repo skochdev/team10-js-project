@@ -28,6 +28,8 @@ export default function modalButton(event) {
   if (!refs.libButtons.classList.contains('is-hidden') && libButtonRef.classList.contains('active')) {
     if (localStorage.getItem(storage)) {
       renderGallery(JSON.parse(localStorage.getItem(storage)));
+      const votes = refs.gallery.querySelectorAll('.movie__vote');
+      votes.forEach(item => item.classList.remove('movie__vote--position'));
     } else {
       refs.gallery.innerHTML = nothing_here();
     }
