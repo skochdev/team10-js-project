@@ -38,8 +38,10 @@ function onMyLibraryBtnClick() {
     libraryButton('watched');
     librarySidebar();
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.add('visually-hidden');
+  if (refs.libQueueBtn.classList.contains('active')) {
     refs.libWatchedBtn.classList.add('active');
     refs.libQueueBtn.classList.remove('active');
+  }
 }
 
 function onWatchedBtnClick() {
