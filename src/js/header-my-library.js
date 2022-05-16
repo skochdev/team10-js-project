@@ -1,6 +1,5 @@
 import getRefs from "./get-refs";
 import libraryButton from './libraryButton';
-import librarySidebar from "./librarySidebar";
 import renderMainPage from './renderMainPage';
 
 const refs = getRefs();
@@ -19,7 +18,6 @@ export default function onHeaderHomeBtnClick() {
     refs.homeRef.classList.add('current'); // додається помаранчеве підкреслення кнопки Home
     refs.myLibraryRef.classList.remove('current'); // знімається помаранчеве підкреслення з кнопки My library
     refs.headerRef.classList.remove('header__my-library');  // видаляється фонове зображення My library
-    refs.mainRef.querySelector('.sidebar').classList.add('visually-hidden');
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.remove('visually-hidden');
     refs.mainRef.querySelector('.filter__btn--active').classList.remove('filter__btn--active');
     refs.filterBtnDaily.classList.add('filter__btn--active');
@@ -36,7 +34,6 @@ function onMyLibraryBtnClick() {
     refs.libWatchedBtn.classList.add('active');
     refs.paginationContainer.classList.add('visually-hidden');
     libraryButton('watched');
-    librarySidebar();
     refs.mainRef.querySelector('.filter__buttons_wrapper').classList.add('visually-hidden');
   if (refs.libQueueBtn.classList.contains('active')) {
     refs.libWatchedBtn.classList.add('active');
@@ -48,12 +45,10 @@ function onWatchedBtnClick() {
   refs.libQueueBtn.classList.remove('active');
   refs.libWatchedBtn.classList.add('active');
   libraryButton('watched');
-  librarySidebar();
 }
 
 function onQueueBtnClick() {
   refs.libWatchedBtn.classList.remove('active');
   refs.libQueueBtn.classList.add('active');
   libraryButton('queue');
-  librarySidebar();
 }
